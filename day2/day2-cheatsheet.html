@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 2 Cheat Sheet — Raw to Reset</title>
+<style>
+  :root{
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF; --muted:#666;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+  }
+  html,body{margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+  .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
+  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
+  header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
+  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
+  .sub{opacity:.95;margin-top:6px}
+  .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
+  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
+  .tone{background:var(--soft);border-left:6px solid var(--brand)}
+  ul{margin:8px 0 0 20px} li{margin:.25rem 0}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700}
+  .btn.secondary{background:#2D2D2D}
+  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
+  .tiny{font-size:.92rem;color:var(--muted)}
+  figure{margin:16px 0 0} figure img{width:100%;border-radius:12px}
+  /* Print-friendly layout */
+@media print {
+  /* Page size & margins */
+  @page { size: A4; margin: 18mm; }
+
+  /* Hide things we don't want in the PDF */
+  .cta-row, .muted, .brand img { display: none !important; }
+
+  /* Cards: remove shadows and roundings for a crisp PDF */
+  section.card {
+    box-shadow: none !important;
+    border: 1px solid #e8e8e8 !important;
+    border-radius: 8px !important;
+  }
+
+  /* Header: keep title legible in monochrome */
+  header {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #e8e8e8 !important;
+  }
+
+  /* Links: underline for print */
+  a { color: #000 !important; text-decoration: underline !important; }
+
+  /* Make body background white */
+  html, body { background: #fff !important; }
+}
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="brand">
+      <img src="logo.png" alt="Artificial Momentum logo">
+    </div>
+
+    <header>
+      <h1>Day 2 — Feeling Edgy? PMT Isn’t the Problem</h1>
+      <div class="sub">Your luteal phase is asking for this</div>
+    </header>
+
+    <!-- Hero image: calm evening journaling -->
+    <figure>
+      <img src="20.jpg" alt="Woman journaling in the evening light">
+    </figure>
+
+    <section class="card">
+      <h2>🧭 Cycle Lens</h2>
+      <ul>
+        <li>Mid-luteal (≈10–14 days pre-bleed) is when misfits get magnified. You’re not “overreacting”; your brain is more honest about what’s off.</li>
+        <li>Chemistry shifts from protection → repair. The curtain pulls back on what isn’t working.</li>
+      </ul>
+    </section>
+
+    <section class="card tone">
+      <h2>🌙 Quick Win</h2>
+      <p><strong>Tonight:</strong> earlier lights + a food-based <strong>B-complex</strong> with dinner. Support progesterone metabolism, stabilise mood, and guard tomorrow from a crash. If symptoms are severe or disruptive, consider a hormone panel — more clarity, not more drama.</p>
+    </section>
+
+    <section class="card">
+      <h2>🧪 Signals to Notice</h2>
+      <ul>
+        <li>Snappy, teary, “done with everyone” feelings → data, not defects.</li>
+        <li>“It’s not you, it’s your chemistry” — serotonin sensitivity + GABA/progesterone dynamics, sleep fragility.</li>
+        <li>The face is real: fewer hard conversations this week; build buffers.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🧰 Support Moves</h2>
+      <ul>
+        <li><strong>Nourish:</strong> protein + complex carbs + minerals at regular intervals.</li>
+        <li><strong>Calm the flag:</strong> earlier bedtime, darker evenings, reduce stimulants.</li>
+        <li><strong>Plan for reactivity:</strong> buffers and breaks; delay high-stakes decisions.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>📝 Reflection Prompt</h2>
+      <p class="tiny"><em>Where is my world mismatched to how I feel? What can soften or defer this week? If I saw something clearly but can’t unsee it, I’ll park the conversation and give my nervous system peace first.</em></p>
+    </section>
+
+    <section class="card">
+      <h2>🧠 Why (mini-physiology)</h2>
+      <p class="tiny">Shifts in progesterone/GABA + serotonin sensitivity heighten reactivity and sleep fragility. Use light blockers at night, skip hard confrontations before bed, and try breathing, chamomile, or gentle somatics.</p>
+    </section>
+
+    <div class="cta-row">
+      <a class="btn" href="https://day2raw.artificialmomentum.com/">Watch Day 2 Video</a>
+      <a class="btn ghost" href="https://day3raw.artificialmomentum.com/cheatsheet/">Day 3 Cheat Sheet →</a>
+      <a class="btn ghost" href="mailto:rawtoresetcoaching@artificialmomentum.com">Ask a Question</a>
+      <a class="btn ghost" id="print-pdf">Download PDF</a>
+
+    </div>
+
+    <p class="muted">Tip: Save this page for quick reference. PDF download coming soon.</p>
+    <p class="muted">Remember, this reset ends with a live Zoom call. Send your questions in — we’ll cover them together.</p>
+
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById('print-pdf');
+      if (btn) btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.print();
+      });
+    })();
+  </script>
+</body>
+</html>

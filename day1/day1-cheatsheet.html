@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 1 Cheat Sheet — Raw to Reset</title>
+<style>
+  :root{
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF; --muted:#666;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+  }
+  html,body{margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+  .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
+  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
+  header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
+  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
+  .sub{opacity:.95;margin-top:6px}
+  .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
+  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
+  .tone{background:var(--soft);border-left:6px solid var(--brand)}
+  ul{margin:8px 0 0 20px} li{margin:.25rem 0}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700}
+  .btn.secondary{background:#2D2D2D}
+  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
+  .tiny{font-size:.92rem;color:var(--muted)}
+  .kicker{font-weight:700}
+  figure{margin:16px 0 0} figure img{width:100%;border-radius:12px}
+  /* Print-friendly layout */
+@media print {
+  /* Page size & margins */
+  @page { size: A4; margin: 18mm; }
+
+  /* Hide things we don't want in the PDF */
+  .cta-row, .muted, .brand img { display: none !important; }
+
+  /* Cards: remove shadows and roundings for a crisp PDF */
+  section.card {
+    box-shadow: none !important;
+    border: 1px solid #e8e8e8 !important;
+    border-radius: 8px !important;
+  }
+
+  /* Header: keep title legible in monochrome */
+  header {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #e8e8e8 !important;
+  }
+
+  /* Links: underline for print */
+  a { color: #000 !important; text-decoration: underline !important; }
+
+  /* Make body background white */
+  html, body { background: #fff !important; }
+}
+
+</style>
+</head>
+
+
+<body>
+  <div class="wrap">
+
+    <div class="brand">
+      <img src="logo.png" alt="Artificial Momentum logo">
+    </div>
+
+    <header>
+      <h1>Day 1 — You’re Not Broken — You’re Just Out of Rhythm</h1>
+      <div class="sub">Quick wins + signals decoded</div>
+    </header>
+
+    <figure>
+      <img src="three_women_in_gym_gear_smiling.jpg" alt="Three women smiling together at the gym">
+    </figure>
+
+    <section class="card">
+      <h2>🧭 Cycle Lens</h2>
+      <ul>
+        <li>Works in any phase, especially <strong>Menstruation (Days 1–5)</strong>. From Day 1 you might feel “nearly ready” — steady the pace and set the board, don’t sprint.</li>
+        <li>Your nervous system is asking for <em>pacing</em>. Line up the skittles in the first couple of days; you’re not letting anyone down. You’re perfecting the game.</li>
+      </ul>
+    </section>
+
+    <section class="card tone">
+      <h2>💧 Quick Win</h2>
+      <p><span class="kicker">Before coffee tomorrow:</span> drink a big glass of water + electrolytes. It gently wakes your nervous system, balances blood pressure, and fuels steady energy. Add lemon + a pinch of mineral salt or use an electrolyte mix.</p>
+    </section>
+
+    <section class="card">
+      <h2>🧪 Signals to Notice</h2>
+      <ul>
+        <li><strong>Mood swings or cravings</strong> → be your body's ally. It's asking for balance, not punishment.</li>
+        <li><strong>Low energy</strong> → a nervous-system flag, not laziness. (Ban the “I’m lazy” label.)</li>
+        <li><strong>Foggy brain</strong> → hydration + minerals often help. Screens off for 30 minutes and call someone who lifts you. (Maybe not Mum after months of radio silence 🙃)</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🧰 Support Moves</h2>
+      <ul>
+        <li><strong>Fuel early:</strong> protein + minerals within 60 minutes of waking. My mix: electrolytes, creatine, and pea protein after an overnight fast (tune length to your body + phase).</li>
+        <li><strong>Pace:</strong> swap “push through” for <em>listening</em>. Lighter movement counts — think yoga over HIIT.</li>
+        <li><strong>Grace:</strong> if you’re ADHD/ND like me, the inner narrator can drag. Offer yourself the same kindness you’d give your child. A few go-to mantras help ❤️</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>📝 Reflection Prompt</h2>
+      <p class="tiny"><em>Where today did I feel out of rhythm? What small signal did I notice once I stopped fighting? (i.e., the moment you ditched “lazy” and said “okay, I need balance.” What brightened?)</em></p>
+    </section>
+
+    <section class="card">
+      <h2>🧠 Why (mini-physiology)</h2>
+      <p class="tiny">Prostaglandins (body-wide inflammation) + lower estrogen can amplify fatigue. Hydration + minerals can reduce headache/fog.</p>
+    </section>
+
+    <div class="cta-row">
+      <a class="btn" href="day1-video.html">Watch Today’s Video</a>
+  <a class="btn" href="../day2/day2-cheatsheet.html">Day 2 Cheat Sheet →</a>
+      <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+      <a class="btn ghost" id="print-pdf">Download PDF</a>
+
+    </div>
+
+    <p class="muted">Tip: Save this page for quick reference. PDF download coming soon.</p>
+
+<p class="muted">💬 Got a question? Note it down — I’ll be answering them in the live wrap-up Zoom call at the end of the reset.</p>
+
+  </div>
+<script>
+  (function () {
+    var btn = document.getElementById('print-pdf');
+    if (btn) btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.print();
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 3 Cheat Sheet — Raw to Reset</title>
+<style>
+  :root{
+    --brand:#FC8B73;        /* coral */
+    --ink:#0D0D0E;          /* near-black */
+    --card:#FFFFFF;
+    --muted:#666;
+    --soft:#FFE5DE;         /* very light coral */
+    --line:#ffd7cc;
+    --radius:18px;
+  }
+  html,body{margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+  .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
+  .brand img{width:clamp(80px,9vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
+  header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
+  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
+  .sub{opacity:.95;margin-top:6px}
+
+  .hero{margin-top:14px;border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.06)}
+  .hero img{display:block;width:100%;height:auto}
+
+  .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06); border:1px solid var(--line)}
+  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
+  .tone{background:#FFF7F4;border-left:6px solid var(--brand)}
+  ul{margin:8px 0 0 20px}
+  li{margin:.25rem 0}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+    padding:12px 18px;border-radius:999px;font-weight:700}
+  .btn.secondary{background:#2D2D2D}
+  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
+  .tiny{font-size:.95rem;color:var(--muted)}
+  .kicker{font-weight:700}
+  /* Print-friendly layout */
+@media print {
+  /* Page size & margins */
+  @page { size: A4; margin: 18mm; }
+
+  /* Hide things we don't want in the PDF */
+  .cta-row, .muted, .brand img { display: none !important; }
+
+  /* Cards: remove shadows and roundings for a crisp PDF */
+  section.card {
+    box-shadow: none !important;
+    border: 1px solid #e8e8e8 !important;
+    border-radius: 8px !important;
+  }
+
+  /* Header: keep title legible in monochrome */
+  header {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #e8e8e8 !important;
+  }
+
+  /* Links: underline for print */
+  a { color: #000 !important; text-decoration: underline !important; }
+
+  /* Make body background white */
+  html, body { background: #fff !important; }
+}
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Logo -->
+    <div class="brand">
+      <img src="logo.png" alt="Artificial Momentum logo">
+    </div>
+
+    <!-- Header -->
+    <header>
+      <h1>Day 3 — Bloat, Burnout, and the Bullsh*t We’ve Normalized</h1>
+      <div class="sub">You’re not lazy — you need fuel.</div>
+    </header>
+
+    <!-- Hero image -->
+    <figure class="hero">
+      <img src="healthy-bowl.jpg" alt="Two nourishing bowls with protein, greens, and grains">
+    </figure>
+
+    <!-- Cycle Lens -->
+    <section class="card">
+      <h2>🧭 Cycle Lens</h2>
+      <ul>
+        <li>Late follicular → luteal transition = appetite/sugar swings spike. It’s right after ovulation; you’re either prepping to bleed or your body’s prepping to grow a baby.</li>
+        <li>Misfits magnify — you’re not suddenly "moody," you're just less willing to swallow what annoys you. The rest of the month it's applauded as emotional maturity. Today it gets mislabeled PMS when you finally snap at the same tired joke. Well… hello 🤦‍♀️🙃</li>
+      </ul>
+    </section>
+
+    <!-- Quick win -->
+    <section class="card tone">
+      <h2>💡 Quick Win</h2>
+      <p><span class="kicker">Mid-morning anchor:</span> <strong>20–30 g protein + fiber + minerals.</strong>
+        This steadies blood sugar, reduces cravings, and brings your brain back into usable focus.</p>
+    </section>
+
+    <!-- Signals -->
+    <section class="card">
+      <h2>🧪 Signals to Notice</h2>
+      <ul>
+        <li>Afternoon crash, cravings, irritability → likely <strong>under-fueling</strong> + <strong>stress load</strong>.</li>
+        <li>Bloat that follows swings in cortisol/glucose → not a moral failure.</li>
+        <li>Feeling like you “should push through” is the trap.</li>
+      </ul>
+    </section>
+
+    <!-- Support -->
+    <section class="card">
+      <h2>🧰 Support Moves</h2>
+      <ul>
+        <li><strong>Fuel rhythm:</strong> protein at breakfast + a real lunch (not just coffee).</li>
+        <li><strong>Move, don’t punish:</strong> 10–20 minutes easy walk or mobility instead of forcing a max session.</li>
+        <li><strong>Electrolytes + magnesium:</strong> support the stress axis while you refuel.</li>
+      </ul>
+    </section>
+
+    <!-- Reflection -->
+    <section class="card">
+      <h2>📝 Reflection Prompt</h2>
+      <p class="tiny"><em>What story do I tell myself when energy dips? What happens if I answer with fuel instead of self-criticism?</em></p>
+    </section>
+
+    <!-- Why -->
+    <section class="card">
+      <h2>🧠 Why (mini-physiology)</h2>
+      <p class="tiny">Cortisol/glucose oscillations drive cravings; <strong>protein + minerals</strong> stabilize.</p>
+    </section>
+
+    <!-- CTAs -->
+    <div class="cta-row">
+      <a class="btn" href="https://day3raw.artificialmomentum.com/">Watch Today’s Video</a>
+      <a class="btn" href="https://day4raw.artificialmomentum.com/cheatsheet/">Day 4 Cheat Sheet →</a>
+      <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+      <a class="btn ghost" id="print-pdf">Download PDF</a>
+
+    </div>
+
+    <p class="muted">Tip: Save this page for quick reference. You can download a PDF above when it’s ready.</p>
+    <p class="muted">We’re building toward the live wrap-up Zoom call. Collect your questions — nothing’s too small.</p>
+
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById('print-pdf');
+      if (btn) btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.print();
+      });
+    })();
+  </script>
+</body>
+</html>
+
