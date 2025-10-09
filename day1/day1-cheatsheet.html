@@ -26,11 +26,42 @@
   .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700}
   .btn.secondary{background:#2D2D2D}
   .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  .btn {
+  cursor: pointer;
+}
+.btn.locked {
+  background: #fce3dd;
+  color: #888;
+  border-color: #f7b4a3;
+  cursor: not-allowed;
+}
+.btn.locked:hover {
+  background: #fce3dd;
+  color: #888;
+}
+
   .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
   .tiny{font-size:.92rem;color:var(--muted)}
   .kicker{font-weight:700}
   figure{margin:16px 0 0} figure img{width:100%;border-radius:12px}
   /* Print-friendly layout */
+  /* Footer Fade-In Animation */
+@keyframes fadeInFooter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+footer {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #FC8B73;
+  margin-top: 28px;
+  animation: fadeInFooter 1.5s ease-in-out 0.4s forwards;
+  opacity: 0;
+}
+footer strong {
+  color: #0D0D0E;
+}
+
 @media print {
   /* Page size & margins */
   @page { size: A4; margin: 18mm; }
@@ -61,23 +92,24 @@
 
 <style>
   .got-question {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    color: #FC8B73;
-    background: #fff3f0;
+    color: #ffffff;
+    background: #FC8B73;
     border: 2px solid #FC8B73;
-    border-radius: 12px;
-    padding: 12px 18px;
+    border-radius: 14px;
+    padding: 14px 22px;
     text-align: center;
-    margin-top: 28px;
-    display: inline-block;
+    margin: 36px auto 0;
+    display: block;
+    max-width: 90%;
+    line-height: 1.4;
     transition: all 0.3s ease;
   }
 
   .got-question:hover {
-    background: #FC8B73;
-    color: #fff;
-    cursor: pointer;
+    background: #ff9c86;
+    border-color: #ff9c86;
   }
 </style>
 
@@ -143,17 +175,16 @@
     </section>
 
     <div class="cta-row">
-      <a class="btn" href="day1-video.html">Watch Today’s Video</a>
-  <a class="btn" href="../day2/day2-cheatsheet.html">Day 2 Cheat Sheet →</a>
-      <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-      <a class="btn ghost" id="print-pdf">Download PDF</a>
+  <a class="btn" href="day1-video.html">Watch Today’s Video</a>
+  <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 2 Cheat Sheet →</a>
+  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+  <a class="btn ghost" id="print-pdf">Download PDF</a>
+</div>
 
     </div>
 
-    <p class="muted">Tip: Save this page for quick reference. PDF download coming soon.</p>
-
-<footer>
-  <p class="got-question">💬 Got a question? Note it down — I’ll be answering them in the live wrap-up Zoom call at the end of the reset.</p>
+    <footer>
+  💬 Got a question already? Note it down — I’ll be answering them live during the wrap-up Zoom call at the end of the reset.
 </footer>
 
 

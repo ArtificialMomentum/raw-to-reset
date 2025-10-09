@@ -45,10 +45,31 @@
     padding:12px 18px;border-radius:999px;font-weight:700}
   .btn.secondary{background:#2D2D2D}
   .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  .btn {
+  cursor: pointer;
+}
+
   .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
   .tiny{font-size:.9rem;color:var(--muted)}
   .kicker{font-weight:700}
   /* Print-friendly layout */
+  /* Footer Fade-In Animation */
+@keyframes fadeInFooter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+footer {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #FC8B73;
+  margin-top: 28px;
+  animation: fadeInFooter 1.5s ease-in-out 0.4s forwards;
+  opacity: 0;
+}
+footer strong {
+  color: #0D0D0E;
+}
+
 @media print {
   /* Page size & margins */
   @page { size: A4; margin: 18mm; }
@@ -144,11 +165,10 @@
 
     <!-- CTAs -->
     <div class="cta-row">
-      <a class="btn" href="https://day5raw.artificialmomentum.com/">Watch Today’s Video</a>
-      <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-      <a class="btn ghost" id="print-pdf">Download PDF</a>
-
-    </div>
+  <a class="btn" href="day5-video.html">Watch Today’s Video</a>
+  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+  <a class="btn ghost" id="print-pdf">Download PDF</a>
+</div>
 
     <!-- Next Step Card -->
 <section class="card tone">
@@ -170,10 +190,9 @@
 </section>
 
 
-
-
-    <p class="muted">Tip: Save this page for quick reference. You can download a PDF above when it’s ready.</p>
-    <p class="muted">🎉 Don’t miss today’s live wrap-up Zoom call. Bring your questions, your insights, and close your reset with us.</p>
+<footer>
+  💬 Don’t miss the <strong>LIVE Wrap-Up Zoom Call</strong> — check your inbox for the invite. Bring your questions, your insights, and close your reset with us.
+</footer>
 
   </div>
   <script>

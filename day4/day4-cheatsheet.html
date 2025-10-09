@@ -37,11 +37,42 @@
   .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
     padding:12px 18px;border-radius:999px;font-weight:700}
   .btn.secondary{background:#2D2D2D}
+  .btn {
+  cursor: pointer;
+}
+.btn.locked {
+  background: #fce3dd;
+  color: #888;
+  border-color: #f7b4a3;
+  cursor: not-allowed;
+}
+.btn.locked:hover {
+  background: #fce3dd;
+  color: #888;
+}
+
   .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
   .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
   .tiny{font-size:.94rem;color:var(--muted)}
   .kicker{font-weight:700}
   /* Print-friendly layout */
+  /* Footer Fade-In Animation */
+@keyframes fadeInFooter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+footer {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #FC8B73;
+  margin-top: 28px;
+  animation: fadeInFooter 1.5s ease-in-out 0.4s forwards;
+  opacity: 0;
+}
+footer strong {
+  color: #0D0D0E;
+}
+
 @media print {
   /* Page size & margins */
   @page { size: A4; margin: 18mm; }
@@ -146,16 +177,15 @@
 
     <!-- CTAs -->
     <div class="cta-row">
-      <a class="btn" href="https://day4raw.artificialmomentum.com/">Watch Today’s Video</a>
-      <a class="btn" href="https://day5raw.artificialmomentum.com/cheatsheet/">Day 5 Cheat Sheet →</a>
-      <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-      <a class="btn ghost" id="print-pdf">Download PDF</a>
+  <a class="btn" href="day4-video.html">Watch Today’s Video</a>
+  <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 5 Cheat Sheet →</a>
+  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+  <a class="btn ghost" id="print-pdf">Download PDF</a>
+</div>
 
-    </div>
-
-    <p class="muted">Tip: Save this page for quick reference. You can download a PDF above when it’s ready.</p>
-    <p class="muted">Tomorrow’s the finale, and then we gather live on Zoom to answer your questions + share takeaways.</p>
-
+<footer>
+  💬 Tomorrow we close the circle — bring your reflections and questions to the live wrap-up Zoom call. You’re almost there.
+</footer>
 
   </div>
   <script>
