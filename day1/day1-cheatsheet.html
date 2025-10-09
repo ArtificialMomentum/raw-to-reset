@@ -49,7 +49,7 @@
 @keyframes slideUpFade {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -59,18 +59,27 @@
 
 footer {
   text-align: center;
-  font-size: 1.05rem;
-  color: #FC8B73;
-  margin-top: 32px;
-  animation: slideUpFade 1.3s ease-out 0.4s forwards;
+  font-size: 1.1rem;
+  color: #0D0D0E; /* Stronger contrast */
+  margin-top: 48px; /* Adds more space from main content */
+  margin-bottom: 60px; /* Keeps it lifted above bottom edge */
+  font-weight: 600;
+  line-height: 1.7;
+  animation: slideUpFade 1.4s ease-out 0.3s forwards;
   opacity: 0;
-  line-height: 1.6;
-  font-weight: 500;
 }
 
 footer strong {
-  color: #0D0D0E;
+  color: #FC8B73;
 }
+
+/* Optional: subtle hover polish */
+footer:hover {
+  color: #FC8B73;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
 
 
 @media print {
