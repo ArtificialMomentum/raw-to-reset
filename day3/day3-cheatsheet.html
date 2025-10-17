@@ -1,247 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Day 3 Cheat Sheet — Raw to Reset</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 3 — Raw to Reset</title>
+<meta name="description" content="Mid-cycle energy shifts — your body’s recalibrating, not failing. Learn how to flow with it.">
 <style>
-  :root{
-    --brand:#FC8B73;        /* coral */
-    --ink:#0D0D0E;          /* near-black */
-    --card:#FFFFFF;
-    --muted:#666;
-    --soft:#FFE5DE;         /* very light coral */
-    --line:#ffd7cc;
-    --radius:18px;
-  }
-  html,body{margin:0;padding:0;background:#F7F7F7;color:var(--ink);
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
-  .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
-  .brand img{width:clamp(80px,9vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
-  header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
-  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
-  .sub{opacity:.95;margin-top:6px}
-
-  .hero{margin-top:14px;border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.06)}
-  .hero img{display:block;width:100%;height:auto}
-
-  .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
-    box-shadow:0 8px 22px rgba(0,0,0,.06); border:1px solid var(--line)}
-  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
-  .tone{background:#FFF7F4;border-left:6px solid var(--brand)}
-  ul{margin:8px 0 0 20px}
-  li{margin:.25rem 0}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
-  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
-    padding:12px 18px;border-radius:999px;font-weight:700}
-  .btn.secondary{background:#2D2D2D}
-  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-  .btn {
-  cursor: pointer;
-}
-.btn.locked {
-  background: #fce3dd;
-  color: #888;
-  border-color: #f7b4a3;
-  cursor: not-allowed;
-}
-.btn.locked:hover {
-  background: #fce3dd;
-  color: #888;
+:root {
+  --brand:#FC8B73;
+  --ink:#0B0D0E;
+  --card:#fff;
+  --radius:18px;
+  --line:#EAEAEA;
 }
 
-  .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
-  .tiny{font-size:.95rem;color:var(--muted)}
-  .kicker{font-weight:700}
-  /* Print-friendly layout */
-/* Footer Slide-Up + Fade-In Animation */
-@keyframes slideUpFade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+html,body{
+  margin:0;
+  padding:0;
+  background:#F7F7F7;
+  color:var(--ink);
+  font-family:system-ui,sans-serif;
 }
 
-footer {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #0D0D0E; /* Stronger contrast */
-  margin-top: 48px; /* Adds more space from main content */
-  margin-bottom: 60px; /* Keeps it lifted above bottom edge */
-  font-weight: 600;
-  line-height: 1.7;
-  animation: slideUpFade 1.4s ease-out 0.3s forwards;
-  opacity: 0;
+.wrap{
+  max-width:900px;
+  margin:auto;
+  padding:16px;
 }
 
-footer strong {
-  color: #FC8B73;
+.brand{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:12px;
+}
+.brand img{
+  width:88px;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 4px 14px rgba(0,0,0,.08));
 }
 
-/* Optional: subtle hover polish */
-footer:hover {
-  color: #FC8B73;
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
+header{
+  background:var(--brand);
+  color:#fff;
+  border-radius:var(--radius);
+  padding:22px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.10);
 }
 
-
-@media print {
-  /* Page size & margins */
-  @page { size: A4; margin: 18mm; }
-
-  /* Hide things we don't want in the PDF */
-  .cta-row, .muted, .brand img { display: none !important; }
-
-  /* Cards: remove shadows and roundings for a crisp PDF */
-  section.card {
-    box-shadow: none !important;
-    border: 1px solid #e8e8e8 !important;
-    border-radius: 8px !important;
-  }
-
-  /* Header: keep title legible in monochrome */
-  header {
-    background: #fff !important;
-    color: #000 !important;
-    border: 1px solid #e8e8e8 !important;
-  }
-
-  /* Links: underline for print */
-  a { color: #000 !important; text-decoration: underline !important; }
-
-  /* Make body background white */
-  html, body { background: #fff !important; }
+.hero{
+  margin-top:14px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+}
+.hero img{
+  display:block;
+  width:100%;
+  height:auto;
 }
 
-.card p,
-.card ul,
-.card .why {
-  margin-bottom: 8px;
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  margin-top:16px;
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+  border-left:6px solid var(--brand);
 }
-.why {
-  display: block;
-  color: #6b2f23;
-  opacity: 0.85;
-  font-size: 0.92rem;
-  margin-top: 4px;
-  font-style: italic;
+.card h2{
+  margin:8px 0 20px;
+  font-size:1.1rem;
+}
+.card ul{
+  margin-left:20px;
+}
+.card li{
+  margin-bottom:8px;
+}
+.sub{
+  font-size:0.9rem;
+  opacity:.8;
+  margin-top:6px;
+}
+
+.btn-row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:18px;
+}
+
+.btn{
+  background:var(--brand);
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:0.9rem;
+  transition:filter .2s ease;
+}
+.btn:hover{
+  filter:brightness(1.05);
+}
+.btn-outline{
+  background:transparent;
+  color:var(--brand);
+  border:2px solid var(--brand);
 }
 </style>
 </head>
 <body>
-  <div class="wrap">
+<div class="wrap">
+  <div class="brand"><img src="../logo.png" alt="Artificial Momentum logo"></div>
 
-    <!-- Logo -->
-    <div class="brand">
-      <img src="logo.png" alt="Artificial Momentum logo">
-    </div>
+  <header>
+    <h1>Day 3 — Raw to Reset</h1>
+    <div class="sub">You’re not lazy — you need fuel.</div>
+  </header>
 
-    <!-- Header -->
-    <header>
-      <h1>Day 3 — Bloat, Burnout, and the Bullsh*t We’ve Normalized</h1>
-      <div class="sub">You’re not lazy — you need fuel.</div>
-    </header>
+  <figure class="hero">
+    <img src="23.jpg" alt="Woman smiling mid-afternoon, feeling more grounded.">
+  </figure>
 
-    <!-- Hero image -->
-    <figure class="hero">
-      <img src="healthy-bowl.jpg" alt="Two nourishing bowls with protein, greens, and grains">
-    </figure>
+  <section class="card">
+    <h2>Cycle Lens</h2>
+    <ul>
+      <li>Mid-cycle energy can feel uneven — your hormones are shifting gears.</li>
+      <li>Estrogen rises while progesterone begins its gentle climb — you’re recalibrating, not crashing.</li>
+      <li>Your nervous system and metabolism are adjusting to new demands for protein and stability.</li>
+    </ul>
+  </section>
 
-    <!-- Cycle Lens -->
-    <section class="card">
-      <h2>🧭 Cycle Lens</h2>
-      <ul>
-  <li>Late follicular → luteal transition = appetite/sugar swings spike. It’s right after ovulation: you’re either prepping to bleed or your body’s prepping to grow a baby.</li>
-  <li>Misfits magnify — you’re not suddenly “moody,” you’re just less willing to swallow what annoys you. The rest of the month it’s applauded as emotional maturity. Today it gets mislabelled PMS when you finally snap at the same tired joke. Well… hello 🙃</li>
-</ul>
+  <section class="card" style="border-left-color:#FCB573;">
+    <h2>Quick Win</h2>
+    <ul>
+      <li><strong>Mid-morning anchor:</strong> add 20–30 g protein + fiber + minerals. This steadies blood sugar and brings your brain back into usable focus.</li>
+    </ul>
+  </section>
 
-    </section>
+  <section class="card" style="border-left-color:#6BA3FF;">
+    <h2>Signals to Notice</h2>
+    <ul>
+      <li>Motivation dips or irritability? Not laziness — it’s chemistry shifting gears.</li>
+      <li><em>“Estrogen is peaking, and progesterone is rising.”</em> That changes how your body uses glucose and neurotransmitters — so your usual pace might suddenly feel “off.”</li>
+      <li>Feeling like your body’s “shoulds” are arguing with your energy? You’re not failing — you’re recalibrating.</li>
+    </ul>
+  </section>
 
-    <section class="card tone">
-      <h2>🌙 Quick Win</h2>
-      <p><strong>Mid-morning anchor:</strong> 20–30 g protein + fiber + minerals. This steadies blood sugar, reduces cravings, and brings your brain back into usable focus.</p>
+  <section class="card" style="border-left-color:#4EBFAE;">
+    <h2>Support Moves</h2>
+    <ul>
+      <li><strong>Front-load protein + fiber </strong>— steady blood sugar = steady mood.</li>
+      <li><strong>Move to spark, not drain </strong>— brisk walk or short weighted session boosts dopamine without tipping cortisol.</li>
+      <li><strong>Hydrate steadily </strong>— minerals keep estrogen’s energy lift smooth instead of spiky.</li>
+    </ul>
+    <p class="sub">→ Consistency fuels clarity. You’re teaching your brain what steady feels like again.</p>
+  </section>
 
-    </section>
-<!-- Signals + Why Combined Section -->
-<section class="card">
-  <h2>🧪 Signals to Notice</h2>
-  <ul>
-    <li>
-      Motivation dips or irritability? Not laziness — <strong>it’s chemistry shifting gears.</strong>
-      <br><em class="why">→ Estrogen is tapering off, and progesterone is rising. That changes how your body uses glucose and neurotransmitters — so your usual pace might suddenly feel “off.”</em>
-    </li>
+  <section class="card" style="border-left-color:#FFD86B;">
+    <h2>Reflection Prompt 🪶</h2>
+    <p>What felt easier to start today? Where did focus flow without forcing it?</p>
+    <p class="sub">→ Celebrate stability — this is your brain catching its rhythm.</p>
+  </section>
 
-    <li>
-      Afternoon crash or “can’t focus” moments — your nervous system is asking for fuel, not guilt.
-      <br><em class="why">→ When cortisol and glucose misalign, brain fog and cravings are just biochemical messages. Try protein + minerals mid-morning to reset stability.</em>
-    </li>
+  <section class="card" style="border-left-color:#A97CFC;">
+    <h2>Why (mini-physiology)</h2>
+    <p>As estrogen declines and progesterone takes the lead, your brain’s glucose use slows slightly — especially in the prefrontal cortex (focus, drive, planning). Supporting this with balanced meals and recovery movement helps prevent the “mid-cycle dip.”</p>
+    <p class="sub"><em>Why it matters:</em> supporting this phase with balanced meals and recovery movement keeps your nervous system steady and stops mid-cycle crashes.</p>
+  </section>
 
-    <li>
-      Feeling like your body’s “shoulds” are arguing with your energy? You’re not failing, you’re recalibrating.
-      <br><em class="why">→ This phase thrives on rhythm, not pressure. Backing off a sprint here means smoother hormones later.</em>
-    </li>
-  </ul>
-</section>
-<section class="card">
-  <h2>🧭 Support Moves</h2>
-  <ul>
-  <li><strong>Front-load protein + fiber</strong> — 20–30 g with breakfast steadies blood sugar and mood.</li>
-  <li><strong>Move to spark, not drain</strong> — a brisk walk or short weights session boosts dopamine without tipping cortisol.</li>
-  <li><strong>Hydrate steadily</strong> — water + minerals keep estrogen’s energy lift smooth instead of spiky.</li>
-</ul>
-<em class="why">→ Consistency fuels clarity. You’re teaching your brain what steady feels like again.</em>
-
-</section>
-
-<section class="card">
-  <h2>💭 Reflection Prompt</h2>
-  <p>What felt easier to start today? Where did focus flow without forcing it?</p>
-<em class="why">→ Celebrate stability — this is your brain catching its rhythm.</em>
-
-</section>
-
-<section class="card">
-  <h2>🧠 Why (mini-physiology)</h2>
-  <p class="tiny">
-    As estrogen declines and progesterone takes the lead, your brain’s glucose use slows slightly — especially in the prefrontal cortex (focus, drive, planning). The body redirects resources toward repair and progesterone’s calming work.
-    <strong>Why it matters:<strong></strong>
-    supporting this phase with balanced meals and recovery movement keeps your nervous system steady and stops mid-cycle crashes. Think nourishment over perfection — your hormones are shifting from creation to conservation mode.
-  </p>
-  <p class="tiny">
-    <em class="why">Why it matters:</em> supporting this phase with balanced meals and recovery movement keeps your nervous system steady and stops mid-cycle crashes. 
-    Think nourishment over perfection — your hormones are shifting from creation to conservation mode.
-  </p>
-</section>
-
-
-    <!-- CTAs -->
-    <div class="cta-row">
-  <a class="btn" href="day3-video.html">Watch Today’s Video</a>
-  <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 4 Cheat Sheet →</a>
-  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-  <a class="btn ghost" id="print-pdf">Download PDF</a>
-</div>
-
-<footer>
-  💬 What’s landing for you so far? Note your insights — we’ll unpack them together in the live wrap-up Zoom call at the end of the reset.
-</footer>
-
+  <div class="btn-row">
+    <a class="btn" href="day3-video.html">Watch Today’s Video</a>
+    <a class="btn-outline" href="day4-cheatsheet.html">Day 4 Cheat Sheet →</a>
+    <a class="btn" href="#">🍽 Recipe of the Day</a>
+    <a class="btn" href="#">🪶 Journal Page</a>
   </div>
-  <script>
-    (function () {
-      var btn = document.getElementById('print-pdf');
-      if (btn) btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.print();
-      });
-    })();
-  </script>
+
+  <footer style="text-align:center;margin-top:24px;font-size:.9rem;opacity:.8;">
+    © Artificial Momentum – Diana Air Coaching × ECHO
+  </footer>
+</div>
 </body>
 </html>
 
