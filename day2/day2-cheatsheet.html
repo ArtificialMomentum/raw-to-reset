@@ -17,110 +17,44 @@
   header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
   header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
   .sub{opacity:.95;margin-top:6px}
+
   .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
     box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
   .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
   .tone{background:var(--soft);border-left:6px solid var(--brand)}
   ul{margin:8px 0 0 20px} li{margin:.25rem 0}
+
+  .why, .card em.why {
+    display:block;
+    color:#6b2f23;
+    opacity:0.85;
+    font-size:0.92rem;
+    margin-top:4px;
+    font-style:italic;
+  }
+
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
-  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700}
-  .btn {
-  cursor: pointer;
-  .why {
-  display: block;
-  color: #6b2f23;
-  opacity: 0.85;
-  font-size: 0.92rem;
-  margin-top: 4px;
-footer {
-  margin-bottom: 80px;
-}
-
-}
-
-}
-.btn.locked {
-  background: #fce3dd;
-  color: #888;
-  border-color: #f7b4a3;
-  cursor: not-allowed;
-}
-.btn.locked:hover {
-  background: #fce3dd;
-  color: #888;
-}
-
+  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+    padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer}
   .btn.secondary{background:#2D2D2D}
   .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-  .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
-  .tiny{font-size:.92rem;color:var(--muted)}
-  figure{margin:16px 0 0} figure img{width:100%;border-radius:12px}
-  /* Print-friendly layout */
-  /* Footer Slide-Up + Fade-In Animation */
-@keyframes slideUpFade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+  .btn.locked{background:#fce3dd;color:#888;border-color:#f7b4a3;cursor:not-allowed}
+  .btn.locked:hover{background:#fce3dd;color:#888}
+
+  footer{text-align:center;font-size:1.1rem;color:#0D0D0E;margin-top:48px;margin-bottom:60px;
+    font-weight:600;line-height:1.7;animation:slideUpFade 1.4s ease-out 0.3s forwards;opacity:0;}
+  footer strong{color:#FC8B73;}
+  footer:hover{color:#FC8B73;transform:translateY(-2px);transition:all 0.3s ease;}
+  @keyframes slideUpFade {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+
+  @media print {
+    @page {size:A4;margin:18mm;}
+    .cta-row, .muted, .brand img {display:none !important;}
+    section.card{box-shadow:none !important;border:1px solid #e8e8e8 !important;border-radius:8px !important;}
+    header{background:#fff !important;color:#000 !important;border:1px solid #e8e8e8 !important;}
+    a{color:#000 !important;text-decoration:underline !important;}
+    html,body{background:#fff !important;}
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-footer {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #0D0D0E; /* Stronger contrast */
-  margin-top: 48px; /* Adds more space from main content */
-  margin-bottom: 60px; /* Keeps it lifted above bottom edge */
-  font-weight: 600;
-  line-height: 1.7;
-  animation: slideUpFade 1.4s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
-footer strong {
-  color: #FC8B73;
-}
-
-/* Optional: subtle hover polish */
-footer:hover {
-  color: #FC8B73;
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-
-
-@media print {
-  /* Page size & margins */
-  @page { size: A4; margin: 18mm; }
-
-  /* Hide things we don't want in the PDF */
-  .cta-row, .muted, .brand img { display: none !important; }
-
-  /* Cards: remove shadows and roundings for a crisp PDF */
-  section.card {
-    box-shadow: none !important;
-    border: 1px solid #e8e8e8 !important;
-    border-radius: 8px !important;
-  }
-
-  /* Header: keep title legible in monochrome */
-  header {
-    background: #fff !important;
-    color: #000 !important;
-    border: 1px solid #e8e8e8 !important;
-  }
-
-  /* Links: underline for print */
-  a { color: #000 !important; text-decoration: underline !important; }
-
-  /* Make body background white */
-  html, body { background: #fff !important; }
-}
-
 </style>
 </head>
 <body>
@@ -135,97 +69,72 @@ footer:hover {
       <div class="sub">Your luteal phase is asking for this</div>
     </header>
 
-    <!-- Hero image: calm evening journaling -->
-    <figure>
-      <img src="20.jpg" alt="Woman journaling in the evening light">
-    </figure>
+    <figure><img src="20.jpg" alt="Woman journaling in the evening light"></figure>
 
     <section class="card">
       <h2>🧭 Cycle Lens</h2>
       <ul>
         <li>Mid-luteal (almost 2 weeks pre-bleed) is when misfits get magnified. You’re not “overreacting”; your brain is more honest about what’s off.</li>
-        <li>Chemistry shifts from protection to repair. The curtain has been pulled back and it becomes tough to fake a smile when something doesn't gel.</li>
+        <li>Chemistry shifts from protection to repair. The curtain has been pulled back — it becomes tough to fake a smile when something doesn't gel.</li>
       </ul>
     </section>
 
     <section class="card tone">
       <h2>🌙 Quick Win</h2>
-      <p><strong>Tonight:</strong> dim the lights and get cozy a couple of hours before bed, we're talking circadian rhythm. Then add to that a food-based <strong>B-complex</strong> with dinner. Support progesterone metabolism, stabilise mood, and guard tomorrow from a crash. If symptoms are severe or disruptive, consider a hormone panel — more clarity, not more drama.</p>
+      <p><strong>Tonight:</strong> dim the lights and get cozy a couple of hours before bed — we’re talking circadian rhythm. Then add a food-based <strong>B-complex</strong> with dinner. It supports progesterone metabolism, stabilizes mood, and guards tomorrow from a crash.</p>
     </section>
 
     <section class="card">
-  <h2>🧪 Signals to Notice</h2>
-  <ul>
-    <li>
-      Snappy, teary, “done with everyone” feelings — <strong> you need to really hear this point:</strong>
-      <strong>this is data, not defects.</strong>
-      <br><em class="why">→ Your brain is flagging overstimulation and a serotonin dip — not failure, just feedback. This is biology doing it's thing. Hang in there, it'll pass.</em>
-    </li>
+      <h2>🧪 Signals to Notice</h2>
+      <ul>
+        <li>Snappy, teary, “done with everyone” feelings — <strong>this is data, not defects.</strong><em class="why">→ Your brain is flagging overstimulation and a serotonin dip — not failure, just feedback.</em></li>
+        <li>“It’s not you, it’s your chemistry.”<em class="why">→ Estrogen dips and progesterone rises — altering serotonin + GABA, your calm-and-steady messengers.</em></li>
+        <li>Saying “yes” while your face says “hell no”?<em class="why">→ The luteal phase thins emotional filters. Your feelings aren’t wrong — they’re just louder. Protect your peace and postpone heavy conversations.</em></li>
+      </ul>
+    </section>
 
-    <li>
-      “It’s not you, it’s your chemistry.”
-      <br><em>During this window, estrogen dips and progesterone rises.</em>
-      That combo tweaks <strong>serotonin and GABA</strong> — the calm-and-steady messengers.
-      <br><em class="why">→ Translation: more emotion, lighter sleep, sharper edges — but all reversible when supported.</em>
-    </li>
+    <section class="card">
+      <h2>🧰 Support Moves</h2>
+      <ul>
+        <li><strong>Ground with minerals + protein</strong> — magnesium-rich foods + lean protein at dinner calm the evening drop.</li>
+        <li><strong>Guard your wind-down</strong> — blue-light off 2 hours before bed; keep lights low and thoughts lighter.</li>
+        <li><strong>Slow input</strong> — journal, stretch, or tidy small spaces. You’re helping the nervous system file the day, not fix it.</li>
+      </ul>
+      <em class="why">→ These rituals re-signal safety so hormones can recalibrate overnight.</em>
+    </section>
 
-    <li>
-      Are you saying “yes” while your face says “hell no”?  
-      That’s the chemistry talking — let it guide your pacing, not your guilt.  
-      <br><em class="why">→ The luteal phase makes emotional filters thinner. Your feelings aren’t wrong — they’re just louder. Slow down; in a few days, you can deliver the same truth without wrecking your nervous system. Protect your peace and postpone the heavy stuff.</em>
-    </li>
-  </ul>
-</section>
-<section class="card">
-  <h2>🧭 Support Moves</h2>
-  <ul>
-    <li><strong>Ground with minerals + protein</strong> — pair magnesium-rich foods and lean protein at dinner to calm the evening drop.</li>
-    <li><strong>Guard your wind-down</strong> — blue-light off two hours before bed; keep lights low and thoughts lighter.</li>
-    <li><strong>Slow input</strong> — journal, stretch, or tidy small spaces. You’re helping the nervous system file the day, not fix it.</li>
-  </ul>
-  <em class="why">→ These rituals re-signal safety to the brain so hormones can recalibrate overnight.</em>
-</section>
+    <section class="card">
+      <h2>💭 Reflection Prompt</h2>
+      <p>Where did honesty show up today? Did slowing down create clarity instead of guilt?</p>
+      <em class="why">→ Note moments your body asked for stillness — and what happened when you listened.</em>
+    </section>
 
-<section class="card">
-  <h2>💭 Reflection Prompt</h2>
-  <p>Where did honesty show up today? Did slowing down create clarity instead of guilt?</p>
-  <em class="why">→ Note the moments your body asked for stillness and what happened when you listened.</em>
-</section>
-
-<section class="card">
-  <h2>🧠 Why (mini-physiology)</h2>
-  <p class="tiny">
-    As progesterone climbs and estrogen falls, your nervous system becomes more sensitive to imbalance. 
-    <strong>Serotonin</strong> (mood) and <strong>GABA</strong> (calm) both shift, making the brain quicker to react and slower to settle. 
-    This is the luteal “honesty filter”: you see what’s off, but lack the chemical cushion to soften it.
-  </p>
-  <p class="tiny">
-    <em class="why">Why it matters:</em> understanding this lets you support yourself instead of self-critiquing. 
-    Light discipline, balanced meals, and fewer screens at night rebuild that cushion from the inside out.
-  </p>
-</section>
+    <section class="card">
+      <h2>🧠 Why (mini-physiology)</h2>
+      <p class="tiny">As progesterone climbs and estrogen falls, serotonin (mood) and GABA (calm) both shift — making the brain quicker to react and slower to settle. Understanding this helps you support yourself instead of self-critiquing.</p>
+    </section>
 
     <div class="cta-row">
-  <a class="btn" href="day2-video.html">Watch Today’s Video</a>
-  <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 3 Cheat Sheet →</a>
-  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-  <a class="btn ghost" id="print-pdf">Download PDF</a>
-</div>
+      <a class="btn" href="day2-video.html">Watch Today’s Video</a>
+      <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 3 Cheat Sheet →</a>
+      <a class="btn ghost" href="#">🍽 Recipe of the Day</a>
+      <a class="btn ghost" href="#">✒️ Journal Page</a>
+      <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+      <a class="btn ghost" id="print-pdf">Download PDF</a>
+    </div>
 
-<footer>
-   Questions from yesterday are rolling in — don’t hold back. Your voice helps shape the live wrap-up Zoom call at the end of the reset. ☝
-</footer>
-
-
+    <footer>
+      Questions from yesterday are rolling in — don’t hold back. Your voice helps shape the live wrap-up Zoom call at the end of the reset. ☝
+    </footer>
   </div>
-  <script>
-    (function () {
-      var btn = document.getElementById('print-pdf');
-      if (btn) btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.print();
-      });
-    })();
-  </script>
+
+<script>
+  (function(){
+    var btn=document.getElementById('print-pdf');
+    if(btn)btn.addEventListener('click',function(e){
+      e.preventDefault();window.print();
+    });
+  })();
+</script>
 </body>
 </html>
