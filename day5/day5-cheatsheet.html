@@ -3,154 +3,103 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Day 5 Cheat Sheet — Rhythm to Reset</title>
+<title>Day 5 Cheat Sheet — Raw to Reset</title>
 <style>
   :root{
-    --brand:#FC8B73;        /* coral */
-    --ink:#0D0D0E;          /* near-black */
-    --card:#FFFFFF;
-    --muted:#666;
-    --soft:#FFF7F4;         /* very light coral wash */
-    --line:#ffd7cc;
-    --radius:18px;
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF; --muted:#666;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
   }
   html,body{margin:0;padding:0;background:#F7F7F7;color:var(--ink);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
   .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
-
-  /* Brand + header */
   .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
-  .brand img{width: clamp(72px, 8vw, 128px); height:auto; display:block;
-    filter: drop-shadow(0 4px 14px rgba(0,0,0,.08));}
+  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
   header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;
     text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
   header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
   .sub{opacity:.95;margin-top:6px}
 
-  /* Hero image */
-  .hero{margin-top:12px;border-radius:var(--radius);width:100%;height:auto;
-    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line);display:block}
+.hero {
+  margin-top:14px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+}
+.hero img {
+  display:block;
+  width:100%;
+  height:auto;
+}
 
-  /* Cards */
   .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
-    box-shadow:0 8px 22px rgba(0,0,0,.06); border:1px solid var(--line)}
+    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
   .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
   .tone{background:var(--soft);border-left:6px solid var(--brand)}
-  ul{margin:8px 0 0 20px}
-  li{margin:.25rem 0}
+  ul{margin:8px 0 0 20px} li{margin:.3rem 0}
 
-  /* CTAs */
+  .why, .card em.why {
+    display:block;
+    color:#6b2f23;
+    opacity:0.85;
+    font-size:0.92rem;
+    margin-top:4px;
+    font-style:italic;
+  }
+
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
   .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
-    padding:12px 18px;border-radius:999px;font-weight:700}
+    padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer}
   .btn.secondary{background:#2D2D2D}
   .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-  .btn {
-  cursor: pointer;
-}
+  .btn.locked{background:#fce3dd;color:#888;border-color:#f7b4a3;cursor:not-allowed}
+  .btn.locked:hover{background:#fce3dd;color:#888}
 
-  .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
-  .tiny{font-size:.9rem;color:var(--muted)}
-  .kicker{font-weight:700}
-  /* Print-friendly layout */
-  /* Footer Slide-Up + Fade-In Animation */
-@keyframes slideUpFade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+  footer{text-align:center;font-size:1.1rem;color:#0D0D0E;margin-top:48px;margin-bottom:60px;
+    font-weight:600;line-height:1.7;animation:slideUpFade 1.4s ease-out 0.3s forwards;opacity:0;}
+  footer strong{color:#FC8B73;}
+  footer:hover{color:#FC8B73;transform:translateY(-2px);transition:all 0.3s ease;}
+  @keyframes slideUpFade {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+
+  @media print {
+    @page {size:A4;margin:18mm;}
+    .cta-row, .muted, .brand img {display:none !important;}
+    section.card{box-shadow:none !important;border:1px solid #e8e8e8 !important;border-radius:8px !important;}
+    header{background:#fff !important;color:#000 !important;border:1px solid #e8e8e8 !important;}
+    a{color:#000 !important;text-decoration:underline !important;}
+    html,body{background:#fff !important;}
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-footer {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #0D0D0E; /* Stronger contrast */
-  margin-top: 48px; /* Adds more space from main content */
-  margin-bottom: 60px; /* Keeps it lifted above bottom edge */
-  font-weight: 600;
-  line-height: 1.7;
-  animation: slideUpFade 1.4s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
-footer strong {
-  color: #FC8B73;
-}
-
-/* Optional: subtle hover polish */
-footer:hover {
-  color: #FC8B73;
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-
-@media print {
-  /* Page size & margins */
-  @page { size: A4; margin: 18mm; }
-
-  /* Hide things we don't want in the PDF */
-  .cta-row, .muted, .brand img { display: none !important; }
-
-  /* Cards: remove shadows and roundings for a crisp PDF */
-  section.card {
-    box-shadow: none !important;
-    border: 1px solid #e8e8e8 !important;
-    border-radius: 8px !important;
-  }
-
-  /* Header: keep title legible in monochrome */
-  header {
-    background: #fff !important;
-    color: #000 !important;
-    border: 1px solid #e8e8e8 !important;
-  }
-
-  /* Links: underline for print */
-  a { color: #000 !important; text-decoration: underline !important; }
-
-  /* Make body background white */
-  html, body { background: #fff !important; }
-}
-
 </style>
 </head>
 <body>
   <div class="wrap">
 
-    <!-- Logo -->
-    <div class="brand"><img src="Logo.png" alt="Artificial Momentum logo"></div>
+    <div class="brand">
+      <img src="logo.png" alt="Artificial Momentum logo">
+    </div>
 
-    <!-- Header -->
     <header>
       <h1>Day 5 — Anchoring Your Rhythm — The 5-Day Capstone</h1>
       <div class="sub">You’ve felt what happens when you stop fighting and start listening.</div>
     </header>
 
-    <!-- Hero -->
-    <img class="hero" src="ladies-dining.jpg" alt="Women dining and celebrating together">
+    <figure class="hero">
+      <img src="ladies-dining.jpg" alt="Women dining and celebrating together">
+    </figure>
 
-    <!-- Cycle Lens -->
     <section class="card">
       <h2>🧭 Cycle Lens</h2>
       <ul>
         <li>Pre-menstrual → early bleed transition = <strong>reset moment</strong>.</li>
-        <li>Ladies — that feeling of willing your period to start? That’s your body asking for closure and reset.</li>
+        <li>That feeling of willing your period to start? It’s your body asking for closure and reset.</li>
       </ul>
     </section>
 
-    <!-- Quick Win -->
     <section class="card tone">
-      <h2>💧 Quick Win</h2>
-      <p><span class="kicker">Choose one tiny ritual</span> to repeat every morning for 7 days
-        (e.g., water + electrolytes before coffee). <strong>Consistency beats intensity.</strong></p>
+      <h2>🌙 Quick Win</h2>
+      <p><strong>Choose one tiny ritual</strong> to repeat every morning for 7 days (e.g. water + electrolytes before coffee). <strong>Consistency beats intensity.</strong></p>
     </section>
 
-    <!-- Signals -->
     <section class="card">
       <h2>🧪 Signals to Notice</h2>
       <ul>
@@ -160,7 +109,6 @@ footer:hover {
       </ul>
     </section>
 
-    <!-- Support -->
     <section class="card">
       <h2>🧰 Support Moves</h2>
       <ul>
@@ -168,60 +116,43 @@ footer:hover {
         <li><strong>Keep the pace:</strong> lighter days aren’t “less” — they’re strategic.</li>
         <li><strong>Keep the grace:</strong> speak to yourself like your best friend.</li>
       </ul>
+      <em class="why">→ Your nervous system loves rhythm more than hustle. Protect the rituals that keep you steady.</em>
     </section>
 
-    <!-- Reflection -->
     <section class="card">
-      <h2>📝 Reflection Prompt</h2>
-      <p class="tiny"><em>What one rhythm will I carry into the next month? What support do I need to protect it?</em></p>
+      <h2>💭 Reflection Prompt</h2>
+      <p>What one rhythm will I carry into the next month? What support do I need to protect it?</p>
+      <em class="why">→ This is the seed of your long-term cycle sync — small, daily, doable.</em>
     </section>
 
-    <!-- Why -->
     <section class="card">
       <h2>🧠 Why (mini-physiology)</h2>
       <p class="tiny"><strong>Lower load + consistent rituals restore capacity.</strong> Your system loves rhythm more than intensity.</p>
     </section>
 
-    <!-- CTAs -->
     <div class="cta-row">
-  <a class="btn" href="day5-video.html">Watch Today’s Video</a>
-  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-  <a class="btn ghost" id="print-pdf">Download PDF</a>
-</div>
+      <a class="btn" href="day5-video.html">Watch Today’s Video</a>
+      <a class="btn ghost" href="#">🍽 Recipe of the Day</a>
+      <a class="btn ghost" href="#">✒️ Journal Page</a>
+      <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+      <a class="btn ghost" id="print-pdf">Download PDF</a>
+      <a class="btn secondary" href="https://artificialmomentum.com/waitlist">Join the 6-Week Program Waitlist</a>
+    </div>
 
-    <!-- Next Step Card -->
-<section class="card tone">
-  <h2>🪄 Next Step: Diana Air 6-Week Blueprint</h2>
-  <p>
-    You’ve just reset in <strong>5 days</strong>. Imagine <strong>6 full weeks</strong> — 
-    every phase mapped, supported, and lived. The Blueprint gives you structure, rhythm sheets, 
-    and live coaching support to make this your new normal.
-  </p>
-  <div style="text-align:center; margin-top:14px;">
-    <a class="btn secondary" 
-       href="https://artificialmomentum.com/waitlist" 
-       style="display:inline-block;background:#2D2D2D;color:#ffffff;
-              text-decoration:none;padding:12px 20px;border-radius:999px;
-              font-weight:700;">
-      Join the 6-Week Program Waitlist
-    </a>
-  </div>
-</section>
-
-
-<footer>
-  💬 Don’t miss the <strong>LIVE Wrap-Up Zoom Call</strong> — check your inbox for the invite. Bring your questions, your insights, and close your reset with us.
-</footer>
+    <footer>
+      💬 Don’t miss the <strong>LIVE Wrap-Up Zoom Call</strong> — check your inbox for the invite.  
+      Bring your questions, your insights, and close your reset with us.
+    </footer>
 
   </div>
-  <script>
-    (function () {
-      var btn = document.getElementById('print-pdf');
-      if (btn) btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.print();
-      });
-    })();
-  </script>
+
+<script>
+  (function(){
+    var btn=document.getElementById('print-pdf');
+    if(btn)btn.addEventListener('click',function(e){
+      e.preventDefault();window.print();
+    });
+  })();
+</script>
 </body>
 </html>
