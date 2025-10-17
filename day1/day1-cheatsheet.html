@@ -5,179 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Day 1 Cheat Sheet — Raw to Reset</title>
 <style>
-  :root {
-    --brand: #FC8B73;
-    --ink: #0D0D0E;
-    --card: #FFFFFF;
-    --muted: #666;
-    --soft: #FFF7F4;
-    --line: #ffd7cc;
-    --radius: 18px;
-    --why: #6B2F23;
+  :root{
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF; --muted:#666;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+  }
+  html,body{margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+  .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
+  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
+  header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
+  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
+  .sub{opacity:.95;margin-top:6px}
+  .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
+  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
+  .tone{background:var(--soft);border-left:6px solid var(--brand)}
+  ul{margin:8px 0 0 20px} li{margin:.25rem 0}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer}
+  .btn.secondary{background:#2D2D2D}
+  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  .btn.locked{background:#fce3dd;color:#888;border-color:#f7b4a3;cursor:not-allowed}
+  .btn.locked:hover{background:#fce3dd;color:#888}
+  .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
+  .tiny{font-size:.92rem;color:var(--muted)}
+  .kicker{font-weight:700}
+  figure{margin:16px 0 0} figure img{width:100%;border-radius:12px}
+
+  /* Alignment fix for “why” notes */
+  .why, .card em.why {
+    display:block;
+    color:#6b2f23;
+    opacity:0.85;
+    font-size:0.92rem;
+    margin-top:4px;
+    margin-left:0;
+    font-style:italic;
   }
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: #F7F7F7;
-    color: var(--ink);
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  .wrap { max-width: 900px; margin: 28px auto 64px; padding: 0 18px; }
-
-  .brand {
-    display: flex; justify-content: center; align-items: center; margin-bottom: 12px;
-  }
-  .brand img {
-    width: clamp(88px, 9vw, 140px);
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 4px 14px rgba(0,0,0,.08));
-  }
-
-  header {
-    background: var(--brand);
-    color: #fff;
-    border-radius: var(--radius);
-    padding: 22px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,.10);
-  }
-  header h1 { margin: 0; font-size: clamp(22px, 4.2vw, 36px); line-height: 1.15; }
-  .sub { opacity: .95; margin-top: 6px; }
-
-  .card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 18px;
-    margin-top: 16px;
-    box-shadow: 0 8px 22px rgba(0,0,0,.06);
-    border: 1px solid var(--line);
-  }
-  .card h2 {
-    margin: 0 0 10px;
-    font-size: 1.2rem;
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-  }
-  .tone { background: var(--soft); border-left: 6px solid var(--brand); }
-
-  ul { margin: 8px 0 0 20px; }
-  li { margin: .25rem 0; }
-
-  .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 18px;
-  }
-
-  .btn {
-    display: inline-block;
-    background: var(--brand);
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 999px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .btn.secondary { background: #2D2D2D; }
-  .btn.ghost {
-    background: #fff;
-    color: var(--brand);
-    border: 2px solid var(--brand);
-  }
-  .btn.locked {
-    background: #fce3dd;
-    color: #888;
-    border-color: #f7b4a3;
-    cursor: not-allowed;
-  }
-  .btn.locked:hover {
-    background: #fce3dd;
-    color: #888;
-  }
-
-  .muted { opacity: .85; font-size: .95rem; text-align: center; margin-top: 10px; }
-  .tiny { font-size: .92rem; color: var(--muted); }
-  .kicker { font-weight: 700; }
-
-  figure { margin: 16px 0 0; }
-  figure img { width: 100%; border-radius: 12px; }
-
-  /* WHY text */
-  .why {
-    display: block;
-    color: var(--why);
-    opacity: 0.85;
-    font-size: 0.92rem;
-    margin-top: 4px;
-    font-style: italic;
-  }
-
-  /* Footer animation */
+  /* Footer Slide-Up + Fade-In Animation */
   @keyframes slideUpFade {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {opacity:0;transform:translateY(30px);}
+    100% {opacity:1;transform:translateY(0);}
   }
+  footer{text-align:center;font-size:1.1rem;color:#0D0D0E;margin-top:48px;margin-bottom:60px;font-weight:600;line-height:1.7;
+    animation:slideUpFade 1.4s ease-out 0.3s forwards;opacity:0;}
+  footer strong{color:#FC8B73;}
+  footer:hover{color:#FC8B73;transform:translateY(-2px);transition:all 0.3s ease;}
 
-  footer {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #0D0D0E;
-    margin-top: 48px;
-    margin-bottom: 60px;
-    font-weight: 600;
-    line-height: 1.7;
-    animation: slideUpFade 1.4s ease-out 0.3s forwards;
-    opacity: 0;
-  }
-
-  footer strong { color: #FC8B73; }
-  footer:hover {
-    color: #FC8B73;
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
-  }
-
-  /* Print-friendly */
   @media print {
-    @page { size: A4; margin: 18mm; }
-    .cta-row, .muted, .brand img { display: none !important; }
-    section.card {
-      box-shadow: none !important;
-      border: 1px solid #e8e8e8 !important;
-      border-radius: 8px !important;
-    }
-    header {
-      background: #fff !important;
-      color: #000 !important;
-      border: 1px solid #e8e8e8 !important;
-    }
-    a { color: #000 !important; text-decoration: underline !important; }
-    html, body { background: #fff !important; }
+    @page {size:A4;margin:18mm;}
+    .cta-row, .muted, .brand img {display:none !important;}
+    section.card{box-shadow:none !important;border:1px solid #e8e8e8 !important;border-radius:8px !important;}
+    header{background:#fff !important;color:#000 !important;border:1px solid #e8e8e8 !important;}
+    a{color:#000 !important;text-decoration:underline !important;}
+    html,body{background:#fff !important;}
   }
 </style>
 </head>
 
 <body>
   <div class="wrap">
-    <div class="brand">
-      <img src="logo.png" alt="Artificial Momentum logo">
-    </div>
+    <div class="brand"><img src="logo.png" alt="Artificial Momentum logo"></div>
 
     <header>
       <h1>Day 1 — You’re Not Broken — You’re Just Out of Rhythm</h1>
       <div class="sub">Quick wins + signals decoded</div>
     </header>
 
-    <figure>
-      <img src="three_women_in_gym_gear_smiling.jpg" alt="Three women smiling together at the gym">
-    </figure>
+    <figure><img src="three_women_in_gym_gear_smiling.jpg" alt="Three women smiling together at the gym"></figure>
 
     <section class="card">
       <h2>🧭 Cycle Lens</h2>
@@ -189,7 +86,7 @@
 
     <section class="card tone">
       <h2>💧 Quick Win</h2>
-      <p><span class="kicker">Before coffee tomorrow:</span> drink a big glass of water + electrolytes. It gently wakes your nervous system, balances blood pressure, and fuels steady energy. If you don't have electrolytes — Add lemon + a pinch of mineral salt.</p>
+      <p><span class="kicker">Before coffee tomorrow:</span> drink a big glass of water + electrolytes. It gently wakes your nervous system, balances blood pressure, and fuels steady energy. If you don't have electrolytes — add lemon + a pinch of mineral salt.</p>
     </section>
 
     <section class="card">
@@ -197,18 +94,17 @@
       <ul>
         <li><strong>Mood swings or cravings</strong> → be your body's ally. It's asking for balance, not punishment.</li>
         <li><strong>Low energy</strong> → a nervous-system flag, not laziness. (Ban the “I’m lazy” label.)</li>
-        <li><strong>Foggy brain</strong> → hydration + minerals often help. Try screens off and connection for 30 minutes, call someone who lifts you. <em class="why">→ Not raw feelings today — we’re not looking for emotional surgery, just reconnection.</em></li>
+        <li><strong>Foggy brain</strong> → hydration + minerals often help. Try screens off and connection for 30 minutes, call someone who lifts you. <em class="why">Not raw feelings today — we’re not looking for emotional surgery, just reconnection.</em></li>
       </ul>
     </section>
 
     <section class="card">
       <h2>🧰 Support Moves</h2>
       <ul>
-        <li><strong>Fuel early:</strong> protein + minerals within 60 minutes of waking. My mix: electrolytes, creatine, and pea protein after an overnight fast.</li>
+        <li><strong>Fuel early:</strong> protein + minerals within 60 minutes of waking. My mix: electrolytes, creatine, and pea protein after an overnight fast (tune the fasting window to your body + cycle phase).</li>
         <li><strong>Pace:</strong> swap “push through” for <em>listening</em>. Lighter movement counts — think yoga over HIIT.</li>
-        <li><strong>Grace:</strong> if you’re ADHD/RSD/ND like me, the inner narrator can really drag you down. Offer yourself the same kindness you’d give your child.</li>
+        <li><strong>Grace:</strong> if you’re ADHD/RSD/ND like me, the inner narrator can really drag you down. Offer yourself the same kindness you’d give your child.<em class="why">Try repeating: “This will pass, my body's got my back.”</em></li>
       </ul>
-      <em class="why">→ Try repeating: “This will pass, my body’s got my back.”</em>
     </section>
 
     <section class="card">
@@ -224,14 +120,10 @@
     <div class="cta-row">
       <a class="btn" href="day1-video.html">Watch Today’s Video</a>
       <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 2 Cheat Sheet →</a>
+      <a class="btn ghost" href="#">🍽 Recipe of the Day</a>
+      <a class="btn ghost" href="#">✒️ Journal Page</a>
       <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
       <a class="btn ghost" id="print-pdf">Download PDF</a>
-    </div>
-
-    <!-- New secondary buttons -->
-    <div class="cta-row">
-      <a class="btn ghost" href="day1-recipe.html">Recipe of the Day 🍽️</a>
-      <a class="btn ghost" href="day1-journal.html">Journal Page 🪶</a>
     </div>
 
     <footer>
@@ -239,14 +131,13 @@
     </footer>
   </div>
 
-  <script>
-    (function () {
-      var btn = document.getElementById('print-pdf');
-      if (btn) btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.print();
-      });
-    })();
-  </script>
+<script>
+  (function(){
+    var btn=document.getElementById('print-pdf');
+    if(btn)btn.addEventListener('click',function(e){
+      e.preventDefault();window.print();
+    });
+  })();
+</script>
 </body>
 </html>
