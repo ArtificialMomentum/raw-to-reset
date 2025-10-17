@@ -4,53 +4,98 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Raw to Reset — Day 2</title>
-  <meta name="description" content="PMT isn’t the problem — your luteal phase is asking for this. Day 2 of Raw to Reset." />
-  <link rel="preload" as="image" href="day2.jpg">
+  <meta name="description" content="Day 2 of your 5-Day Raw to Reset." />
   <style>
-    body { font-family: system-ui, sans-serif; background: #F7F7F7; color: #0D0D0E; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #F7F7F7;
+      color: #0D0D0E;
+      margin: 0;
+      padding: 0;
+    }
     .wrap { max-width: 900px; margin: auto; padding: 16px; }
-    header { background: #FC8B73; padding: 18px; border-radius: 18px; text-align: center; max-width: 620px; margin: 0 auto; }
-    h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); color: white; }
-    p.lead { margin: 8px 0 0; opacity: .9; color: white; }
-    .player { margin: 18px 0; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,.12); background: #000; }
-    video { width: 100%; height: auto; display: block; }
-    .cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 18px 0; }
-    .btn { background: #FC8B73; color: white; padding: 12px 18px; border-radius: 999px; text-decoration: none; font-weight: 700; }
+    header {
+      background: #FC8B73;
+      padding: 18px;
+      border-radius: 18px;
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto;
+      color: white;
+    }
+    h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); }
+    p.lead { margin: 8px 0 0; opacity: .9; }
+
+    .player {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .player iframe {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 9 / 16;
+      border: 0;
+      border-radius: 12px;
+      background: #000;
+    }
+    @media (min-width: 768px) { .player iframe { max-width: 480px; } }
+    @media (hover:hover) {
+      .player iframe:hover { transform: scale(1.01); transition: transform 0.3s ease; }
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 18px 0;
+    }
+    .btn {
+      background: #FC8B73;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
     .btn:hover { filter: brightness(1.05); }
     .muted { font-size: .95rem; opacity: .8; text-align: center; }
     footer { margin: 26px 0 10px; text-align: center; font-size: .9rem; opacity: .75; }
-    @media (min-width: 900px){
-      .player{max-width:620px; margin:18px auto;}
-    }
-    video{max-height:80vh; object-fit:contain;}
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
       <h1>Day 2 · Raw to Reset</h1>
-      <p class="lead"><strong>PMT isn’t the problem</strong> — your luteal phase is asking for this.</p>
+      <p class="lead"><strong>PMT isn't the problem - your luteal phase is asking for this.</strong></p>
     </header>
+
     <div class="player">
-  <div style="position:relative;padding-top:56.25%;">
-    <iframe 
-      src="https://iframe.mediadelivery.net/embed/504868/43e7403a-e607-4291-b208-526d7ef2850e?autoplay=true&loop=false&muted=false&preload=true&responsive=true" 
-      loading="lazy"
-      style="border:0;position:absolute;top:0;height:100%;width:100%;"
-      allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
-      allowfullscreen>
-    </iframe>
-  </div>
-</div>
+      <iframe 
+        src="https://iframe.mediadelivery.net/embed/504868/43e7403a-e607-4291-b208-526d7ef2850e?autoplay=false&responsive=true"
+        loading="lazy"
+        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
 
     <div class="cta">
       <a class="btn" href="day2-cheatsheet.html" target="_blank" rel="noopener">Get Today’s Cheatsheet</a>
       <a class="btn" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
     </div>
-    <p class="muted">Tip: If video is choppy on mobile, switch Wi-Fi or tap the ••• menu to <em>Download</em> and watch locally.<br><a href="day2video.mp4" download>Download the video</a></p>
+
+    <p class="muted">
+      Tip: If video is choppy on mobile, switch Wi-Fi or tap the ••• menu to <em>Download</em> and watch locally.<br>
+      <a href="day2vid.mp4" download>Download the video</a>
+    </p>
+
     <footer>© Artificial Momentum · Diana Air Coaching × ECHO</footer>
   </div>
 </body>
 </html>
+
 
 
