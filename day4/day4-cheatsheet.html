@@ -6,126 +6,74 @@
 <title>Day 4 Cheat Sheet — Raw to Reset</title>
 <style>
   :root{
-    --brand:#FC8B73;        /* coral */
-    --ink:#0D0D0E;          /* near-black */
-    --card:#FFFFFF;
-    --muted:#666;
-    --soft:#FFF7F4;
-    --line:#ffd7cc;
-    --radius:18px;
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF; --muted:#666;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
   }
   html,body{margin:0;padding:0;background:#F7F7F7;color:var(--ink);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
   .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
   .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
-  .brand img{width: clamp(78px, 9vw, 132px); height:auto; display:block;
-    filter: drop-shadow(0 4px 14px rgba(0,0,0,.08));}
+  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
   header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;
     text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
   header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
   .sub{opacity:.95;margin-top:6px}
-  .hero{margin-top:14px;border-radius:var(--radius);overflow:hidden;
-    box-shadow:0 8px 22px rgba(0,0,0,.08)}
-  .hero img{width:100%;height:auto;display:block}
+
+.hero {
+  margin-top:14px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+}
+.hero img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+
   .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
-    box-shadow:0 8px 22px rgba(0,0,0,.06); border:1px solid var(--line)}
+    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
   .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
   .tone{background:var(--soft);border-left:6px solid var(--brand)}
-  ul{margin:8px 0 0 20px}
-  li{margin:.35rem 0}
+  ul{margin:8px 0 0 20px} li{margin:.35rem 0}
+
+  .why, .card em.why {
+    display:block;
+    color:#6b2f23;
+    opacity:0.85;
+    font-size:0.92rem;
+    margin-top:4px;
+    font-style:italic;
+  }
+
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
   .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
-    padding:12px 18px;border-radius:999px;font-weight:700}
+    padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer}
   .btn.secondary{background:#2D2D2D}
-  .btn {
-  cursor: pointer;
-}
-.btn.locked {
-  background: #fce3dd;
-  color: #888;
-  border-color: #f7b4a3;
-  cursor: not-allowed;
-}
-.btn.locked:hover {
-  background: #fce3dd;
-  color: #888;
-}
-
   .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-  .muted{opacity:.85;font-size:.95rem;text-align:center;margin-top:10px}
-  .tiny{font-size:.94rem;color:var(--muted)}
-  .kicker{font-weight:700}
-  /* Print-friendly layout */
- /* Footer Slide-Up + Fade-In Animation */
-@keyframes slideUpFade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+  .btn.locked{background:#fce3dd;color:#888;border-color:#f7b4a3;cursor:not-allowed}
+  .btn.locked:hover{background:#fce3dd;color:#888}
+
+  footer{text-align:center;font-size:1.1rem;color:#0D0D0E;margin-top:48px;margin-bottom:60px;
+    font-weight:600;line-height:1.7;animation:slideUpFade 1.4s ease-out 0.3s forwards;opacity:0;}
+  footer strong{color:#FC8B73;}
+  footer:hover{color:#FC8B73;transform:translateY(-2px);transition:all 0.3s ease;}
+  @keyframes slideUpFade {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+
+  @media print {
+    @page {size:A4;margin:18mm;}
+    .cta-row, .muted, .brand img {display:none !important;}
+    section.card{box-shadow:none !important;border:1px solid #e8e8e8 !important;border-radius:8px !important;}
+    header{background:#fff !important;color:#000 !important;border:1px solid #e8e8e8 !important;}
+    a{color:#000 !important;text-decoration:underline !important;}
+    html,body{background:#fff !important;}
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-footer {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #0D0D0E; /* Stronger contrast */
-  margin-top: 48px; /* Adds more space from main content */
-  margin-bottom: 60px; /* Keeps it lifted above bottom edge */
-  font-weight: 600;
-  line-height: 1.7;
-  animation: slideUpFade 1.4s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
-footer strong {
-  color: #FC8B73;
-}
-
-/* Optional: subtle hover polish */
-footer:hover {
-  color: #FC8B73;
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-
-@media print {
-  /* Page size & margins */
-  @page { size: A4; margin: 18mm; }
-
-  /* Hide things we don't want in the PDF */
-  .cta-row, .muted, .brand img { display: none !important; }
-
-  /* Cards: remove shadows and roundings for a crisp PDF */
-  section.card {
-    box-shadow: none !important;
-    border: 1px solid #e8e8e8 !important;
-    border-radius: 8px !important;
-  }
-
-  /* Header: keep title legible in monochrome */
-  header {
-    background: #fff !important;
-    color: #000 !important;
-    border: 1px solid #e8e8e8 !important;
-  }
-
-  /* Links: underline for print */
-  a { color: #000 !important; text-decoration: underline !important; }
-
-  /* Make body background white */
-  html, body { background: #fff !important; }
-}
-
 </style>
 </head>
 <body>
   <div class="wrap">
 
-    <!-- Logo -->
     <div class="brand">
       <img src="logo.png" alt="Artificial Momentum logo">
     </div>
@@ -135,12 +83,10 @@ footer:hover {
       <div class="sub">This isn’t a crash — it’s data you can use.</div>
     </header>
 
-    <!-- Hero -->
-    <div class="hero">
+    <figure class="hero">
       <img src="yoga.jpg" alt="Gentle yoga class — moving with your cycle">
-    </div>
+    </figure>
 
-    <!-- Cycle Lens -->
     <section class="card">
       <h2>🧭 Cycle Lens</h2>
       <ul>
@@ -149,17 +95,11 @@ footer:hover {
       </ul>
     </section>
 
-    <!-- Quick Win -->
     <section class="card tone">
-      <h2>🧪 Quick Win</h2>
-      <p>
-        <span class="kicker">Swap push for precision:</span> pick <em>one</em> right-size move today
-        (hydration, protein, a 15-minute walk, or a mini yoga flow). Repeat it at the same time tomorrow.
-        Hold a tiny routine for this phase — you’ll feel your body stop hunting for comfort.
-      </p>
+      <h2>🌙 Quick Win</h2>
+      <p><strong>Swap push for precision:</strong> pick <em>one</em> right-size move today (hydration, protein, a 15-minute walk, or a mini yoga flow). Repeat it at the same time tomorrow. Hold a tiny routine for this phase — you’ll feel your body stop hunting for comfort.</p>
     </section>
 
-    <!-- Signals -->
     <section class="card">
       <h2>🔎 Signals to Notice</h2>
       <ul>
@@ -169,7 +109,6 @@ footer:hover {
       </ul>
     </section>
 
-    <!-- Support -->
     <section class="card">
       <h2>🧰 Support Moves</h2>
       <ul>
@@ -177,47 +116,48 @@ footer:hover {
         <li><strong>Right move, right dose:</strong> 10–20 minutes of gentle cardio or mobility when foggy.</li>
         <li><strong>Right boundary:</strong> reschedule extras on low-capacity days. If your “Yes” hat has been glued on, peel it off for a bit.</li>
       </ul>
+      <em class="why">→ These signals are recalibration, not regression. Meet them with rhythm, not resistance.</em>
     </section>
 
-    <!-- Reflection -->
     <section class="card">
-      <h2>📝 Reflection Prompt</h2>
-      <p class="tiny"><em>If I treat today like a calibration day, what becomes easier — and what can wait? Do I really need two events in one day?</em></p>
+      <h2>💭 Reflection Prompt</h2>
+      <p>If I treat today like a calibration day, what becomes easier — and what can wait?</p>
+      <em class="why">→ You’re not behind — you’re syncing with your own system update.</em>
     </section>
 
-    <!-- Why -->
     <section class="card">
       <h2>🧠 Why (mini-physiology)</h2>
       <p class="tiny">
-        As <strong>estrogen/progesterone</strong> drop, executive function and sleep efficiency dip.
+        As <strong>estrogen and progesterone</strong> both drop, executive function and sleep efficiency dip.
         <strong>Precision beats push:</strong> shorter efforts, calmer evenings, and earlier caffeine protect your brain’s brakes.
       </p>
+      <em class="why">→ Hormones are transitioning toward the bleed phase — treat this as a pre-reset, not a crash.</em>
     </section>
 
-    <!-- CTAs -->
     <div class="cta-row">
-  <a class="btn" href="day4-video.html">Watch Today’s Video</a>
-  <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 5 Cheat Sheet →</a>
-  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-  <a class="btn ghost" id="print-pdf">Download PDF</a>
-</div>
+      <a class="btn" href="day4-video.html">Watch Today’s Video</a>
+      <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 5 Cheat Sheet →</a>
+      <a class="btn ghost" href="#">🍽 Recipe of the Day</a>
+      <a class="btn ghost" href="#">✒️ Journal Page</a>
+      <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+      <a class="btn ghost" id="print-pdf">Download PDF</a>
+    </div>
 
-<footer>
-  💬 Tomorrow we close the circle — bring your reflections and questions to the live wrap-up Zoom call. You’re almost there.
-</footer>
+    <footer>
+      💬 Tomorrow we close the circle — bring your reflections and questions to the live wrap-up Zoom call. You’re almost there.
+    </footer>
 
   </div>
-  <script>
-    (function () {
-      var btn = document.getElementById('print-pdf');
-      if (btn) btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.print();
-      });
-    })();
-  </script>
+
+<script>
+  (function(){
+    var btn=document.getElementById('print-pdf');
+    if(btn)btn.addEventListener('click',function(e){
+      e.preventDefault();window.print();
+    });
+  })();
+</script>
 </body>
 </html>
-
 
 
