@@ -27,10 +27,16 @@
   header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
   .sub{opacity:.95;margin-top:6px;font-size:1.05rem}
 
-  /* Hero */
-  .hero{margin-top:18px;border-radius:var(--radius);overflow:hidden;
-    box-shadow:0 8px 22px rgba(0,0,0,.06)}
-  .hero img{display:block;width:100%;height:auto;object-fit:cover}
+  .hero img {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
 
   /* Cards */
   .card{background:var(--card);border-radius:var(--radius);
