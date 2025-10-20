@@ -58,25 +58,26 @@ header .sub {
   opacity: 0.95;
   font-size: 1.05rem;
   font-weight: 500;
-
 }
-.hero img {
-  display:block;
-  width:100%;
-  height:auto;
+
+.hero {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 36px;
 }
 
 .hero img {
   display: block;
   width: 100%;
-  max-width: 420px;
-  height: auto;
-  margin: 0 auto;
+  max-width: 900px; /* adjust width for your layout */
+  aspect-ratio: 3 / 2; /* ensures the landscape shape */
   border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+  margin: 0 auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
 
 .hero img:hover {
   transform: scale(1.02);
