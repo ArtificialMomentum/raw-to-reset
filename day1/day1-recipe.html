@@ -19,99 +19,149 @@
   .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
 
   .brand {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 18px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+  }
 
-.brand img {
-  width: clamp(90px, 8vw, 120px);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 3px 10px rgba(0,0,0,.08));
-  transition: transform 0.3s ease;
-}
-.brand img:hover {
-  transform: scale(1.04);
-}
+  .brand img {
+    width: clamp(90px, 8vw, 120px);
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 3px 10px rgba(0,0,0,.08));
+    transition: transform 0.3s ease;
+  }
 
-header {
-  background: linear-gradient(165deg, #FD8369 0%, #FEB299 100%) !important;
-  color: #fff;
-  border-radius: var(--radius);
-  padding: 26px 20px 28px;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  margin-bottom: 32px;
-}
+  .brand img:hover {
+    transform: scale(1.04);
+  }
 
-header h1 {
-  margin: 0;
-  font-size: clamp(22px, 4vw, 34px);
-  line-height: 1.18;
-  font-weight: 700;
-}
+  header {
+    background: linear-gradient(165deg, #FD8369 0%, #FEB299 100%) !important;
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 26px 20px 28px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    margin-bottom: 32px;
+  }
 
-header .sub {
-  margin-top: 6px;
-  opacity: 0.95;
-  font-size: 1.05rem;
-  font-weight: 500;
-}
-header {
-  margin-bottom: 0;
-  padding-bottom: 0;
+  header h1 {
+    margin: 0;
+    font-size: clamp(22px, 4vw, 34px);
+    line-height: 1.18;
+    font-weight: 700;
+  }
 
-.hero {
-  display: flex;
-  justify-content: center;
-  max-width: 720px;     /* narrower than before (was 900px) */
-  margin: 8px auto 32px;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  aspect-ratio: 5 / 3;  /* shallower shape, more like cheat sheets */
-}
+  header .sub {
+    margin-top: 6px;
+    opacity: 0.95;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
 
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
+  /* ✅ Fixed + balanced hero section */
+  .hero {
+    display: flex;
+    justify-content: center;
+    max-width: 720px;
+    margin: 8px auto 32px;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 5 / 3; /* shallower height */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  }
 
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
 
-
-
-.card.tone {
-  margin-top: 0; 
-}
-
-.hero img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 26px rgba(0,0,0,.08);
-}
+  .hero img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  }
 
   /* Cards */
-  .card{background:var(--card);border-radius:var(--radius);
-    padding:20px;margin-top:18px;box-shadow:0 8px 22px rgba(0,0,0,.06);
-    border:1px solid var(--line)}
-  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
-  .tone{background:var(--soft);border-left:6px solid var(--brand)}
-  ul{margin:8px 0 0 20px} li{margin:.25rem 0;line-height:1.55}
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,.06);
+    border: 1px solid var(--line);
+  }
+
+  .card h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  .tone {
+    background: var(--soft);
+    border-left: 6px solid var(--brand);
+  }
+
+  ul {
+    margin: 8px 0 0 20px;
+  }
+  li {
+    margin: .25rem 0;
+    line-height: 1.55;
+  }
 
   /* Buttons + layout */
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
-  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
-    padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer;
-    text-align:center;transition:all .25s ease}
-  .btn:hover{transform:translateY(-1px);opacity:.9}
-  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-  
-  footer{text-align:center;font-size:1.05rem;color:#0D0D0E;margin-top:52px;margin-bottom:60px;
-    font-weight:600;line-height:1.7}
-  footer strong{color:#FC8B73;}
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 26px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--brand);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all .25s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+    opacity: .9;
+  }
+
+  .btn.ghost {
+    background: #fff;
+    color: var(--brand);
+    border: 2px solid var(--brand);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #0D0D0E;
+    margin-top: 52px;
+    margin-bottom: 60px;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  footer strong {
+    color: #FC8B73;
+  }
 
   /* Mobile polish */
   @media (max-width:600px){
@@ -132,6 +182,7 @@ header {
   }
 </style>
 </head>
+
 <body>
 <div class="wrap">
 
@@ -145,7 +196,7 @@ header {
   </header>
 
   <figure class="hero">
-    <img src="morning-reset-bowl.jpg" alt="day1-recipe.html">
+    <img src="morning-reset-bowl.jpg" alt="Morning Reset Bowl">
   </figure>
 
   <section class="card tone">
