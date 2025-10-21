@@ -9,65 +9,75 @@
     --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF; --muted:#666;
     --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
   }
-  html,body{margin:0;padding:0;background:#F7F7F7;color:var(--ink);
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  html,body{
+    margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
   .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
   .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
-  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
-  header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
-  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
-  .sub{opacity:.95;margin-top:6px}
-.hero {
-  margin-top: 14px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 8px 22px rgba(0,0,0,.06);
-}
-.hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
+  
+  header{
+    background:linear-gradient(165deg,#FD8369 0%,#FEB299 100%);
+    color:#fff;border-radius:var(--radius);padding:26px 20px 28px;
+    text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.08);
+    margin-bottom:28px;
+  }
+  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15;font-weight:700;}
+  .sub{opacity:.95;margin-top:6px;font-size:1.05rem;font-weight:500;}
 
-  .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
-    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
-  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
-  .tone{background:var(--soft);border-left:6px solid var(--brand)}
-  ul{margin:8px 0 0 20px} li{margin:.25rem 0}
+  .hero{
+    margin-top:14px;border-radius:var(--radius);
+    overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.06);
+  }
+  .hero img{display:block;width:100%;height:auto;}
 
-  .why, .card em.why {
-    display:block;
-    color:#6b2f23;
-    opacity:0.85;
-    font-size:0.92rem;
-    margin-top:4px;
-    font-style:italic;
+  .card{background:var(--card);border-radius:var(--radius);
+    padding:18px;margin-top:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);
+    border:1px solid var(--line);}
+  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center;}
+  .tone{background:var(--soft);border-left:6px solid var(--brand);}
+  ul{margin:8px 0 0 20px;} li{margin:.25rem 0;}
+  .why,.card em.why{
+    display:block;color:#6b2f23;opacity:.85;font-size:.92rem;
+    margin-top:4px;font-style:italic;
   }
 
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
-  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
-    padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer}
-  .btn.secondary{background:#2D2D2D}
-  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-  .btn.locked{background:#fce3dd;color:#888;border-color:#f7b4a3;cursor:not-allowed}
-  .btn.locked:hover{background:#fce3dd;color:#888}
+  .cta-row{
+    display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px;
+  }
+  .btn{
+    display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+    padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer;
+    transition:all .25s ease;
+  }
+  .btn:hover{transform:translateY(-1px);opacity:.9;}
+  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+  .btn.locked{background:#fce3dd;color:#888;border-color:#f7b4a3;cursor:not-allowed;}
+  .btn.locked:hover{background:#fce3dd;color:#888;}
 
-  footer{text-align:center;font-size:1.1rem;color:#0D0D0E;margin-top:48px;margin-bottom:60px;
-    font-weight:600;line-height:1.7;animation:slideUpFade 1.4s ease-out 0.3s forwards;opacity:0;}
+  footer{
+    text-align:center;font-size:1.05rem;color:#0D0D0E;
+    margin-top:48px;margin-bottom:60px;font-weight:600;line-height:1.7;
+    animation:slideUpFade 1.4s ease-out .3s forwards;opacity:0;
+  }
   footer strong{color:#FC8B73;}
-  footer:hover{color:#FC8B73;transform:translateY(-2px);transition:all 0.3s ease;}
-  @keyframes slideUpFade {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+  footer:hover{color:#FC8B73;transform:translateY(-2px);transition:all .3s ease;}
+  @keyframes slideUpFade{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
 
   @media print {
-    @page {size:A4;margin:18mm;}
-    .cta-row, .muted, .brand img {display:none !important;}
-    section.card{box-shadow:none !important;border:1px solid #e8e8e8 !important;border-radius:8px !important;}
-    header{background:#fff !important;color:#000 !important;border:1px solid #e8e8e8 !important;}
-    a{color:#000 !important;text-decoration:underline !important;}
-    html,body{background:#fff !important;}
+    @page{size:A4;margin:18mm;}
+    .cta-row,.brand img{display:none!important;}
+    section.card{box-shadow:none!important;border:1px solid #e8e8e8!important;border-radius:8px!important;}
+    header{background:#fff!important;color:#000!important;border:1px solid #e8e8e8!important;}
+    a{color:#000!important;text-decoration:underline!important;}
+    html,body{background:#fff!important;}
   }
 </style>
 </head>
+
 <body>
   <div class="wrap">
 
@@ -81,28 +91,27 @@
     </header>
 
     <figure class="hero">
-  <img src="20.jpg" alt="Woman journaling in the evening light">
-</figure>
-
+      <img src="20.jpg" alt="Woman journaling in the evening light">
+    </figure>
 
     <section class="card">
       <h2>🧭 Cycle Lens</h2>
       <ul>
-        <li>Mid-luteal (almost 2 weeks pre-bleed) is when misfits get magnified. You’re not “overreacting”; your brain is more honest about what’s off.</li>
-        <li>Chemistry shifts from protection to repair. The curtain has been pulled back — it becomes tough to fake a smile when something doesn't gel.</li>
+        <li>Mid-luteal (around 10–12 days pre-bleed) is when small misalignments feel amplified. You’re not “overreacting” — your brain is surfacing truth.</li>
+        <li>Chemistry shifts from performance to protection. When things feel off, your body’s asking for boundaries, not blame.</li>
       </ul>
     </section>
 
     <section class="card tone">
       <h2>🌙 Quick Win</h2>
-      <p><strong>Tonight:</strong> dim the lights and get cozy a couple of hours before bed — we’re talking circadian rhythm. Then add a food-based <strong>B-complex</strong> with dinner. It supports progesterone metabolism, stabilizes mood, and guards tomorrow from a crash.</p>
+      <p><strong>Tonight:</strong> dim the lights and slow stimulation two hours before bed — circadian chemistry loves predictability. Add a <strong>food-based B-complex</strong> with dinner (leafy greens, seeds, or nutritional yeast). It steadies progesterone metabolism and smooths your serotonin curve.</p>
     </section>
 
     <section class="card">
       <h2>🧪 Signals to Notice</h2>
       <ul>
         <li>Snappy, teary, “done with everyone” feelings — <strong>this is data, not defects.</strong><em class="why">→ Your brain is flagging overstimulation and a serotonin dip — not failure, just feedback.</em></li>
-        <li>“It’s not you, it’s your chemistry.”<em class="why">→ Estrogen dips and progesterone rises — altering serotonin + GABA, your calm-and-steady messengers.</em></li>
+        <li>“It’s not you, it’s your chemistry.”<em class="why">→ Estrogen dips and progesterone rises — shifting serotonin + GABA, your calm-and-steady messengers.</em></li>
         <li>Saying “yes” while your face says “hell no”?<em class="why">→ The luteal phase thins emotional filters. Your feelings aren’t wrong — they’re just louder. Protect your peace and postpone heavy conversations.</em></li>
       </ul>
     </section>
@@ -125,13 +134,13 @@
 
     <section class="card">
       <h2>🧠 Why (mini-physiology)</h2>
-      <p class="tiny">As progesterone climbs and estrogen falls, serotonin (mood) and GABA (calm) both shift — making the brain quicker to react and slower to settle. Understanding this helps you support yourself instead of self-critiquing.</p>
+      <p class="tiny">As progesterone climbs and estrogen falls, serotonin (mood) and GABA (calm) both shift — making the brain quicker to react and slower to settle. Knowing this helps you support yourself instead of self-critiquing.</p>
     </section>
 
     <div class="cta-row">
       <a class="btn" href="day2-video.html">Watch Today’s Video</a>
+      <a class="btn ghost" href="day2-recipe.html">🍽 Recipe of the Day →</a>
       <a class="btn locked" href="#" onclick="return false;" title="Unlocks tomorrow">Day 3 Cheat Sheet →</a>
-      <a class="btn ghost" href="#">🍽 Recipe of the Day</a>
       <a class="btn ghost" href="#">✒️ Journal Page</a>
       <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
       <a class="btn ghost" id="print-pdf">Download PDF</a>
@@ -152,3 +161,4 @@
 </script>
 </body>
 </html>
+
