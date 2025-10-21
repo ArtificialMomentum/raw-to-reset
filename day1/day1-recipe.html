@@ -66,20 +66,21 @@ header {
 .hero {
   display: flex;
   justify-content: center;
-  max-width: 900px;
-  margin: 8px auto 36px;
+  max-width: 720px;     /* narrower than before (was 900px) */
+  margin: 8px auto 32px;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  aspect-ratio: 5 / 3;  /* shallower shape, more like cheat sheets */
 }
 
 .hero img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
 
 
 
