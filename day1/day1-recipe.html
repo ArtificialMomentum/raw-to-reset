@@ -66,20 +66,23 @@ header {
 .hero {
   display: flex;
   justify-content: center;
-  margin: 8px auto 8px;
+  align-items: center;
+  margin: 8px auto 36px;
+  max-width: 900px;
+  aspect-ratio: 4 / 3;        /* ⬅️ controls overall shape */
+  overflow: hidden;           /* keeps image neatly cropped */
+  border-radius: 20px;        /* same soft curve */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
 }
 
+
 .hero img {
-  display: block;
   width: 100%;
-  max-width: 900px;
-  aspect-ratio: 4 / 3; 
-  border-radius: 20px;
+  height: 100%;
   object-fit: cover;
-  margin: 12px auto 5px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
 
 
 .card.tone {
