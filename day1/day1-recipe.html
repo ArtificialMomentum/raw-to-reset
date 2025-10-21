@@ -62,23 +62,21 @@ header .sub {
 header {
   margin-bottom: 0;
   padding-bottom: 0;
-}
+
 .hero {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 8px auto 36px;
   max-width: 900px;
-  aspect-ratio: 4 / 3;        /* ⬅️ controls overall shape */
-  overflow: hidden;           /* keeps image neatly cropped */
-  border-radius: 20px;        /* same soft curve */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  margin: 8px auto 36px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
-
 
 .hero img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: cover;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
