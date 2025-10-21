@@ -54,6 +54,31 @@
   footer strong{color:#FC8B73;}
   footer:hover{color:#FC8B73;transform:translateY(-2px);transition:all 0.3s ease;}
 
+  .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px auto 32px;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+}
+
+
   @media print {
     @page {size:A4;margin:18mm;}
     .cta-row, .muted, .brand img {display:none !important;}
@@ -74,7 +99,10 @@
       <div class="sub">Quick wins + signals decoded</div>
     </header>
 
-    <figure><img src="three_women_in_gym_gear_smiling.jpg" alt="Three women smiling together at the gym"></figure>
+    <figure class="hero">
+  <img src="three_women_in_gym_gear_smiling.jpg" alt="Three women smiling together at the gym">
+</figure>
+
 
     <section class="card">
       <h2>🧭 Cycle Lens</h2>
