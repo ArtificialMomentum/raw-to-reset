@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 3 Recipe — No-Bloat Energy Bowl</title>
+<style>
+  :root{
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
+    --muted:#666; --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+  }
+
+  html,body{
+    margin:0;padding:0;
+    background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+
+  .brand {
+    display:flex;justify-content:center;align-items:center;margin-bottom:18px;
+  }
+  .brand img {
+    width:clamp(90px,8vw,120px);height:auto;display:block;
+    filter:drop-shadow(0 3px 10px rgba(0,0,0,.08));
+    transition:transform 0.3s ease;
+  }
+  .brand img:hover{transform:scale(1.04);}
+
+  header {
+    background:linear-gradient(165deg,#FD8369 0%,#FEB299 100%) !important;
+    color:#fff;border-radius:var(--radius);
+    padding:26px 20px 28px;text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);margin-bottom:32px;
+  }
+  header h1 {
+    margin:0;font-size:clamp(22px,4vw,34px);line-height:1.18;font-weight:700;
+  }
+  header .sub {
+    margin-top:6px;opacity:0.95;font-size:1.05rem;font-weight:500;
+  }
+
+  .hero {
+    display:flex;justify-content:center;max-width:720px;
+    margin:8px auto 32px;border-radius:20px;
+    box-shadow:0 8px 16px rgba(0,0,0,0.08);
+    overflow:hidden;aspect-ratio:5/3;
+  }
+  .hero img {
+    width:100%;height:100%;object-fit:cover;
+    transition:transform 0.35s ease,box-shadow 0.35s ease;
+  }
+  .hero img:hover {
+    transform:scale(1.02);
+    box-shadow:0 10px 26px rgba(0,0,0,.08);
+  }
+
+  .card{background:var(--card);border-radius:var(--radius);
+    padding:20px;margin-top:18px;box-shadow:0 8px 22px rgba(0,0,0,.06);
+    border:1px solid var(--line);}
+  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center;}
+  .tone{background:var(--soft);border-left:6px solid var(--brand);}
+  ul{margin:8px 0 0 20px;} li{margin:.25rem 0;line-height:1.55;}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px;}
+  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+    padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer;
+    text-align:center;transition:all .25s ease;}
+  .btn:hover{transform:translateY(-1px);opacity:.9;}
+  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+
+  footer{text-align:center;font-size:1.05rem;color:#0D0D0E;
+    margin-top:52px;margin-bottom:60px;font-weight:600;line-height:1.7;}
+  footer strong{color:#FC8B73;}
+  .poetic {
+    display:block;margin-top:8px;font-size:.95rem;
+    color:#777;font-style:italic;font-weight:400;
+  }
+
+  @media (max-width:600px){
+    header{padding:20px 14px;}
+    .card{padding:16px;}
+    .btn{width:100%;max-width:300px;}
+    .hero{margin-top:12px;}
+  }
+
+  @media print {
+    @page {size:A4;margin:18mm;}
+    .cta-row,.brand img{display:none!important;}
+    section.card{box-shadow:none!important;border:1px solid #e8e8e8!important;border-radius:8px!important;}
+    header{background:#fff!important;color:#000!important;border:1px solid #e8e8e8!important;}
+    a{color:#000!important;text-decoration:underline!important;}
+    html,body{background:#fff!important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <img src="logo.png" alt="Artificial Momentum logo">
+  </div>
+
+  <header>
+    <h1>Day 3 Recipe — No-Bloat Energy Bowl</h1>
+    <div class="sub">Light, steady nourishment for your mid-cycle rhythm</div>
+  </header>
+
+  <figure class="hero">
+    <img src="no-bloat-energy-bowl.jpg" alt="Day 3 Recipe — No-Bloat Energy Bowl">
+  </figure>
+
+  <section class="card tone">
+    <h2>🌿 Why This Fits Today</h2>
+    <p>During the late-follicular → luteal transition, your hormones shift gears — estrogen tapers while progesterone begins to rise. This bowl stabilizes energy, reduces water retention, and keeps your focus smooth through midday. Think: clarity without crash.</p>
+  </section>
+
+  <section class="card">
+    <h2>🥗 Base Ingredients</h2>
+    <ul>
+      <li>½ cup cooked quinoa</li>
+      <li>½ cup chickpeas</li>
+      <li>1 cup rocket or mixed greens</li>
+      <li>¼ cup shredded carrot + cucumber</li>
+      <li>1 tbsp hummus + drizzle olive oil</li>
+      <li>1 tbsp pumpkin + sunflower seeds</li>
+      <li>Grilled prawns (4–6 medium)</li>
+      <li>Slice of lemon + sprinkle fresh parsley</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>✨ Optional Add-Ins</h2>
+    <ul>
+      <li>Wholegrain tortilla (for comfort + steady carbs)</li>
+      <li>Fermented veggies (support gut harmony)</li>
+      <li>Pinch sea salt + black pepper to taste</li>
+    </ul>
+    <p><em>Each layer helps reduce bloating by balancing electrolytes and glucose uptake.</em></p>
+  </section>
+
+  <section class="card">
+    <h2>🕊 Notes for Your Rhythm</h2>
+    <p>Eat slowly and mindfully. Pair with lemon water or mint tea to support digestion and steady energy. Notice how your body responds when you fuel rather than fight your mid-cycle shifts.</p>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn" href="day3-cheatsheet.html">← Back to Cheat Sheet</a>
+    <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+  </div>
+
+  <footer>
+    💬 Your body knows balance — it just needs you to listen.  
+    <span class="poetic">Energy is not taken; it’s tuned. Balance what you give, trust what returns.</span>
+  </footer>
+
+</div>
+</body>
+</html>
+
