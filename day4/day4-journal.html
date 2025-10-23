@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 4 Journal — Raw to Reset</title>
+<style>
+  :root{
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
+    --muted:#666; --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+  }
+  html,body{
+    margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+  .brand{display:flex;justify-content:center;align-items:center;margin-bottom:18px}
+  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
+  header{
+    background:var(--brand);color:#fff;border-radius:var(--radius);
+    padding:26px 20px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.08);
+  }
+  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
+  header .sub{opacity:.95;margin-top:6px;font-size:1.05rem;font-weight:500}
+  .hero{display:flex;justify-content:center;align-items:center;margin:16px auto 32px;
+    max-width:900px;aspect-ratio:16/9;overflow:hidden;border-radius:20px;
+    box-shadow:0 8px 16px rgba(0,0,0,.08)}
+  .hero img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+  .hero img:hover{transform:scale(1.02)}
+  section.card{background:var(--card);border-radius:var(--radius);padding:20px;margin-top:18px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
+  section.card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
+  .tone{background:var(--soft);border-left:6px solid var(--brand)}
+  textarea.entry{
+    width:100%;min-height:130px;margin-top:10px;padding:12px 14px;font-size:1rem;
+    border:1px solid var(--line);border-radius:12px;resize:vertical;
+    font-family:inherit;line-height:1.55;background:#fff;
+  }
+  textarea.entry:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px #ffd7cc60}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+    padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer;transition:all .25s ease}
+  .btn:hover{transform:translateY(-1px);opacity:.9}
+  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  footer{text-align:center;font-size:1.05rem;color:#0D0D0E;margin-top:52px;margin-bottom:60px;font-weight:600;line-height:1.7}
+  footer strong{color:var(--brand)}
+  @media print{
+    @page{size:A4;margin:18mm;}
+    .cta-row,.brand img{display:none!important;}
+    section.card{box-shadow:none!important;border:1px solid #e8e8e8!important;border-radius:8px!important;}
+    header{background:#fff!important;color:#000!important;border:1px solid #e8e8e8!important;}
+    a{color:#000!important;text-decoration:underline!important;}
+    html,body{background:#fff!important;}
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="brand"><img src="logo.png" alt="Artificial Momentum logo"></div>
+
+  <header>
+    <h1>Day 4 — Journal Reflection</h1>
+    <div class="sub">Swap Push for Precision</div>
+  </header>
+
+  <figure class="hero">
+    <img src="yoga.jpg" alt="Gentle yoga class — moving with your cycle">
+  </figure>
+
+  <section class="card tone">
+    <h2>💬 Grounding Note</h2>
+    <p>The fog, the dip, the moodiness — all signals, not setbacks.  
+    Today is your invitation to stop forcing and start fine-tuning.  
+    Precision means choosing the right dose of movement, nourishment, and rest — not doing everything.  
+    Treat this day as calibration: notice what works, not what’s missing.</p>
+  </section>
+
+  <section class="card">
+    <h2>🩸 Signal Decoder</h2>
+    <p class="tiny"><em>What signals showed up today — tiredness, craving, frustration, clarity?  
+    What might each be asking for?</em></p>
+    <textarea class="entry" placeholder="Write your reflections here..."></textarea>
+  </section>
+
+  <section class="card">
+    <h2>🧘‍♀️ Precision Moves</h2>
+    <p class="tiny"><em>What one right-sized action helped (or could help) me feel steadier?  
+    How did it change my energy?</em></p>
+    <textarea class="entry" placeholder="Type your thoughts..."></textarea>
+  </section>
+
+  <section class="card">
+    <h2>🌿 System Update</h2>
+    <p class="tiny"><em>If I stop treating this as a crash and start treating it as calibration,  
+    what becomes easier?</em></p>
+    <textarea class="entry" placeholder="Plan or insight..."></textarea>
+  </section>
+
+  <div class="cta-row">
+    <button class="btn" id="shareBtn">📤 Share with Diana</button>
+    <button class="btn ghost" id="printBtn">🖨 Keep a private copy</button>
+    <a class="btn ghost" href="day4-cheatsheet.html">← Back to Cheat Sheet</a>
+  </div>
+
+  <footer>
+    💫 Every signal is data.  
+    <strong>Precision beats push — always.</strong>
+  </footer>
+
+</div>
+
+<script>
+  // print / pdf
+  document.getElementById('printBtn').addEventListener('click', e=>{
+    e.preventDefault(); window.print();
+  });
+
+  // collect and email
+  document.getElementById('shareBtn').addEventListener('click', e=>{
+    e.preventDefault();
+    const entries=[...document.querySelectorAll('textarea.entry')].map(t=>t.value.trim()).filter(Boolean);
+    const body=encodeURIComponent(entries.join('\n\n---\n\n'));
+    const mailto=`mailto:rtr@artificialmomentum.com?subject=Raw to Reset — Day 4 Journal&body=${body}`;
+    window.location.href=mailto;
+  });
+</script>
+
+</body>
+</html>
+
