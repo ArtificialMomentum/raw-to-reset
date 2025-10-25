@@ -96,11 +96,38 @@
     <textarea class="entry" placeholder="Plan or insight..."></textarea>
   </section>
 
-  <div class="cta-row">
-    <button class="btn" id="shareBtn">📤 Share with Diana</button>
-    <button class="btn ghost" id="printBtn">🖨 Keep a private copy</button>
-    <a class="btn ghost" href="day2-cheatsheet.html">← Back to Cheat Sheet</a>
+  <div class="card tone" 
+     style="text-align:center; 
+            margin-top:28px; 
+            padding:26px 20px; 
+            border:none; 
+            background:linear-gradient(to top, rgba(252,139,115,0.15) 0%, rgba(252,139,115,0.06) 60%, rgba(255,255,255,0) 100%); 
+            border-left:6px solid var(--brand); 
+            border-radius:var(--radius);">
+  
+  <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
+    When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them just for you.</strong>
+  </p>
+
+  <div class="cta-row" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+    <a 
+      href="mailto:rtr@artificialmomentum.com?subject=Raw%20to%20Reset%20Journal%20Reflection&body=Hi%20Diana%2C%0D%0A%0D%0AHere%20are%20my%20reflections%20from%20today's%20journal%3A%0D%0A%0D%0A%5BWrite%20your%20thoughts%20here%5D%0D%0A%0D%0AWith%20love%2C%0D%0A%5BYour%20Name%5D"
+      class="btn"
+      style="background:var(--brand); color:var(--card); padding:12px 22px; border-radius:var(--radius); text-decoration:none; font-weight:600; box-shadow:0 2px 4px rgba(0,0,0,0.08);">
+      💌 Share with Diana
+    </a>
+
+    <button 
+      onclick="window.print()" 
+      class="btn ghost"
+      style="padding:12px 22px; border-radius:var(--radius); font-weight:600; cursor:pointer;">
+      🗂️ Keep Private Copy
+    </button>
+
+    <a class="btn ghost" href="day1-cheatsheet.html">← Back to Cheat Sheet</a>
   </div>
+</div>
+
 
   <footer>
     💫 The luteal phase isn’t your undoing — it’s your honesty window.  
