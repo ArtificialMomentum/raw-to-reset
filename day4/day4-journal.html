@@ -44,22 +44,23 @@
   .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
   footer{text-align:center;font-size:1.05rem;color:#0D0D0E;margin-top:52px;margin-bottom:60px;font-weight:600;line-height:1.7}
   footer strong{color:var(--brand)}
-  @media print{
-    @page{size:A4;margin:18mm;}
-    .cta-row,.brand img{display:none!important;}
-    section.card{box-shadow:none!important;border:1px solid #e8e8e8!important;border-radius:8px!important;}
-    header{background:#fff!important;color:#000!important;border:1px solid #e8e8e8!important;}
-    a{color:#000!important;text-decoration:underline!important;}
-    html,body{background:#fff!important;}
-  }
+
+  /* Overlay animation */
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes fadeOut{from{opacity:1}to{opacity:0}}
+  #thankyou-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+    background:rgba(255,247,244,0.96);backdrop-filter:blur(4px);z-index:9999;
+    text-align:center;padding-top:25vh;animation:fadeIn .6s ease forwards}
+  #thankyou-overlay.fade-out{animation:fadeOut .5s ease forwards}
+  #thankyou-overlay div{background:#fff;padding:36px 48px;border-radius:var(--radius);
+    border:2px solid rgba(252,139,115,0.4);box-shadow:0 0 28px rgba(252,139,115,0.35)}
 </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo">
-</div>
+  <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo"></div>
 
   <header>
     <h1>Day 4 — Journal Reflection</h1>
@@ -72,94 +73,90 @@
 
   <section class="card tone">
     <h2>💬 Grounding Note</h2>
-    <p>The fog, the dip, the moodiness — all signals, not setbacks.  
-    Today is your invitation to stop forcing and start fine-tuning.  
-    Precision means choosing the right dose of movement, nourishment, and rest — not doing everything.  
+    <p>The fog, the dip, the moodiness — all signals, not setbacks.<br>
+    Today is your invitation to stop forcing and start fine-tuning.<br>
+    Precision means choosing the right dose of movement, nourishment, and rest — not doing everything.<br>
     Treat this day as calibration: notice what works, not what’s missing.</p>
   </section>
 
   <section class="card">
     <h2>🩸 Signal Decoder</h2>
-    <p class="tiny"><em>What signals showed up today — tiredness, craving, frustration, clarity?  
+    <p><em>What signals showed up today — tiredness, craving, frustration, clarity?<br>
     What might each be asking for?</em></p>
     <textarea class="entry" placeholder="Write your reflections here..."></textarea>
   </section>
 
   <section class="card">
     <h2>🧘‍♀️ Precision Moves</h2>
-    <p class="tiny"><em>What one right-sized action helped (or could help) me feel steadier?  
+    <p><em>What one right-sized action helped (or could help) me feel steadier?<br>
     How did it change my energy?</em></p>
     <textarea class="entry" placeholder="Type your thoughts..."></textarea>
   </section>
 
   <section class="card">
     <h2>🌿 System Update</h2>
-    <p class="tiny"><em>If I stop treating this as a crash and start treating it as calibration,  
+    <p><em>If I stop treating this as a crash and start treating it as calibration,<br>
     what becomes easier?</em></p>
     <textarea class="entry" placeholder="Plan or insight..."></textarea>
   </section>
 
   <div class="card tone" 
-     style="text-align:center; 
-            margin-top:28px; 
-            padding:26px 20px; 
-            border:none; 
-            background:linear-gradient(to top, rgba(252,139,115,0.15) 0%, rgba(252,139,115,0.06) 60%, rgba(255,255,255,0) 100%); 
-            border-left:6px solid var(--brand); 
-            border-radius:var(--radius);">
-  
-  <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
-    When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them just for you.</strong>
-  </p>
+    style="text-align:center;
+           margin-top:28px;
+           padding:26px 20px;
+           border:none;
+           background:linear-gradient(to top, rgba(252,139,115,0.15) 0%, rgba(252,139,115,0.06) 60%, rgba(255,255,255,0) 100%);
+           border-left:6px solid var(--brand);
+           border-radius:var(--radius);">
 
-  <div class="cta-row" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-  
-  <form action="https://formspree.io/f/xzzkrlyp" method="POST" style="width:100%; text-align:center;">
-<input type="hidden" name="_next" value="https://raw.artificialmomentum.com/thank-you.html">
-    <input type="hidden" name="page" value="Day 4 Journal">
+    <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
+      When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong>
+    </p>
 
-    <button type="submit"
-      class="btn"
-      style="background:var(--brand); color:var(--card); padding:12px 22px; border-radius:var(--radius);
-      font-weight:600; box-shadow:0 2px 4px rgba(0,0,0,.08); border:none; cursor:pointer;">
-      Share with Diana
-    </button>
-  </form>
+    <div class="cta-row" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
 
-  <button onclick="window.print()" class="btn ghost"
-    style="padding:12px 22px; border-radius:var(--radius); font-weight:600; cursor:pointer;">
-    🗂️ Keep Private Copy
-  </button>
+      <form action="https://formspree.io/f/xzzkrlyp" method="POST" style="width:100%;text-align:center">
+        <div id="thankyou-overlay">
+          <div>
+            <h2 style="color:var(--brand)">Message received 💛</h2>
+            <p>I’m listening — thank you for sharing.</p>
+            <button onclick="fadeOutOverlay()" class="btn" style="margin-top:20px">Close</button>
+          </div>
+        </div>
 
-  <a class="btn ghost" href="https://raw.artificialmomentum.com/day4/day4-cheatsheet.html">← Back to Cheat Sheet</a>
-</div>
+        <input type="hidden" name="page" value="Day 4 Journal">
+        <button type="submit" class="btn">Share with Diana</button>
+      </form>
 
-</div>
+      <button onclick="window.print()" class="btn ghost">🗂️ Keep Private Copy</button>
+      <a class="btn ghost" href="https://raw.artificialmomentum.com/day4/day4-cheatsheet.html">← Back to Cheat Sheet</a>
 
+    </div> <!-- end cta-row -->
+  </div> <!-- end coral box -->
 
   <footer>
-    💫 Every signal is data.  
-    <strong>Precision beats push — always.</strong>
+    💫 Every signal is data. <strong>Precision beats push — always.</strong>
   </footer>
 
 </div>
 
 <script>
-  // print / pdf
-  document.getElementById('printBtn').addEventListener('click', e=>{
-    e.preventDefault(); window.print();
-  });
-
-  // collect and email
-  document.getElementById('shareBtn').addEventListener('click', e=>{
-    e.preventDefault();
-    const entries=[...document.querySelectorAll('textarea.entry')].map(t=>t.value.trim()).filter(Boolean);
-    const body=encodeURIComponent(entries.join('\n\n---\n\n'));
-    const mailto=`mailto:rtr@artificialmomentum.com?subject=Raw to Reset — Day 4 Journal&body=${body}`;
-    window.location.href=mailto;
-  });
+function fadeOutOverlay(){
+  const o=document.getElementById('thankyou-overlay');
+  o.classList.add('fade-out');
+  setTimeout(()=>o.style.display='none',500);
+}
+document.querySelector('form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target;
+  const d=new FormData(f);
+  try{
+    const r=await fetch(f.action,{method:'POST',body:d,headers:{Accept:'application/json'}});
+    if(r.ok){f.reset();document.getElementById('thankyou-overlay').style.display='block';}
+    else alert('Something went wrong, please try again.');
+  }catch{alert('Something went wrong, please try again.');}
+});
 </script>
 
 </body>
 </html>
-
