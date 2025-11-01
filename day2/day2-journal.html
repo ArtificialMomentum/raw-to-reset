@@ -70,16 +70,21 @@
     <textarea class="entry" placeholder="Where does my environment or routine feel mismatched to how I feel?"></textarea>
   </section>
 
-  <section class="card">
-    <h2>🌿 Support &amp; Reframe</h2>
-    <textarea class="entry" placeholder="One gentle action to support my nervous system tonight..."></textarea>
-  </section>
+  <div class="card tone" 
+  style="text-align:center;
+         margin-top:28px;
+         padding:26px 20px;
+         border:none;
+         background:linear-gradient(to top, rgba(252,139,115,0.15) 0%, rgba(252,139,115,0.06) 60%, rgba(255,255,255,0) 100%);
+         border-left:6px solid var(--brand);
+         border-radius:var(--radius);">
 
-  <p style="text-align:center;margin-top:28px;opacity:.9">
+  <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
     When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong>
   </p>
 
-  <div class="cta-row">
+  <div class="cta-row" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+
     <form action="https://formspree.io/f/xzzkrlyp" method="POST" style="width:100%;text-align:center">
       <div id="thankyou-overlay">
         <div>
@@ -95,7 +100,10 @@
 
     <button onclick="window.print()" class="btn ghost">🗂️ Keep Private Copy</button>
     <a class="btn ghost" href="https://raw.artificialmomentum.com/day2/day2-cheatsheet.html">← Back to Cheat Sheet</a>
-  </div>
+
+  </div> <!-- end cta-row -->
+</div> <!-- end coral box -->
+
 
   <footer>💫 The luteal phase isn’t your undoing — it’s your honesty window. <strong>Listen softly; truth has purpose.</strong></footer>
 </div>
