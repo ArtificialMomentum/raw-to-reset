@@ -1,11 +1,38 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Day 1 Cheat Sheet — Raw to Reset</title>
 
-<title>Day 1 Cheat Sheet — Raw to Reset</title>
-<style>
+  <!-- Universal Typography + Mobile Spacing Patch -->
+  <style>
+    /* Balanced line-height and rhythm alignment */
+    p, h1, h2, h3 {
+      line-height: 1.55 !important;
+    }
+
+    /* Smooth mobile padding for cards and containers */
+    @media only screen and (max-width: 600px) {
+      div[style*="padding:24px"],
+      div[style*="padding:20px"],
+      div[style*="padding:28px"] {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+      }
+    }
+
+    /* Outlook / dark mode fix */
+    @media (prefers-color-scheme: dark) {
+      body, table, td, p, h1, h2, h3 {
+        color: #ffffff !important;
+        background-color: #0D0D0E !important;
+      }
+    }
+  </style>
+</head>
+
   :root{
     --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF; --muted:#666;
     --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
