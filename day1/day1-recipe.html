@@ -3,11 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
 <title>Day 1 Recipe — Morning Reset Bowl (Comfort Edition)</title>
 <style>
   :root{
     --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
-    --muted:#666; --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
   }
 
   html,body{
@@ -38,7 +40,7 @@
   }
 
   header {
-    background: linear-gradient(165deg, #FD8369 0%, #FEB299 100%) !important;
+    background: var(--brand);
     color: #fff;
     border-radius: var(--radius);
     padding: 26px 20px 28px;
@@ -180,6 +182,30 @@
     a{color:#000!important;text-decoration:underline!important;}
     html,body{background:#fff!important;}
   }
+  @media (prefers-color-scheme: dark) {
+  html, body {
+    background: #F7F7F7 !important;
+    color: var(--ink) !important;
+  }
+  header {
+    background: var(--brand) !important;
+    color: #fff !important;
+  }
+  section.card, .card, footer {
+    background: #FFFFFF !important;
+    color: var(--ink) !important;
+  }
+  .btn, .btn.primary {
+    background: var(--brand) !important;
+    color: #fff !important;
+  }
+  .btn.ghost {
+    background: #fff !important;
+    color: var(--brand) !important;
+    border-color: var(--brand) !important;
+  }
+}
+
 </style>
 </head>
 
