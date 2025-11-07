@@ -57,6 +57,30 @@
   #thankyou-overlay.fade-out{animation:fadeOut .5s ease forwards}
   #thankyou-overlay div{background:#fff;padding:36px 48px;border-radius:var(--radius);
     border:2px solid rgba(252,139,115,0.4);box-shadow:0 0 28px rgba(252,139,115,0.35)}
+    @media (prefers-color-scheme: dark) {
+  html, body {
+    background: #F7F7F7 !important;
+    color: var(--ink) !important;
+  }
+  header {
+    background: var(--brand) !important;
+    color: #fff !important;
+  }
+  section.card, .card, footer {
+    background: #FFFFFF !important;
+    color: var(--ink) !important;
+  }
+  .btn, .btn.primary {
+    background: var(--brand) !important;
+    color: #fff !important;
+  }
+  .btn.ghost {
+    background: #fff !important;
+    color: var(--brand) !important;
+    border-color: var(--brand) !important;
+  }
+}
+
 </style>
 </head>
 
