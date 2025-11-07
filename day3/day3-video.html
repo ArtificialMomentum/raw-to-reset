@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
   <title>Raw to Reset — Day 3</title>
   <meta name="description" content="Day 3 of your 5-Day Raw to Reset — stay in rhythm." />
   <link rel="preload" as="image" href="../assets/portrait1.jpg">
@@ -83,6 +85,30 @@
       font-size: .9rem;
       opacity: .75;
     }
+    @media (prefers-color-scheme: dark) {
+  html, body {
+    background: #F7F7F7 !important;
+    color: var(--ink) !important;
+  }
+  header {
+    background: var(--brand) !important;
+    color: #fff !important;
+  }
+  section.card, .card, footer {
+    background: #FFFFFF !important;
+    color: var(--ink) !important;
+  }
+  .btn, .btn.primary {
+    background: var(--brand) !important;
+    color: #fff !important;
+  }
+  .btn.ghost {
+    background: #fff !important;
+    color: var(--brand) !important;
+    border-color: var(--brand) !important;
+  }
+}
+
   </style>
 </head>
 
