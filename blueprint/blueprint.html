@@ -5,75 +5,178 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark" />
 <meta name="supported-color-schemes" content="light dark" />
-<title>Diana Air Blueprint — Artificial Momentum</title>
+<title>The Blueprint — Artificial Momentum</title>
 <style>
   :root {
-    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFF; --soft:#FFF7F4;
-    --line:#ffd7cc; --radius:20px;
+    --brand:#FC8B73; 
+    --ink:#0D0D0E; 
+    --card:#FFFFFF; 
+    --soft:#FFF7F4; 
+    --line:#ffd7cc; 
+    --radius:20px;
   }
-  html,body{
-    margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+
+  html, body {
+    margin:0;
+    padding:0;
+    background:#F7F7F7;
+    color:var(--ink);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    scroll-behavior:smooth;
   }
-  .wrap{max-width:1000px;margin:auto;padding:0 18px 80px;}
-  header{
-    text-align:center;padding:100px 20px 80px;
+
+  .fade-in {
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp 1s ease forwards;
+  }
+  @keyframes fadeUp {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+  }
+
+  header {
+    text-align:center;
+    padding:100px 20px 80px;
     background:linear-gradient(165deg,#FD8369 0%,#FEB299 100%);
-    color:#fff;border-bottom-left-radius:60px;border-bottom-right-radius:60px;
+    color:#fff;
+    border-bottom-left-radius:60px;
+    border-bottom-right-radius:60px;
     box-shadow:0 10px 28px rgba(0,0,0,.1);
+    position:relative;
+    overflow:hidden;
   }
-  header img{width:120px;margin-bottom:24px;}
-  header h1{margin:0;font-size:clamp(28px,5vw,48px);font-weight:700;}
-  header p{max-width:600px;margin:16px auto 0;font-size:1.2rem;opacity:.95;}
-  .flow{
-    display:grid;gap:28px;margin-top:64px;
+
+  header img.logo {
+    width:120px;
+    margin-bottom:24px;
+    animation:fadeUp 1.4s ease forwards;
+  }
+
+  header h1 {
+    margin:0;
+    font-size:clamp(28px,5vw,48px);
+    font-weight:700;
+    animation:fadeUp 1.6s ease forwards;
+  }
+
+  header p {
+    max-width:640px;
+    margin:16px auto 0;
+    font-size:1.2rem;
+    opacity:.95;
+    animation:fadeUp 1.8s ease forwards;
+  }
+
+  .hero {
+    margin-top:60px;
+    text-align:center;
+    animation:fadeUp 2s ease forwards;
+  }
+
+  .hero img {
+    width:100%;
+    max-height:460px;
+    object-fit:cover;
+    border-radius:var(--radius);
+    box-shadow:0 8px 22px rgba(0,0,0,.1);
+  }
+
+  .wrap {
+    max-width:1000px;
+    margin:auto;
+    padding:0 18px 80px;
+  }
+
+  .flow {
+    display:grid;
+    gap:28px;
+    margin-top:64px;
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   }
-  .card{
-    background:var(--card);border-radius:var(--radius);padding:26px 22px;
-    border:1px solid var(--line);box-shadow:0 8px 22px rgba(0,0,0,.06);
-    text-align:left;transition:transform .3s ease;
-  }
-  .card:hover{transform:translateY(-4px);}
-  .card h2{margin-top:0;color:var(--brand);}
-  .hero{
-    margin-top:-80px;text-align:center;
-  }
-  .hero img{
-    width:100%;max-height:440px;object-fit:cover;
-    border-radius:var(--radius);box-shadow:0 8px 22px rgba(0,0,0,.1);
-  }
-  .cta{
-    margin-top:80px;text-align:center;
-    background:var(--brand);color:#fff;padding:60px 20px;
+
+  .card {
+    background:var(--card);
     border-radius:var(--radius);
+    padding:26px 22px;
+    border:1px solid var(--line);
+    box-shadow:0 8px 22px rgba(0,0,0,.06);
+    text-align:left;
+    transition:transform .3s ease;
+    animation:fadeUp 1s ease forwards;
   }
-  .cta h3{margin-top:0;font-size:1.8rem;}
-  .cta a{
-    display:inline-block;margin-top:16px;padding:14px 28px;
-    background:#fff;color:var(--brand);font-weight:700;
-    border-radius:999px;text-decoration:none;
+  .card:hover {transform:translateY(-4px);}
+  .card h2 {margin-top:0;color:var(--brand);}
+
+  .secondary {
+    margin-top:80px;
+    text-align:center;
+    animation:fadeUp 1s ease forwards;
+  }
+
+  .secondary img {
+    width:100%;
+    max-height:480px;
+    object-fit:cover;
+    border-radius:var(--radius);
+    box-shadow:0 8px 22px rgba(0,0,0,.08);
+  }
+
+  .cta {
+    margin-top:80px;
+    text-align:center;
+    background:var(--brand);
+    color:#fff;
+    padding:60px 20px;
+    border-radius:var(--radius);
+    animation:fadeUp 1s ease forwards;
+  }
+
+  .cta h3 {margin-top:0;font-size:1.8rem;}
+  .cta p {margin:0 auto 16px;max-width:480px;}
+  .cta a {
+    display:inline-block;
+    margin-top:16px;
+    padding:14px 28px;
+    background:#fff;
+    color:var(--brand);
+    font-weight:700;
+    border-radius:999px;
+    text-decoration:none;
     transition:all .25s ease;
   }
-  .cta a:hover{transform:translateY(-2px);opacity:.9;}
-  footer{text-align:center;margin-top:60px;font-size:.95rem;opacity:.7;}
+  .cta a:hover {transform:translateY(-2px);opacity:.9;}
+
+  footer {
+    text-align:center;
+    margin-top:60px;
+    font-size:.95rem;
+    opacity:.7;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body { background:#0D0D0E; color:#EEE; }
+    .card { background:#1E1E1E; border-color:#333; }
+    .cta { background:#FC8B73; }
+  }
 </style>
 </head>
 
 <body>
+
 <div class="wrap">
 
   <header>
-    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo">
-    <h1>Diana Air — The Blueprint</h1>
+    <img class="logo" src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo">
+    <h1>The Blueprint</h1>
     <p>Where rhythm meets intelligence — blending AI precision and human intuition to help women reset, rebuild, and rise in sync with their biology.</p>
   </header>
 
-  <div class="hero">
-    <img src="placeholder-hero.jpg" alt="Hero placeholder image">
+  <div class="hero fade-in">
+    <img src="Assets/blueprint/blueprint-hero-image.jpg" alt="Women enjoying an autumn garden gathering">
   </div>
 
-  <section class="flow">
+  <section class="flow fade-in">
     <div class="card">
       <h2>1. Understand Your Signals</h2>
       <p>Decode your body’s language — from energy shifts to emotional cues — and finally make sense of what your hormones are saying.</p>
@@ -92,15 +195,21 @@
     </div>
   </section>
 
-  <section class="cta">
+  <section class="secondary fade-in">
+    <img src="Assets/blueprint/mother-five-girls.jpg" alt="Mother cooking with daughters in a warm kitchen">
+  </section>
+
+  <section class="cta fade-in">
     <h3>Join the Beta</h3>
     <p>Be part of the first rhythm-based reset for women.</p>
-    <a href="https://blueprint.artificialmomentum.com/signup.html">Join the Waitlist</a>
+    <a href="https://stats.sender.net/forms/b827G2/view" target="_blank" rel="noopener">Join the Waitlist</a>
   </section>
 
   <footer>© Artificial Momentum · Diana Air Coaching × ECHO</footer>
 
 </div>
+
 </body>
 </html>
+
 
