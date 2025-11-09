@@ -59,6 +59,18 @@
 @media (max-width:540px){
   .mini-intro .row{align-items:center}
 }
+/* Image fade-in effect */
+img {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+img.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #0d0d0e;
@@ -247,5 +259,31 @@
       }, 4500);
     })();
   </script>
+  <script>
+  // Lazy-load + fade-in for images
+  document.addEventListener("DOMContentLoaded", () => {
+    const imgs = document.querySelectorAll("img");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) img.src = img.dataset.src;
+          img.classList.add("loaded");
+          observer.unobserve(img);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    imgs.forEach(img => {
+      if (!img.complete) {
+        img.loading = "lazy";
+        observer.observe(img);
+      } else {
+        img.classList.add("loaded");
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
