@@ -94,6 +94,20 @@ img.loaded {
 
 
   </style>
+  <script>
+  (function (s, e, n, d, er) {
+    s['Sender'] = er;
+    s[er] = s[er] || function () {
+      (s[er].q = s[er].q || []).push(arguments)
+    }, s[er].l = 1 * new Date();
+    var a = e.createElement(n),
+        m = e.getElementsByTagName(n)[0];
+    a.async = 1;
+    a.src = d;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+  sender('5200e1d77e6017')
+</script>
 </head>
 <body>
   <div class="container">
@@ -240,8 +254,10 @@ img.loaded {
 
     <p class="highlight">Spots are limited. Once the 5 free places are gone, they’re gone. Early bird pricing ends Jan 31st. Don’t miss your reset.</p>
 
-    <a href="https://stats.sender.net/forms/dPNGKw/view" class="cta">Yes — I’m ready for clarity 💡</a>
-  </div>
+    <div class="signup-container">
+  <div style="text-align:left" class="sender-form-field" data-sender-form-id="dPNGKw"></div>
+</div>
+
 
   <footer>
     Built by Diana Air Coaching + ECHO — powered by raw truth, hormonal wisdom, and momentum.
