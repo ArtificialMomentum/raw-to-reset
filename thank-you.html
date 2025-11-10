@@ -1,146 +1,141 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thank You — Raw to Reset</title>
-  <style>
-    :root {
-      --brand: #FC8B73;
-      --ink: #0D0D0E;
-      --card: #FFFFFF;
-      --muted: #666;
-      --soft: #FFF7F4;
-      --line: #ffd7cc;
-      --radius: 18px;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Thank You 🌿 — Raw to Reset</title>
+<style>
+  :root {
+    --brand:#FC8B73;
+    --ink:#0D0D0E;
+    --soft:#FFF7F4;
+    --card:#FFFFFF;
+    --line:#ffd7cc;
+    --radius:18px;
+  }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--soft);
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      color: var(--ink);
-      overflow-x: hidden;
-    }
+  html,body {
+    margin:0;
+    padding:0;
+    min-height:100%;
+    background:var(--soft);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+  }
 
-    .wrap {
-      max-width: 640px;
-      margin: 80px auto;
-      padding: 0 18px;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
-    }
+  .card {
+    background:var(--card);
+    padding:48px 56px;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    box-shadow:0 8px 28px rgba(252,139,115,0.25);
+    max-width:620px;
+    margin:24px;
+    animation:fadeIn 0.7s ease;
+  }
 
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+  h1 {
+    color:var(--brand);
+    font-size:1.9rem;
+    margin-bottom:10px;
+  }
 
+  p {
+    font-size:1.1rem;
+    line-height:1.6;
+    margin-bottom:32px;
+  }
+
+  .cta-row {
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  .btn {
+    background:var(--brand);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:12px 26px;
+    font-weight:700;
+    cursor:pointer;
+    transition:opacity 0.3s ease;
+    text-decoration:none;
+    display:inline-block;
+  }
+
+  .btn:hover {opacity:0.9;}
+
+  footer {
+    margin-top:36px;
+    font-size:0.95rem;
+    opacity:0.8;
+    text-align:center;
+  }
+
+  footer strong { color: var(--brand); }
+
+  @keyframes fadeIn {
+    from {opacity:0;transform:translateY(8px);}
+    to {opacity:1;transform:translateY(0);}
+  }
+
+  /* 🌙 Dark mode safety patch */
+  @media (prefers-color-scheme: dark) {
+    html,body {
+      background:#F7F7F7 !important;
+      color:var(--ink) !important;
+    }
     .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 36px 28px;
-      border: 1px solid var(--line);
-      box-shadow: 0 6px 18px rgba(0,0,0,.06);
-      animation: popIn 0.8s ease forwards;
+      background:#FFFFFF !important;
+      color:var(--ink) !important;
     }
-
-    @keyframes popIn {
-      0% { transform: scale(0.97); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    h1 {
-      color: var(--brand);
-      font-size: 30px;
-      margin: 0 0 12px 0;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 17px;
-      line-height: 1.5;
-      margin: 0 0 18px 0;
-    }
-
     .btn {
-      display: inline-block;
-      background: var(--brand);
-      color: #fff;
-      text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      margin: 10px 8px 0 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,.08);
-      transition: all 0.2s ease;
+      background:var(--brand) !important;
+      color:#fff !important;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,.12);
-    }
-
-    .btn.ghost {
-      background: #fff;
-      color: var(--brand);
-      border: 2px solid var(--brand);
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: var(--muted);
-      opacity: 0.9;
-      line-height: 1.4;
-    }
-  </style>
+  }
+</style>
 </head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Thank You 🌿</h1>
-      <p>Your <span id="day-label">journal</span> reflection has been received by <strong>Diana</strong>.</p>
-      <p>Take a moment to breathe and notice what’s shifted — even small awareness changes your rhythm.</p>
-      
-      <div style="margin-top:28px;">
-        <a href="https://raw.artificialmomentum.com" class="btn">Back to Home</a>
-        <a id="next-day-btn" href="#" class="btn ghost">Continue Tomorrow →</a>
-      </div>
-    </div>
 
-    <footer>
-      With rhythm,<br><strong>The Raw to Reset Team</strong><br><br>
-      <span style="font-size:13px; opacity:0.8;">Every reflection strengthens your calibration loop 💫</span>
-    </footer>
+<body>
+  <div class="card">
+    <h1>Thank You 🌿</h1>
+    <p>Your reflection has been received.<br>
+    Take a breath — awareness itself is progress.</p>
+
+    <div class="cta-row">
+      <button class="btn" onclick="goBack()">← Back to Journal</button>
+    </div>
   </div>
 
-  <script>
-    // Get day info if passed via query param (e.g., ?page=Day%204%20Journal)
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get('page');
-    const dayLabel = document.getElementById('day-label');
-    const nextDayBtn = document.getElementById('next-day-btn');
+  <footer>
+    With rhythm,<br>
+    <strong>The Raw to Reset Team</strong><br>
+    <small>Every reflection strengthens your calibration loop 🌀</small>
+  </footer>
 
-    if (page) {
-      dayLabel.textContent = page.toLowerCase();
-      
-      // Try to extract day number
-      const match = page.match(/Day\s*(\d+)/i);
-      if (match) {
-        const day = parseInt(match[1]);
-        const nextDay = day + 1;
-        nextDayBtn.href = `https://raw.artificialmomentum.com/day${nextDay}/day${nextDay}-journal.html`;
+  <script>
+    // Automatically return to the previous journal page
+    function goBack(){
+      if (document.referrer) {
+        window.location.href = document.referrer;
       } else {
-        nextDayBtn.href = "https://raw.artificialmomentum.com";
+        window.history.back();
       }
-    } else {
-      nextDayBtn.href = "https://raw.artificialmomentum.com";
     }
   </script>
 </body>
 </html>
+
+
 
