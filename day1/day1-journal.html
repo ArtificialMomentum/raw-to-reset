@@ -47,29 +47,27 @@
   }
   footer strong {color:var(--brand)}
 
-  @media (prefers-color-scheme: dark) {
-    html, body {
-      background: #F7F7F7 !important;
-      color: var(--ink) !important;
-    }
-    header {
-      background: var(--brand) !important;
-      color: #fff !important;
-    }
-    section.card, .card, footer {
-      background: #FFFFFF !important;
-      color: var(--ink) !important;
-    }
-    .btn, .btn.primary {
-      background: var(--brand) !important;
-      color: #fff !important;
-    }
-    .btn.ghost {
-      background: #fff !important;
-      color: var(--brand) !important;
-      border-color: var(--brand) !important;
-    }
+ /* 🌓 Force light mode everywhere */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light !important;
   }
+  html, body, header, section.card, .card, footer, .tone, textarea.entry {
+    background: #FFFFFF !important;
+    color: #0D0D0E !important;
+    border-color: #ffd7cc !important;
+  }
+  .btn, .btn.primary {
+    background: #FC8B73 !important;
+    color: #fff !important;
+  }
+  .btn.ghost {
+    background: #fff !important;
+    color: #FC8B73 !important;
+    border-color: #FC8B73 !important;
+  }
+}
+
 </style>
 </head>
 
