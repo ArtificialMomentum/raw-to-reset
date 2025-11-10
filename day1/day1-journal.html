@@ -137,6 +137,25 @@
 
   <footer>💫 Each note you write is a signal of awareness. <strong>Tomorrow, rhythm builds momentum.</strong></footer>
 </div>
+<script>
+  // Automatically attach a timestamp to the form before it's submitted
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[name="day1-journal"]');
+    if (form) {
+      form.addEventListener('submit', function() {
+        let timestampInput = form.querySelector('input[name="timestamp"]');
+        if (!timestampInput) {
+          timestampInput = document.createElement('input');
+          timestampInput.type = 'hidden';
+          timestampInput.name = 'timestamp';
+          form.appendChild(timestampInput);
+        }
+        timestampInput.value = new Date().toISOString();
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
 
