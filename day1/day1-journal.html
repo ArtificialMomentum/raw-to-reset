@@ -47,15 +47,19 @@
   }
   footer strong {color:var(--brand)}
 
- /* 🌓 Force light mode everywhere */
+ /* 🌓 Force light mode everywhere — keep header coral */
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: light !important;
   }
-  html, body, header, section.card, .card, footer, .tone, textarea.entry {
+  html, body, section.card, .card, footer, .tone, textarea.entry {
     background: #FFFFFF !important;
     color: #0D0D0E !important;
     border-color: #ffd7cc !important;
+  }
+  header {
+    background: #FC8B73 !important; /* coral brand */
+    color: #FFFFFF !important;
   }
   .btn, .btn.primary {
     background: #FC8B73 !important;
@@ -67,6 +71,7 @@
     border-color: #FC8B73 !important;
   }
 }
+
 
 </style>
 </head>
