@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Diana Air — 6-Week Blueprint</title>
+
+  <!-- Color Scheme -->
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d0d0e" />
+
+  <style>
+    :root {
+      --rose: #e4b1a2;
+      --deep: #2d2a2a;
+      --ink: #3e3b3b;
+      --soft: #faf7f6;
+      --line: #e8d6cf;
+      --accent: #d58a7a;
+      --radius: 16px;
+      --max: 780px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--soft);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    header {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    header img.logo {
+      width: 140px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      color: var(--deep);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      color: var(--deep);
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    img.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Sections */
+    section {
+      margin: 3rem 0;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin: 1.5rem 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    /* Meet Diana */
+    .bio {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .bio img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--line);
+      flex-shrink: 0;
+    }
+
+    /* Pricing */
+    .pricing {
+      background: #fff;
+      padding: 2rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .plan {
+      margin-bottom: 1.8rem;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      color: var(--accent);
+      font-weight: bold;
+      margin-top: 0.3rem;
+    }
+
+    /* CTA */
+    .cta {
+      display: block;
+      text-align: center;
+      padding: 1rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      text-decoration: none;
+      transition: filter 0.2s ease;
+    }
+
+    .cta:hover {
+      filter: brightness(0.95);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #0d0d0e;
+        color: #f2f2f2;
+      }
+
+      .card, .pricing {
+        background: #1a1a1a;
+        border-color: #444;
+      }
+
+      header img.logo {
+        filter: brightness(0.9);
+      }
+
+      h1, h2, .highlight {
+        color: #ffb0a2;
+      }
+
+      .cta {
+        background: #c46c5d;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="artificial-momentum-logo.png" alt="Artificial Momentum" class="logo">
+  <h1>The Diana Air 6-Week Blueprint</h1>
+  <p class="highlight">Rebuild your rhythm. Redefine your power.</p>
+</header>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <p>You reconnected with your rhythm in Raw to Reset.  
+    Now it’s time to *live* from it — with confidence, structure, and emotional clarity.</p>
+
+    <img src="hero-blueprint.jpg" alt="Blueprint Hero Image" />
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section>
+    <h2>What the Blueprint Is</h2>
+    <p>A premium 6-week coaching experience for women ready to move from reset to reinvention.</p>
+
+    <div class="card">
+      <p>This isn’t a generic wellness program.  
+      It’s a rhythm-anchored evolution that blends:</p>
+
+      <ul>
+        <li>identity work and emotional clarity</li>
+        <li>hormone or phase-mimic rhythm mapping</li>
+        <li>nervous-system resets & confidence grounding</li>
+        <li>AI-supported tools for structure & focus</li>
+        <li>boundaries, relationships, direction, purpose</li>
+      </ul>
+    </div>
+
+    <img src="kitchen.jpg" alt="Women Together" style="width:100%; border-radius:var(--radius); margin-top:1rem;">
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section>
+    <h2>Who It’s For</h2>
+
+    <div class="card">
+      <ul>
+        <li>Women in their 30s–40s ready for their next chapter</li>
+        <li>Those who completed Raw to Reset</li>
+        <li>Women juggling family, work, identity or reinvention</li>
+        <li>Those wanting emotional steadiness & renewed energy</li>
+        <li>Anyone craving clarity, rhythm and grounded power</li>
+      </ul>
+    </div>
+
+    <img src="salmon-women.jpg" alt="Women Outdoors" style="width:100%; border-radius:var(--radius); margin-top:1rem;">
+  </section>
+
+  <!-- PROGRAM STRUCTURE -->
+  <section>
+    <h2>The 6-Part Blueprint Journey</h2>
+
+    <div class="card">
+      <h3>Week 1 — Grounding + Identity</h3>
+      <p>Nervous-system reset, emotional triage, reflection tools.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 2 — Cycle Mapping + Hormone Intelligence</h3>
+      <p>Your unique rhythm (menstrual or phase-mimic), energy & nutrition patterns.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 3 — Relationships + Boundaries</h3>
+      <p>Communication clarity, core needs, micro-boundaries.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 4 — Body + Mind Reboot</h3>
+      <p>Declutter digital, emotional, and physical overwhelm.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 5 — Vision + Direction</h3>
+      <p>Purpose, identity evolution, AI planning tools.</p>
+    </div>
+
+    <div class="card">
+      <h3>Week 6 — Integration + Radiance</h3>
+      <p>Embodying your new rhythm. Continuity plan. Celebration.</p>
+    </div>
+  </section>
+
+  <!-- MEET DIANA -->
+  <section>
+    <h2>Meet Diana</h2>
+    <div class="card bio">
+      <img src="portrait1.jpg" alt="Diana Air">
+      <div>
+        <p>I know what it feels like to be out of rhythm — tired, foggy, and trying to hold everything together.</p>
+        <p>Raw to Reset gave you the foundation.  
+        The Blueprint is where you learn to live with clarity, direction, and emotional steadiness.</p>
+        <p>This is where your next chapter begins.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <h2>Founding Cohort — April 13th, 2026</h2>
+
+    <div class="pricing">
+      <div class="plan">
+        <strong>💎 First 5 Free</strong>
+        <p>For Raw to Reset graduates — a thank-you for trusting the journey.</p>
+      </div>
+
+      <div class="plan">
+        <strong>⚡ Early Bird</strong>
+        <p class="price">£127</p>
+        <p>Until March 31st, 2026</p>
+      </div>
+
+      <div class="plan">
+        <strong>🌿 Standard</strong>
+        <p class="price">£197</p>
+      </div>
+
+      <a href="#" class="cta">Join the Blueprint Waitlist</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Built by Diana Air Coaching + ECHO · April 13th, 2026  
+</footer>
+
+<script>
+  // Fade-in images on scroll
+  document.addEventListener("DOMContentLoaded", () => {
+    const imgs = document.querySelectorAll("img");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("loaded");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    imgs.forEach(img => observer.observe(img));
+  });
+</script>
+
+</body>
+</html>
