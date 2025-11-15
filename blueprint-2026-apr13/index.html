@@ -453,21 +453,6 @@
   Built by Diana Air Coaching + ECHO · April 13th, 2026  
 </footer>
 
-<script>
-  // Fade-in images on scroll
-  document.addEventListener("DOMContentLoaded", () => {
-    const imgs = document.querySelectorAll("img");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("loaded");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    imgs.forEach(img => observer.observe(img));
-  });
 </script>
 
 </body>
