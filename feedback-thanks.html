@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Thank You 🌿 — Raw to Reset</title>
+<style>
+  :root {
+    --brand:#FC8B73;
+    --ink:#0D0D0E;
+    --soft:#FFF7F4;
+    --card:#FFFFFF;
+    --line:#ffd7cc;
+    --radius:18px;
+  }
+
+  html,body {
+    margin:0;
+    padding:0;
+    min-height:100%;
+    background:var(--soft);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+  }
+
+  .card {
+    background:var(--card);
+    padding:48px 56px;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    box-shadow:0 8px 28px rgba(252,139,115,0.25);
+    max-width:620px;
+    margin:24px;
+    animation:fadeIn 0.7s ease;
+  }
+
+  h1 {
+    color:var(--brand);
+    font-size:1.9rem;
+    margin-bottom:10px;
+  }
+
+  p {
+    font-size:1.1rem;
+    line-height:1.6;
+    margin-bottom:32px;
+  }
+
+  .cta-row {
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  .btn {
+    background:var(--brand);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:12px 26px;
+    font-weight:700;
+    cursor:pointer;
+    transition:opacity 0.3s ease;
+    text-decoration:none;
+    display:inline-block;
+  }
+
+  .btn:hover {opacity:0.9;}
+
+  footer {
+    margin-top:36px;
+    font-size:0.95rem;
+    opacity:0.8;
+    text-align:center;
+  }
+
+  footer strong { color: var(--brand); }
+
+  @keyframes fadeIn {
+    from {opacity:0;transform:translateY(8px);}
+    to {opacity:1;transform:translateY(0);}
+  }
+
+  /* 🌙 Dark mode safety patch */
+  @media (prefers-color-scheme: dark) {
+    html,body {
+      background:#F7F7F7 !important;
+      color:var(--ink) !important;
+    }
+    .card {
+      background:#FFFFFF !important;
+      color:var(--ink) !important;
+    }
+    .btn {
+      background:var(--brand) !important;
+      color:#fff !important;
+    }
+  }
+</style>
+</head>
+
+<div class="card">
+  <h1>Thank You — Truly 🌿</h1>
+  <p>Your feedback has been received.<br>
+  Thank you for being honest, open, and willing to help shape this into something real.<br>
+  Every insight you shared strengthens the next evolution of Raw to Reset.</p>
+
+  <p style="font-size:0.95rem; opacity:0.85; margin-top:-10px; margin-bottom:30px;">
+    You’ll see live updates as Raw to Reset evolves — your feedback is shaping the next version in real time.
+  </p>
+
+  <div class="cta-row">
+    <a class="btn" href="/index.html">← Back to Raw to Reset</a>
+  </div>
+</div>
+
+  </script>
+</body>
+</html>
+
+
+
