@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+      <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light only">
+
+  <title>Day 1 Cheat Sheet — Raw to Reset</title>
+
+  <style>
+    /* ---------- Global Rhythm + Dark Mode ---------- */
+    :root {
+      --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF; --muted:#666;
+      --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+    }
+
+    html, body {
+      margin:0; padding:0;
+      background:#F7F7F7; color:var(--ink);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+
+    p, h1, h2, h3 { line-height:1.55; }
+
+    @media only screen and (max-width:600px) {
+      div[style*="padding:24px"], div[style*="padding:20px"], div[style*="padding:28px"] {
+        padding-left:18px !important; padding-right:18px !important;
+      }
+    }
+
+    
+    /* ---------- Layout & Brand ---------- */
+    .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px;}
+    .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px;}
+    .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;
+      filter:drop-shadow(0 4px 14px rgba(0,0,0,.08));}
+
+    /* ---------- Header ---------- */
+    header {
+      background: var(--brand);
+      color:#fff; border-radius:var(--radius);
+      padding:26px 20px 28px; text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+      margin-bottom:28px;
+    }
+    header h1{
+      margin:0; font-size:clamp(22px, 4.2vw, 36px);
+      line-height:1.15; font-weight:700;
+    }
+    .sub{opacity:.95;margin-top:6px;font-size:1.05rem;font-weight:500;}
+
+    /* ---------- Hero ---------- */
+    .hero{display:flex;justify-content:center;align-items:center;
+      margin:16px auto 32px;max-width:900px;aspect-ratio:16/9;overflow:hidden;
+      border-radius:20px;box-shadow:0 8px 16px rgba(0,0,0,0.08);}
+    .hero img{width:100%;height:100%;object-fit:cover;
+      transition:transform .35s ease,box-shadow .35s ease;}
+    .hero img:hover{transform:scale(1.02);box-shadow:0 10px 26px rgba(0,0,0,.08);}
+
+    /* ---------- Cards ---------- */
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
+      box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line);}
+    .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center;}
+    .tone{background:var(--soft);border-left:6px solid var(--brand);}
+    ul{margin:8px 0 0 20px;}li{margin:.25rem 0;}
+    .why,.card em.why{display:block;color:#6b2f23;opacity:.85;font-size:.92rem;
+      margin-top:4px;font-style:italic;}
+
+    /* ---------- Buttons ---------- */
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px;}
+    .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+      padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer;
+      transition:all .25s ease;}
+    .btn:hover{transform:translateY(-1px);opacity:.9;}
+    .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+    .btn.locked{background:#fce3dd;color:#888;border-color:#f7b4a3;cursor:not-allowed;}
+    .btn.locked:hover{background:#fce3dd;color:#888;}
+
+    /* ---------- Footer ---------- */
+    footer{text-align:center;font-size:1.05rem;color:#0D0D0E;margin-top:48px;margin-bottom:60px;
+      font-weight:600;line-height:1.7;animation:slideUpFade 1.4s ease-out .3s forwards;opacity:0;}
+    footer strong{color:#FC8B73;}
+    footer:hover{color:#FC8B73;transform:translateY(-2px);transition:all .3s ease;}
+    @keyframes slideUpFade{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+
+    /* ---------- Print ---------- */
+    @media print{
+      @page{size:A4;margin:18mm;}
+      .cta-row,.brand img{display:none!important;}
+      section.card{box-shadow:none!important;border:1px solid #e8e8e8!important;border-radius:8px!important;}
+      header{background:#fff!important;color:#000!important;border:1px solid #e8e8e8!important;}
+      a{color:#000!important;text-decoration:underline!important;}
+      html,body{background:#fff!important;}
+      
+  @media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #FFF !important;
+    color: #0D0D0E !important;
+  }
+  .card, .container, .wrap, div {
+    background-color: #FFF !important;
+    color: #0D0D0E !important;
+  }
+  input, textarea {
+    background-color: #FFF !important;
+    color: #0D0D0E !important;
+  }
+}
+
+
+        
+ 
+  </style>
+</head>
+
+
+<body>
+  <div class="wrap">
+    <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo"></div>
+
+    <header>
+      <h1>Day 1 — You’re Not Broken — You’re Just Out of Rhythm</h1>
+      <div class="sub">Small shifts, big signals decoded</div>
+    </header>
+
+    <figure class="hero">
+  <img src="three_women_in_gym_gear_smiling.jpg" alt="Three women smiling together at the gym">
+</figure>
+
+
+        <section class="card">
+      <h2>🧭 Cycle Lens</h2>
+      <ul>
+        <li>Works in any phase, but <strong>especially menstruation (Days 1–5)</strong>. As bleeding begins, estrogen and progesterone both dip — so your brain’s energy use slows and your nervous system shifts into “repair mode.”</li>
+        <li>That’s why motivation and focus can feel thin. → Don’t push. <em>Pace.</em> Line up the pieces — your brain is recalibrating. You’re not falling behind; you’re building stability for the surge that’s coming.</li>
+      </ul>
+    </section>
+
+    <section class="card tone">
+      <h2>💧 Quick Win</h2>
+      <p><strong>Before coffee tomorrow morning:</strong><br>
+      🥤 1 large glass of water + electrolytes (or lemon + a pinch of mineral salt).<br>
+      <em class="why">Why it matters:</em> Estrogen’s low, sodium retention drops, and blood pressure can dip — hydration + minerals rebalance the system and wake your brain gently.</p>
+    </section>
+
+    <section class="card">
+      <h2>🧪 Signals to Notice</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:.95rem;">
+        <thead>
+          <tr style="text-align:left;border-bottom:1px solid var(--line);">
+            <th style="padding:4px 0;">What you feel</th>
+            <th style="padding:4px 0;">What’s happening</th>
+            <th style="padding:4px 0;">Support move</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Mood swings / cravings</td><td>Cortisol and serotonin are recalibrating.</td><td>Protein + magnesium calm the axis.</td></tr>
+          <tr><td>Low energy</td><td>Prostaglandins + lower estrogen slow glucose use.</td><td>Hydrate, mineralize, rest guilt-free.</td></tr>
+          <tr><td>Foggy brain</td><td>Blood volume + iron are lower early bleed.</td><td>Protein breakfast + steady water intake.</td></tr>
+          <tr><td>Emotional dips</td><td>Dopamine temporarily dips with estrogen.</td><td>Move lightly, get sunlight, connection.</td></tr>
+        </tbody>
+      </table>
+      <p class="why">Not raw feelings today — we’re not looking for emotional surgery, just reconnection.</p>
+    </section>
+
+    <section class="card">
+      <h2>🧰 Support Moves</h2>
+      <ul>
+        <li><strong>Fuel early:</strong> 20–30 g protein + minerals within 60 minutes of waking.<br><em class="why">I use electrolytes, creatine, and pea protein after an overnight fast.</em></li>
+        <li><strong>Pace wisely:</strong> swap “push through” for “check in.” Yoga, walking, stretching > HIIT today.</li>
+        <li><strong>Grace first:</strong> if you’re ADHD/RSD/ND, the self-talk spiral is real. Offer yourself the same tone you’d use with your child.<br><em class="why">“This will pass. My body’s got my back.”</em></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>📝 Reflection Prompt</h2>
+      <p class="tiny"><em>Where today did I feel out of rhythm? What small signal did I notice once I stopped fighting?</em></p>
+    </section>
+
+    <section class="card">
+      <h2>🧠 Why (mini-physiology)</h2>
+      <p class="tiny">
+        During menstruation, prostaglandins rise to help the uterus release its lining — but they also increase inflammation body-wide.  
+        Low estrogen = less serotonin, less fluid retention, and a slower glucose metabolism.  
+        That’s why water, minerals, and protein feel like medicine right now — they literally refill what your chemistry’s spending on repair.
+      </p>
+    </section>
+
+
+<div class="cta-row">
+  <a class="btn" href="day1-video.html">Watch Today’s Video</a>
+  <a class="btn ghost" href="day1-recipe.html">🍽 Recipe of the Day</a>
+  <a class="btn ghost" href="https://raw.artificialmomentum.com/day1/day1-journal">✒️ Journal Page</a>
+  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+  <a class="btn ghost" id="print-pdf">Download PDF</a>
+  <a class="btn" href="/rtr-hub.html">← Back to Raw to Reset Hub</a>
+</div>
+
+    </div>
+
+    <footer>
+      💬 Got a question already? Note it down — I’ll be answering them live during the wrap-up Zoom call at the end of the reset.
+    </footer>
+  </div>
+
+<script>
+  (function(){
+    var btn=document.getElementById('print-pdf');
+    if(btn)btn.addEventListener('click',function(e){
+      e.preventDefault();window.print();
+    });
+  })();
+</script>
+</body>
+</html>
