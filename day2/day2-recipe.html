@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8" />
 
-    <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+<link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark">
+<meta name="supported-color-schemes" content="light light">
 <title>Day 2 Recipe — Evening Wind-Down Bowl</title>
+
 <style>
   :root{
     --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
@@ -23,112 +24,132 @@
 
   .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
 
-  .brand{
-    display:flex;justify-content:center;align-items:center;margin-bottom:18px;
+  /* Breadcrumb */
+  .back {
+    margin: 4px 0 12px;
+    font-size: .9rem;
+    color: #666;
+    text-align: left;
   }
-  .brand img{
-    width:clamp(90px,8vw,120px);height:auto;display:block;
-    filter:drop-shadow(0 3px 10px rgba(0,0,0,.08));
-    transition:transform .3s ease;
+  .back a {
+    color:#666;
+    text-decoration:none;
   }
-  .brand img:hover{transform:scale(1.04);}
+  .back a:hover {
+    color:#FC8B73;
+    text-decoration:underline;
+  }
 
-  header{
+  .brand {display:flex;justify-content:center;align-items:center;margin-bottom:12px;}
+  .brand img {width:clamp(90px, 8vw,120px);height:auto;filter:drop-shadow(0 3px 10px rgba(0,0,0,.08));}
+
+  header {
     background: var(--brand);
-    color:#fff;border-radius:var(--radius);
-    padding:26px 20px 28px;text-align:center;
+    color:#fff;
+    border-radius:var(--radius);
+    padding:26px 20px 28px;
+    text-align:center;
     box-shadow:0 8px 24px rgba(0,0,0,.08);
-    margin-bottom:32px;
+    margin-bottom:28px;
   }
-  header h1{margin:0;font-size:clamp(22px,4vw,34px);line-height:1.18;font-weight:700;}
-  header .sub{margin-top:6px;opacity:.95;font-size:1.05rem;font-weight:500;}
+  header h1 {margin:0;font-size:clamp(22px,4vw,34px);font-weight:700;line-height:1.18;}
+  header .sub {margin-top:6px;font-size:1.05rem;opacity:.95;font-weight:500;}
 
+  /* Hero */
   .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8px auto 32px;
-  max-width: 900px;         /* matches the Cheat Sheet */
-  aspect-ratio: 16 / 9;     /* slightly wider than 5/3 */
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.hero img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 26px rgba(0,0,0,.08);
-}
-
+    margin: 12px auto 32px;
+    max-width:900px;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 8px 16px rgba(0,0,0,.08);
+  }
+  .hero img {
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .hero img:hover {transform:scale(1.02);}
 
   /* Cards */
-  .card{background:var(--card);border-radius:var(--radius);
-    padding:20px;margin-top:18px;
+  .card {
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:20px;
+    margin-top:18px;
+    border:1px solid var(--line);
     box-shadow:0 8px 22px rgba(0,0,0,.06);
-    border:1px solid var(--line);}
-  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center;}
-  .tone{background:var(--soft);border-left:6px solid var(--brand);}
-  ul{margin:8px 0 0 20px;} li{margin:.25rem 0;line-height:1.55;}
+  }
+  .card h2 {
+    margin:0 0 10px;
+    font-size:1.2rem;
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .tone {
+    background:var(--soft);
+    border-left:6px solid var(--brand);
+  }
 
-  /* Buttons + layout */
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px;}
-  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
-    padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer;
-    text-align:center;transition:all .25s ease;}
-  .btn:hover{transform:translateY(-1px);opacity:.9;}
-  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+  ul {margin:8px 0 0 20px;}
+  li {margin:.25rem 0;line-height:1.55;}
 
-  footer{text-align:center;font-size:1.05rem;color:#0D0D0E;margin-top:52px;margin-bottom:60px;
-    font-weight:600;line-height:1.7;}
+  /* Buttons — outline default, coral hover */
+  .cta-row {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:26px;
+  }
+
+  .btn {
+    padding:12px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:1rem;
+    cursor:pointer;
+    border:2px solid var(--brand);
+    background:#fff;
+    color:var(--brand);
+    transition:all .25s ease;
+    display:inline-block;
+  }
+
+  .btn:hover {
+    background:var(--brand);
+    color:#fff;
+    transform:translateY(-2px);
+  }
+
+  footer {
+    text-align:center;
+    font-size:1.05rem;
+    margin-top:52px;
+    margin-bottom:60px;
+    font-weight:600;
+    line-height:1.7;
+  }
   footer strong{color:#FC8B73;}
 
-  /* Mobile polish */
+  /* Mobile */
   @media(max-width:600px){
     header{padding:20px 14px;}
-    .card{padding:16px;}
+    .hero{margin-top:14px;}
     .btn{width:100%;max-width:300px;}
-    .hero{margin-top:12px;}
   }
 
-  /* Print-friendly */
-  @media print{
-    @page{size:A4;margin:18mm;}
-    .cta-row,.brand img{display:none!important;}
-    section.card{box-shadow:none!important;border:1px solid #e8e8e8!important;border-radius:8px!important;}
+  /* Print */
+  @media print {
+    @page {size:A4;margin:18mm;}
+    .cta-row,.brand img,.back {display:none!important;}
     header{background:#fff!important;color:#000!important;border:1px solid #e8e8e8!important;}
-    a{color:#000!important;text-decoration:underline!important;}
     html,body{background:#fff!important;}
   }
-  @media (prefers-color-scheme: dark) {
-  html, body {
-    background: #F7F7F7 !important;
-    color: var(--ink) !important;
+
+  /* Dark Override */
+  @media(prefers-color-scheme:dark){
+    html,body {background:#FFF!important;color:var(--ink)!important;}
   }
-  header {
-    background: var(--brand) !important;
-    color: #fff !important;
-  }
-  section.card, .card, footer {
-    background: #FFFFFF !important;
-    color: var(--ink) !important;
-  }
-  .btn, .btn.primary {
-    background: var(--brand) !important;
-    color: #fff !important;
-  }
-  .btn.ghost {
-    background: #fff !important;
-    color: var(--brand) !important;
-    border-color: var(--brand) !important;
-  }
-}
 
 </style>
 </head>
@@ -137,7 +158,12 @@
 <div class="wrap">
 
   <div class="brand">
-    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo">
+    <img src="https://cdn.artificialmomentum.com/logo.png" alt="">
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="back">
+    <a href="/rtr-hub.html">← Back to Hub</a>
   </div>
 
   <header>
@@ -146,7 +172,7 @@
   </header>
 
   <figure class="hero">
-    <img src="mid-luteal-meal.png" alt="Evening wind-down bowl with salmon, quinoa, and roasted vegetables">
+    <img src="mid-luteal-meal.jpg" alt="Evening wind-down bowl with salmon, quinoa, and roasted vegetables">
   </figure>
 
   <section class="card tone">
@@ -183,7 +209,8 @@
 
   <div class="cta-row">
     <a class="btn" href="day2-cheatsheet.html">← Back to Cheat Sheet</a>
-    <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+    <a class="btn" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+    <button class="btn" onclick="window.print()">📄 Download PDF</button>
   </div>
 
   <footer>
