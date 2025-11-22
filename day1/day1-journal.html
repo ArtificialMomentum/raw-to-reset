@@ -75,19 +75,18 @@
     gap:.5rem;
   }
 
-  /* Textareas */
-  textarea.entry{
-    width:100%;
-    min-height:130px;
-    margin-top:14px;
-    padding:14px 16px;
-    border:1px solid var(--line);
-    border-radius:16px;
-    resize:vertical;
-    font-size:1rem;
-    font-family:inherit;
-    box-sizing:border-box;
-  }
+textarea.entry{
+  width:100%;
+  min-height:130px;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  resize:none;                    /* No resize handle */
+  overflow:hidden;                /* Smooth auto-grow */
+  box-sizing:border-box;
+  font-size:1rem;
+  line-height:1.55;
+}
 
   /* CTA Buttons */
   .cta-row{
@@ -139,7 +138,28 @@
     .btn:hover{background:var(--brand)!important;color:#fff!important;}
   }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const areas = document.querySelectorAll("textarea.entry");
+
+  areas.forEach(area => {
+    // Auto-expand on input
+    area.addEventListener("input", function() {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+    });
+
+    // Expand on page load if browser restores content
+    area.style.height = "auto";
+    area.style.height = area.scrollHeight + "px";
+  });
+});
+</script>
+
+
 </head>
+
 
 <body>
 <div class="wrap">

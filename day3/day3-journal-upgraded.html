@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Day 3 Journal — Raw to Reset</title>
+<style>
+  :root {
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+  }
+  html,body {
+    margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap {max-width:900px;margin:28px auto 64px;padding:0 18px}
+  .brand {text-align:center;margin-bottom:18px}
+  .brand img {width:120px;height:auto}
+  header {
+    background:var(--brand);color:#fff;border-radius:var(--radius);
+    padding:26px 20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)
+  }
+  .hero {margin:20px auto 32px;max-width:900px;border-radius:20px;overflow:hidden;
+    box-shadow:0 8px 16px rgba(0,0,0,.08)}
+  .hero img {width:100%;display:block}
+  section.card {
+    background:var(--card);border-radius:var(--radius);padding:20px;margin-top:18px;
+    border:1px solid var(--line);box-shadow:0 8px 22px rgba(0,0,0,.06)
+  }
+  .tone {background:var(--soft);border-left:6px solid var(--brand)}
+  textarea.entry {
+    width:100%;min-height:130px;margin-top:10px;padding:12px 14px;
+    border:1px solid var(--line);border-radius:12px;resize:vertical
+  }
+  .cta-row {display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+  .btn {
+    background:#fff;color:var(--brand);border:2px solid var(--brand);
+    border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;
+    text-decoration:none;
+  }
+  .btn:hover {background:var(--brand);color:#fff;}
+  footer {
+    text-align:center;font-size:1.05rem;margin:52px 0 60px;
+    font-weight:600;line-height:1.7
+  }
+  footer strong {color:var(--brand)}
+  @media (prefers-color-scheme: dark) {
+    :root {color-scheme: light !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum"></div>
+  <header>
+    <h1>Day 3 — Journal Reflection</h1>
+    <div class="sub">You’re not lazy — you need fuel</div>
+  </header>
+  <figure class="hero">
+    <img src="workout-prep.jpg" alt="">
+  </figure>
+
+  <section class="card tone">
+    <h2>💬 Grounding Note</h2>
+    <p>Today is about grace...</p>
+  </section>
+
+  <form name="day3-journal" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="day3-journal" />
+    <input type="hidden" name="page" value="Day 3 Journal" />
+
+    <section class="card">
+      <h2>🍽 Energy Check-In</h2>
+      <textarea class="entry" name="energy_check"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>💗 Self-Talk Audit</h2>
+      <textarea class="entry" name="self_talk_audit"></textarea>
+    </section>
+
+    <div style="text-align:center;margin-top:28px;">
+      <p>When you're finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong></p>
+      <div class="cta-row">
+        <button type="submit" class="btn">Share with Diana</button>
+        <button type="button" onclick="window.print()" class="btn">🗂️ Keep Private Copy</button>
+        <a class="btn" href="https://raw.artificialmomentum.com/day3/day3-cheatsheet.html">← Back to Cheat Sheet</a>
+      </div>
+    </div>
+  </form>
+
+  <footer>💫 Grace isn’t slowing down — it’s syncing up. <strong>Fuel first. Guilt never.</strong></footer>
+</div>
+</body>
+</html>
