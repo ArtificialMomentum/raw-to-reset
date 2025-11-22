@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+
+  <title>Day 1 Video — Raw to Reset</title>
+  <meta name="description" content="Day 1 of your 5-Day Raw to Reset." />
+
+  <style>
+    :root {
+      --brand:#FC8B73;
+      --ink:#0D0D0E;
+      --card:#FFFFFF;
+      --line:#ffd7cc;
+      --radius:18px;
+    }
+
+    html, body {
+      margin:0;
+      padding:0;
+      background:#F7F7F7;
+      color:var(--ink);
+      font-family:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .wrap { max-width:900px; margin:28px auto 64px; padding:0 18px; }
+
+    /* Breadcrumb */
+    .back {
+      margin:4px 0 16px;
+      text-align:left;
+    }
+    .back a {
+      color:#777;
+      font-size:.95rem;
+      text-decoration:none;
+    }
+    .back a:hover { color:var(--brand); }
+
+    /* Header */
+    header {
+      background:var(--brand);
+      padding:26px 20px;
+      border-radius:var(--radius);
+      text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+      max-width:620px;
+      margin:0 auto 28px;
+      color:#fff;
+    }
+
+    h1 {
+      margin:0;
+      font-size:clamp(24px,4vw,34px);
+      line-height:1.15;
+      font-weight:700;
+    }
+
+    .sub {
+      margin-top:6px;
+      opacity:.95;
+      font-size:1.05rem;
+      font-weight:500;
+    }
+
+    /* Video Card */
+    .video-card {
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      border:1px solid var(--line);
+      box-shadow:0 8px 22px rgba(0,0,0,.06);
+      margin-top:24px;
+    }
+
+    .player {
+      display:flex;
+      justify-content:center;
+      margin:10px 0 22px;
+    }
+
+    .player iframe {
+      width:100%;
+      max-width:420px;
+      aspect-ratio:9/16;
+      border:0;
+      border-radius:14px;
+      background:#000;
+    }
+
+    @media (min-width:768px) {
+      .player iframe { max-width:480px; }
+    }
+
+    /* Buttons */
+    .cta-row {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin:24px 0;
+    }
+
+    .btn {
+      display:inline-block;
+      background:#fff;
+      color:var(--brand);
+      border:2px solid var(--brand);
+      padding:12px 22px;
+      border-radius:999px;
+      font-weight:700;
+      text-decoration:none;
+      cursor:pointer;
+      transition:all .25s ease;
+    }
+
+    .btn:hover {
+      background:var(--brand);
+      color:#fff;
+      transform:translateY(-1px);
+    }
+
+    .muted {
+      font-size:.95rem;
+      opacity:.8;
+      text-align:center;
+      margin-top:6px;
+    }
+
+    footer {
+      margin:60px 0 10px;
+      text-align:center;
+      font-size:.9rem;
+      opacity:.75;
+    }
+
+    /* Dark mode fix */
+    @media (prefers-color-scheme: dark){
+      :root { color-scheme: light !important; }
+      html,body,footer {
+        background:#FFFFFF !important;
+        color:#0D0D0E !important;
+      }
+      header {
+        background:#FC8B73 !important;
+        color:#fff !important;
+      }
+      .video-card {
+        background:#fff !important;
+        color:#0D0D0E !important;
+      }
+      .btn {
+        background:#fff !important;
+        color:var(--brand) !important;
+        border-color:var(--brand) !important;
+      }
+      .btn:hover {
+        background:var(--brand) !important;
+        color:#fff !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Breadcrumb -->
+    <div class="back"><a href="/rtr-hub.html">← Back to Hub</a></div>
+
+    <header>
+      <h1>Day 1 · Raw to Reset</h1>
+      <p class="sub"><strong>Welcome to your 5-day reset</strong></p>
+    </header>
+
+    <section class="video-card">
+
+      <div class="player">
+        <iframe
+          src="https://iframe.mediadelivery.net/embed/504868/e67fe29d-4a9c-4950-86d6-01ef6189339f?autoplay=false&responsive=true"
+          loading="lazy"
+          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn" href="day1-cheatsheet.html">Cheat Sheet</a>
+        <a class="btn" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+      </div>
+
+      <p class="muted">
+        Tip: If video is choppy on mobile, switch Wi-Fi or tap the ••• menu to <em>Download</em> and watch locally.<br>
+        <a href="day1vid.mp4" download>Download the video</a>
+      </p>
+
+    </section>
+
+    <footer>© Artificial Momentum · Diana Air Coaching × ECHO</footer>
+
+  </div>
+</body>
+</html>
