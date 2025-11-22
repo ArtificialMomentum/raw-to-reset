@@ -25,16 +25,24 @@
       padding:0;
       background:#F7F7F7;
       color:var(--ink);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      font-family:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
 
-    .wrap {
-      max-width:900px;
-      margin:28px auto 64px;
-      padding:0 18px;
-    }
+    .wrap { max-width:900px; margin:28px auto 64px; padding:0 18px; }
 
-    /* ------- Header ------- */
+    /* Breadcrumb */
+    .back {
+      margin:4px 0 16px;
+      text-align:left;
+    }
+    .back a {
+      color:#777;
+      font-size:.95rem;
+      text-decoration:none;
+    }
+    .back a:hover { color:var(--brand); }
+
+    /* Header */
     header {
       background:var(--brand);
       padding:26px 20px;
@@ -42,7 +50,7 @@
       text-align:center;
       box-shadow:0 8px 24px rgba(0,0,0,.08);
       max-width:620px;
-      margin:0 auto 16px;
+      margin:0 auto 28px;
       color:#fff;
     }
 
@@ -60,54 +68,42 @@
       font-weight:500;
     }
 
-    /* ------- Breadcrumb (matches cheat sheets & recipes) ------- */
-    .breadcrumb {
-      display:block;
-      margin:8px 0 22px 0;
-      color:#666;
-      opacity:0.75;
-      font-size:0.95rem;
-      text-decoration:none;
-      transition:all .25s ease;
+    /* Video Card */
+    .video-card {
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      border:1px solid var(--line);
+      box-shadow:0 8px 22px rgba(0,0,0,.06);
+      margin-top:24px;
     }
 
-    .breadcrumb:hover {
-      color:var(--brand);
-      opacity:1;
-    }
-
-    /* ------- Video ------- */
     .player {
       display:flex;
       justify-content:center;
-      margin:34px 0 22px;
+      margin:10px 0 22px;
     }
 
     .player iframe {
       width:100%;
       max-width:420px;
-      aspect-ratio:9 / 16;
+      aspect-ratio:9/16;
       border:0;
       border-radius:14px;
       background:#000;
-      transition:transform .3s ease;
     }
 
-    @media (min-width:768px){
+    @media (min-width:768px) {
       .player iframe { max-width:480px; }
     }
 
-    .player iframe:hover {
-      transform:scale(1.01);
-    }
-
-    /* ------- Unified CTA Buttons (outlined) ------- */
+    /* Buttons */
     .cta-row {
       display:flex;
       gap:12px;
       flex-wrap:wrap;
       justify-content:center;
-      margin:24px 0 16px;
+      margin:24px 0;
     }
 
     .btn {
@@ -115,7 +111,7 @@
       background:#fff;
       color:var(--brand);
       border:2px solid var(--brand);
-      padding:12px 24px;
+      padding:12px 22px;
       border-radius:999px;
       font-weight:700;
       text-decoration:none;
@@ -127,25 +123,13 @@
       background:var(--brand);
       color:#fff;
       transform:translateY(-1px);
-      box-shadow:0 4px 12px rgba(252,139,115,0.35);
     }
 
-    /* ------- Supporting Text ------- */
     .muted {
       font-size:.95rem;
       opacity:.8;
       text-align:center;
       margin-top:6px;
-    }
-
-    .muted a {
-      color:var(--brand);
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    .muted a:hover {
-      text-decoration:underline;
     }
 
     footer {
@@ -155,16 +139,20 @@
       opacity:.75;
     }
 
-    /* ------- Dark Mode Fix ------- */
+    /* Dark mode fix */
     @media (prefers-color-scheme: dark){
       :root { color-scheme: light !important; }
-      html,body {
+      html,body,footer {
         background:#FFFFFF !important;
         color:#0D0D0E !important;
       }
       header {
         background:#FC8B73 !important;
         color:#fff !important;
+      }
+      .video-card {
+        background:#fff !important;
+        color:#0D0D0E !important;
       }
       .btn {
         background:#fff !important;
@@ -182,34 +170,36 @@
 <body>
   <div class="wrap">
 
-    <!-- Breadcrumb under header (proper placement) -->
-    <a href="/rtr-hub.html" class="breadcrumb">← Back to Hub</a>
+    <!-- Breadcrumb -->
+    <div class="back"><a href="/rtr-hub.html">← Back to Hub</a></div>
 
     <header>
       <h1>Day 1 · Raw to Reset</h1>
       <p class="sub"><strong>Welcome to your 5-day reset</strong></p>
     </header>
 
-    <!-- Video (same size as original) -->
-    <div class="player">
-      <iframe 
-        src="https://iframe.mediadelivery.net/embed/504868/e67fe29d-4a9c-4950-86d6-01ef6189339f?autoplay=false&responsive=true"
-        loading="lazy"
-        allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <section class="video-card">
 
-    <!-- Unified Buttons -->
-    <div class="cta-row">
-      <a class="btn" href="day1-cheatsheet.html">Get Today’s Cheatsheet</a>
-      <a class="btn" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-    </div>
+      <div class="player">
+        <iframe
+          src="https://iframe.mediadelivery.net/embed/504868/e67fe29d-4a9c-4950-86d6-01ef6189339f?autoplay=false&responsive=true"
+          loading="lazy"
+          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-    <p class="muted">
-      Tip: If video is choppy on mobile, switch Wi-Fi or tap the ••• menu to download and watch locally.<br>
-      <a href="day1vid.mp4" download>Download the video</a>
-    </p>
+      <div class="cta-row">
+        <a class="btn" href="day1-cheatsheet.html">Cheat Sheet</a>
+        <a class="btn" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+      </div>
+
+      <p class="muted">
+        Tip: If video is choppy on mobile, switch Wi-Fi or tap the ••• menu to <em>Download</em> and watch locally.<br>
+        <a href="day1vid.mp4" download>Download the video</a>
+      </p>
+
+    </section>
 
     <footer>© Artificial Momentum · Diana Air Coaching × ECHO</footer>
 
