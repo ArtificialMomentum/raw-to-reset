@@ -155,60 +155,75 @@
     There’s nothing to fix — only to listen, decode, and support.</p>
   </section>
 
-  <!-- Journal Form -->
-  <form name="day1-journal" method="POST" data-netlify="true" action="/thank-you.html">
-    
-    <input type="hidden" name="form-name" value="day1-journal" />
-    <input type="hidden" name="page" value="Day 1 Journal" />
+<!-- Journal Form -->
+<form name="day1-journal" method="POST" data-netlify="true" action="/thank-you.html">
 
-    <section class="card">
-      <h2>🩸 Body Check-in</h2>
-      <textarea class="entry" name="body_checkin" placeholder="How does my body feel today — physically, emotionally, energetically?"></textarea>
-    </section>
+  <input type="hidden" name="form-name" value="day1-journal" />
+  <input type="hidden" name="page" value="Day 1 Journal" />
 
-    <section class="card">
-      <h2>🌙 Signals &amp; Stories</h2>
-      <textarea class="entry" name="signals_stories" placeholder="Where did I notice tension, ease, or craving?"></textarea>
-    </section>
+  <!-- Body Check-in -->
+  <section class="card">
+    <h2>🩸 Body Check-in</h2>
+    <textarea class="entry upgraded"
+      name="body_checkin"
+      placeholder="How does my body feel today — physically, emotionally, energetically?"></textarea>
+  </section>
 
-    <section class="card">
-      <h2>🌿 Integration Prompt</h2>
-      <textarea class="entry" name="integration_prompt" placeholder="One small action to stay in rhythm tomorrow..."></textarea>
-    </section>
+  <!-- Signals & Stories -->
+  <section class="card">
+    <h2>🍌 Signals &amp; Stories</h2>
+    <textarea class="entry upgraded"
+      name="signals_stories"
+      placeholder="Where did I notice tension, ease, or craving?"></textarea>
+  </section>
+
+  <!-- Integration -->
+  <section class="card">
+    <h2>🌿 Integration Prompt</h2>
+    <textarea class="entry upgraded"
+      name="integration_prompt"
+      placeholder="One small action to stay in rhythm tomorrow..."></textarea>
+  </section>
+
 
 <!-- CTA Section — Clean, Important White Card -->
+<!-- CTA Section -->
 <div class="card"
-     style="
-        text-align:center;
-        margin-top:28px;
-        padding:28px 22px;
-        border:2px solid var(--line);
-        box-shadow:0 6px 14px rgba(0,0,0,0.04);
-     ">
+     style="margin-top:28px;
+            padding:26px 20px;
+            border:2px solid var(--line);
+            background:#fff;
+            border-radius:var(--radius);
+            text-align:center;">
 
   <p style="margin-bottom:18px;font-size:0.98rem;opacity:0.9;">
-    When you’re finished reflecting, you can <strong>share your thoughts</strong>  
-    or <strong>keep them private.</strong>
+    When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong>
   </p>
 
   <div class="cta-row">
 
     <!-- Share Button -->
-    <button type="submit" class="btn">
+    <button type="submit" class="btn"
+      style="border-width:2px;">
       Share with Diana + Get a Copy
     </button>
 
-    <!-- Private Copy Button -->
-    <button type="button" onclick="window.print()" class="btn">
+    <!-- Private Copy -->
+    <button type="button"
+            onclick="window.print()"
+            class="btn"
+            style="border-width:2px;">
       🗂️ Keep Private Copy
     </button>
 
     <!-- Back Link -->
-    <a class="btn" href="https://raw.artificialmomentum.com/day1/day1-cheatsheet.html">
-      ← Back to Cheat Sheet
+    <a class="btn" style="border-width:2px;" 
+       href="https://raw.artificialmomentum.com/day1/day1-cheatsheet.html">
+       ← Back to Cheat Sheet
     </a>
 
   </div>
+
 </div>
     </div>
   </form>
