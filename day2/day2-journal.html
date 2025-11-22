@@ -3,83 +3,150 @@
 <head>
 <meta charset="utf-8" />
 
-    <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+<link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- 🌓 Dark mode safety -->
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark">
+
 <title>Day 2 Journal — Raw to Reset</title>
+
 <style>
   :root {
-    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
-    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+    --brand:#FC8B73;
+    --ink:#0D0D0E;
+    --card:#FFFFFF;
+    --soft:#FFF7F4;
+    --line:#ffd7cc;
+    --radius:18px;
   }
-  html,body {
-    margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+
+  html,body{
+    margin:0;padding:0;
+    background:#F7F7F7;
+    color:var(--ink);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
-  .wrap {max-width:900px;margin:28px auto 64px;padding:0 18px}
-  .brand {text-align:center;margin-bottom:18px}
-  .brand img {width:120px;height:auto}
-  header {
-    background:var(--brand);color:#fff;border-radius:var(--radius);
-    padding:26px 20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)
-  }
-  .hero {margin:20px auto 32px;max-width:900px;border-radius:20px;overflow:hidden;
-    box-shadow:0 8px 16px rgba(0,0,0,.08)}
-  .hero img {width:100%;display:block}
-  section.card {
-    background:var(--card);border-radius:var(--radius);padding:20px;margin-top:18px;
-    border:1px solid var(--line);box-shadow:0 8px 22px rgba(0,0,0,.06)
-  }
-  .tone {background:var(--soft);border-left:6px solid var(--brand)}
-  textarea.entry {
-    width:100%;min-height:130px;margin-top:10px;padding:12px 14px;
-    border:1px solid var(--line);border-radius:12px;resize:vertical
-  }
-  .cta-row {display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
-  .btn {
-    background:var(--brand);color:#fff;border:none;border-radius:999px;
-    padding:12px 22px;font-weight:700;cursor:pointer
-  }
-  .btn.ghost {background:#fff;color:var(--brand);border:2px solid var(--brand)}
-  footer {
-    text-align:center;font-size:1.05rem;margin:52px 0 60px;
-    font-weight:600;line-height:1.7
-  }
-  footer strong {color:var(--brand)}
 
-  /* 🌓 Force light mode everywhere — keep header coral */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      color-scheme: light !important;
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+
+  /* Breadcrumb */
+  .back {
+    margin:4px 0 16px;
+    text-align:left;
+  }
+  .back a {
+    color:#777;
+    font-size:.95rem;
+    text-decoration:none;
+  }
+  .back a:hover { color:var(--brand); }
+
+  .brand{text-align:center;margin-bottom:18px}
+  .brand img{width:120px;height:auto}
+
+  header{
+    background:var(--brand);color:#fff;
+    border-radius:var(--radius);
+    padding:26px 20px;text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.10)
+  }
+
+  .hero {
+    margin:20px auto 32px;max-width:900px;
+    border-radius:20px;overflow:hidden;
+    box-shadow:0 8px 16px rgba(0,0,0,.08)
+  }
+  .hero img{width:100%;display:block}
+
+  /* CARD */
+  section.card{
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:20px;margin-top:18px;
+    border:1px solid var(--line);
+    box-shadow:0 8px 22px rgba(0,0,0,.06)
+  }
+
+  .tone {
+    background:var(--soft);
+    border-left:6px solid var(--brand)
+  }
+
+  /* TEXTAREA */
+  textarea.entry{
+    width:100%;
+    min-height:130px;
+    margin-top:10px;
+    padding:12px 14px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    resize:vertical;
+    font-size:1rem;
+    font-family:inherit;
+  }
+
+  /* CTA Buttons */
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:28px
+  }
+
+  .btn{
+    background:#fff;
+    color:var(--brand);
+    border:2px solid var(--brand);
+    border-radius:999px;
+    padding:12px 22px;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    transition:all .25s ease;
+  }
+
+  .btn:hover{
+    background:var(--brand);
+    color:#fff;
+    transform:translateY(-1px);
+  }
+
+  footer{
+    text-align:center;
+    font-size:1.05rem;
+    margin:52px 0 60px;
+    font-weight:600;
+    line-height:1.7
+  }
+  footer strong{color:var(--brand)}
+
+  /* Light mode enforcement */
+  @media (prefers-color-scheme: dark){
+    :root{color-scheme:light!important;}
+    html,body,section.card,.card,footer,.tone,textarea.entry{
+      background:#FFFFFF!important;
+      color:#0D0D0E!important;
+      border-color:#ffd7cc!important;
     }
-    html, body, section.card, .card, footer, .tone, textarea.entry {
-      background: #FFFFFF !important;
-      color: #0D0D0E !important;
-      border-color: #ffd7cc !important;
-    }
-    header {
-      background: #FC8B73 !important;
-      color: #FFFFFF !important;
-    }
-    .btn, .btn.primary {
-      background: #FC8B73 !important;
-      color: #fff !important;
-    }
-    .btn.ghost {
-      background: #fff !important;
-      color: #FC8B73 !important;
-      border-color: #FC8B73 !important;
-    }
+    header{background:#FC8B73!important;color:#FFFFFF!important;}
+    .btn{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important;}
+    .btn:hover{background:var(--brand)!important;color:#fff!important;}
   }
 </style>
 </head>
 
 <body>
 <div class="wrap">
-  <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum"></div>
+
+  <div class="brand">
+    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum">
+  </div>
+
+  <!-- Back breadcrumb -->
+  <div class="back"><a href="/rtr-hub.html">← Back to Hub</a></div>
 
   <header>
     <h1>Day 2 — Journal Reflection</h1>
@@ -92,71 +159,73 @@
 
   <section class="card tone">
     <h2>💬 Grounding Note</h2>
-    <p>Some days in the luteal phase feel like the curtain lifts and you can’t pretend everything’s fine.
-    You’re not crazy — your hormones are pulling truth to the surface. This is honesty chemistry.  
-    Use this space to notice what your body is showing you about what no longer fits.</p>
+    <p>
+      Some days in the luteal phase feel like the curtain lifts and you can’t pretend everything’s fine.
+      You’re not crazy — your hormones are pulling truth to the surface. This is honesty chemistry.
+      Use this space to notice what your body is showing you about what no longer fits.
+    </p>
   </section>
 
   <!-- Journal Form -->
   <form name="day2-journal" method="POST" data-netlify="true" action="/thank-you.html">
+
     <input type="hidden" name="form-name" value="day2-journal" />
     <input type="hidden" name="page" value="Day 2 Journal" />
 
     <section class="card">
       <h2>💔 Emotional Honesty</h2>
-      <textarea class="entry" name="emotional_honesty" placeholder="What truths or feelings surfaced today that I usually hide?"></textarea>
+      <textarea class="entry" name="emotional_honesty"
+        placeholder="What truths or feelings surfaced today that I usually hide?"></textarea>
     </section>
 
     <section class="card">
       <h2>🏡 Environment Check</h2>
-      <textarea class="entry" name="environment_check" placeholder="Where does my environment or routine feel mismatched to how I feel?"></textarea>
+      <textarea class="entry" name="environment_check"
+        placeholder="Where does my environment or routine feel mismatched to how I feel?"></textarea>
     </section>
 
-    <!-- CTA Section -->
-    <div class="card tone" 
-      style="text-align:center;
-            margin-top:28px;
-            padding:26px 20px;
-            border:none;
-            background:linear-gradient(to top, rgba(252,139,115,0.15) 0%, rgba(252,139,115,0.06) 60%, rgba(255,255,255,0) 100%);
-            border-left:6px solid var(--brand);
-            border-radius:var(--radius);">
+    <!-- CTA SECTION, INVISIBLE CARD -->
+    <div style="text-align:center;margin-top:38px;">
 
-      <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
-        When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong>
+      <p style="margin-bottom:18px;font-size:0.98rem;opacity:0.9;">
+        When you’re finished reflecting, you can <strong>share your thoughts</strong> or
+        <strong>keep them private.</strong>
       </p>
 
       <div class="cta-row">
-        <button type="submit" class="btn">Share with Diana</button>
-        <button type="button" onclick="window.print()" class="btn ghost">🗂️ Keep Private Copy</button>
-        <a class="btn ghost" href="https://raw.artificialmomentum.com/day2/day2-cheatsheet.html">← Back to Cheat Sheet</a>
+        <button type="submit" class="btn">Share with Diana + Get a Copy</button>
+        <button type="button" onclick="window.print()" class="btn">🗂️ Keep Private Copy</button>
+        <a class="btn" href="https://raw.artificialmomentum.com/day2/day2-cheatsheet.html">← Back to Cheat Sheet</a>
       </div>
+
     </div>
+
   </form>
 
-  <footer>💫 The luteal phase isn’t your undoing — it’s your honesty window. <strong>Listen softly; truth has purpose.</strong></footer>
+  <footer>
+    💫 The luteal phase isn’t your undoing — it’s your honesty window.
+    <strong>Listen softly; truth has purpose.</strong>
+  </footer>
+
 </div>
 
 <script>
-  // Automatically attach a timestamp to the form before it's submitted
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[name="day2-journal"]');
     if (form) {
       form.addEventListener('submit', function() {
-        let timestampInput = form.querySelector('input[name="timestamp"]');
-        if (!timestampInput) {
-          timestampInput = document.createElement('input');
-          timestampInput.type = 'hidden';
-          timestampInput.name = 'timestamp';
-          form.appendChild(timestampInput);
+        let timestamp = form.querySelector('input[name="timestamp"]');
+        if (!timestamp) {
+          timestamp = document.createElement('input');
+          timestamp.type = 'hidden';
+          timestamp.name = 'timestamp';
+          form.appendChild(timestamp);
         }
-        timestampInput.value = new Date().toISOString();
+        timestamp.value = new Date().toISOString();
       });
     }
   });
 </script>
+
 </body>
 </html>
-
-
-
