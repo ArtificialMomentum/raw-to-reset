@@ -92,4 +92,136 @@
   /* CTA Buttons */
   .cta-row{
     display:flex;
-    flex-w
+    flex-wrap:wrap;
+    gap:14px;
+    justify-content:center;
+    margin-top:28px
+  }
+
+  .btn{
+    background:#fff;
+    color:var(--brand);
+    border:2px solid var(--brand);
+    border-radius:999px;
+    padding:12px 22px;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    transition:all .25s ease;
+  }
+
+  .btn:hover{
+    background:var(--brand);
+    color:#fff;
+    transform:translateY(-1px);
+  }
+
+  footer{
+    text-align:center;
+    font-size:1.05rem;
+    margin:52px 0 60px;
+    font-weight:600;
+    line-height:1.7
+  }
+  footer strong{color:var(--brand)}
+
+  /* Light mode enforcement */
+  @media (prefers-color-scheme: dark){
+    :root{color-scheme:light!important;}
+    html,body,section.card,.card,footer,.tone,textarea.entry{
+      background:#FFFFFF!important;
+      color:#0D0D0E!important;
+      border-color:#ffd7cc!important;
+    }
+    header{background:#FC8B73!important;color:#FFFFFF!important;}
+    .btn{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important;}
+    .btn:hover{background:var(--brand)!important;color:#fff!important;}
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum"></div>
+
+  <!-- Breadcrumb -->
+  <div class="back"><a href="/rtr-hub.html">← Back to Hub</a></div>
+
+  <header>
+    <h1>Day 1 — Journal Reflection</h1>
+    <div class="sub">You’re not broken — you’re just out of rhythm</div>
+  </header>
+
+  <figure class="hero">
+    <img src="three_women_in_gym_gear_smiling.jpg" alt="">
+  </figure>
+
+  <section class="card">
+    <h2>💬 Grounding Note</h2>
+    <p>Welcome to Day 1. Remember: you’re learning a language your body has always been speaking.  
+    There’s nothing to fix — only to listen, decode, and support.</p>
+  </section>
+
+  <!-- Journal Form -->
+  <form name="day1-journal" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="day1-journal" />
+    <input type="hidden" name="page" value="Day 1 Journal" />
+
+    <section class="card">
+      <h2>🩸 Body Check-in</h2>
+      <textarea class="entry" name="body_checkin"
+      placeholder="How does my body feel today — physically, emotionally, energetically?"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>🍌 Signals &amp; Stories</h2>
+      <textarea class="entry" name="signals_stories"
+      placeholder="Where did I notice tension, ease, or craving?"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>🌿 Integration Prompt</h2>
+      <textarea class="entry" name="integration_prompt"
+      placeholder="One small action to stay in rhythm tomorrow..."></textarea>
+    </section>
+
+    <!-- Invisible CTA container -->
+    <div style="margin-top:38px; text-align:center;">
+      <div class="cta-row">
+        <button type="submit" class="btn">Share with Diana + Get a Copy</button>
+        <button type="button" onclick="window.print()" class="btn">📄 Keep Private Copy</button>
+        <a class="btn" href="/day1/day1-cheatsheet.html">← Back to Cheat Sheet</a>
+      </div>
+    </div>
+  </form>
+
+  <footer>
+    💫 Each note you write is a signal of awareness.  
+    <strong>Tomorrow, rhythm builds momentum.</strong>
+  </footer>
+
+</div>
+
+<script>
+  /* Timestamp injection */
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[name="day1-journal"]');
+    if (form) {
+      form.addEventListener('submit', function() {
+        let timestampInput = form.querySelector('input[name="timestamp"]');
+        if (!timestampInput) {
+          timestampInput = document.createElement('input');
+          timestampInput.type = 'hidden';
+          timestampInput.name = 'timestamp';
+          form.appendChild(timestampInput);
+        }
+        timestampInput.value = new Date().toISOString();
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
