@@ -3,124 +3,187 @@
 <head>
 <meta charset="utf-8" />
 
-    <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+<link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark">
+<meta name="supported-color-schemes" content="light light">
 <title>Day 4 Recipe — Creamy Red Lentil Soup</title>
+
 <style>
-  :root {
+  :root{
     --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
     --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
   }
-  html,body {
-    margin:0; padding:0; background:#F7F7F7; color:var(--ink);
+
+  html,body{
+    margin:0;padding:0;
+    background:#F7F7F7;color:var(--ink);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
+
   .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
-  .brand{display:flex;justify-content:center;align-items:center;margin-bottom:12px}
-  .brand img{width:clamp(88px,9vw,140px);height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
-  header{background:var(--brand);color:#fff;border-radius:var(--radius);padding:22px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)}
-  header h1{margin:0;font-size:clamp(22px,4.2vw,36px);line-height:1.15}
-  .sub{opacity:.95;margin-top:6px}
-  
-  .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8px auto 32px;
-  max-width: 900px;       /* same as text width */
-  aspect-ratio: 16 / 9;   /* shallow, cinematic feel */
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-}
 
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
+  /* Breadcrumb */
+  .back {
+    margin: 4px 0 12px;
+    font-size: .9rem;
+    color: #666;
+    text-align: left;
+  }
+  .back a {
+    color:#666;
+    text-decoration:none;
+  }
+  .back a:hover {
+    color:#FC8B73;
+    text-decoration:underline;
+  }
 
-.hero img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 26px rgba(0,0,0,.08);
-}
-  .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:16px;
-    box-shadow:0 8px 22px rgba(0,0,0,.06);border:1px solid var(--line)}
-  .card h2{margin:0 0 10px;font-size:1.2rem;display:flex;gap:.5rem;align-items:center}
-  ul{margin:8px 0 0 20px}
-  li{margin:.25rem 0}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px}
-  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
-    padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer;transition:all 0.25s ease}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(252,139,115,.35)}
-  .btn.secondary{background:#2D2D2D}
-  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-.btn.primary{background:var(--brand);color:#fff;border:none}
-.btn.primary:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(252,139,115,.35)}
-  .btn.ghost:hover{background:#FC8B73;color:#fff}
-  footer{text-align:center;font-size:1.1rem;color:#0D0D0E;margin-top:48px;margin-bottom:60px;
-    font-weight:600;line-height:1.7;animation:slideUpFade 1.4s ease-out 0.3s forwards;opacity:0;}
-  footer strong{color:#FC8B73;}
-  @keyframes slideUpFade {
-    0%{opacity:0;transform:translateY(30px);}
-    100%{opacity:1;transform:translateY(0);}
-  }
-  @media (prefers-color-scheme: dark) {
-  html, body {
-    background: #F7F7F7 !important;
-    color: var(--ink) !important;
-  }
+  .brand {display:flex;justify-content:center;align-items:center;margin-bottom:12px;}
+  .brand img {width:clamp(90px, 8vw,120px);height:auto;filter:drop-shadow(0 3px 10px rgba(0,0,0,.08));}
+
   header {
-    background: var(--brand) !important;
-    color: #fff !important;
+    background: var(--brand);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:26px 20px 28px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    margin-bottom:28px;
   }
-  section.card, .card, footer {
-    background: #FFFFFF !important;
-    color: var(--ink) !important;
+  header h1 {margin:0;font-size:clamp(22px,4vw,34px);font-weight:700;line-height:1.18;}
+  header .sub {margin-top:6px;font-size:1.05rem;opacity:.95;font-weight:500;}
+
+  /* Hero */
+  .hero {
+    margin: 12px auto 32px;
+    max-width:900px;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 8px 16px rgba(0,0,0,.08);
   }
-  .btn, .btn.primary {
-    background: var(--brand) !important;
-    color: #fff !important;
+  .hero img {
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .35s ease, box-shadow .35s ease;
   }
-  .btn.ghost {
-    background: #fff !important;
-    color: var(--brand) !important;
-    border-color: var(--brand) !important;
+  .hero img:hover {transform:scale(1.02);}
+
+  /* Cards */
+  .card {
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:20px;
+    margin-top:18px;
+    border:1px solid var(--line);
+    box-shadow:0 8px 22px rgba(0,0,0,.06);
   }
-}
+  .card h2 {
+    margin:0 0 10px;
+    font-size:1.2rem;
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .tone {
+    background:var(--soft);
+    border-left:6px solid var(--brand);
+  }
+
+  ul {margin:8px 0 0 20px;}
+  li {margin:.25rem 0;line-height:1.55;}
+
+  /* Buttons — outline default, coral hover */
+  .cta-row {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:26px;
+  }
+
+  .btn {
+    padding:12px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:1rem;
+    cursor:pointer;
+    border:2px solid var(--brand);
+    background:#fff;
+    color:var(--brand);
+    transition:all .25s ease;
+    display:inline-block;
+  }
+
+  .btn:hover {
+    background:var(--brand);
+    color:#fff;
+    transform:translateY(-2px);
+  }
+
+  footer {
+    text-align:center;
+    font-size:1.05rem;
+    margin-top:52px;
+    margin-bottom:60px;
+    font-weight:600;
+    line-height:1.7;
+  }
+  footer strong{color:#FC8B73;}
+
+  /* Mobile */
+  @media(max-width:600px){
+    header{padding:20px 14px;}
+    .hero{margin-top:14px;}
+    .btn{width:100%;max-width:300px;}
+  }
+
+  /* Print */
+  @media print {
+    @page {size:A4;margin:18mm;}
+    .cta-row,.brand img,.back {display:none!important;}
+    header{background:#fff!important;color:#000!important;border:1px solid #e8e8e8!important;}
+    html,body{background:#fff!important;}
+  }
+
+  /* Dark Override */
+  @media(prefers-color-scheme:dark){
+    html,body {background:#FFF!important;color:var(--ink)!important;}
+  }
 
 </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <div class="brand">
-      <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo">
-    </div>
+  <div class="brand">
+    <img src="https://cdn.artificialmomentum.com/logo.png" alt="">
+  </div>
 
-    <header>
+  <!-- Breadcrumb -->
+  <div class="back">
+    <a href="/rtr-hub.html">← Back to Hub</a>
+  </div>
+
+  <header>
       <h1>Day 4 Recipe — Creamy Red Lentil Soup</h1>
       <div class="sub">Warm, grounding nourishment for your late-luteal calm</div>
     </header>
 
-    <figure class="hero">
+  <figure class="hero">
       <img src="creamy-red-lentil-soup.jpg" alt="Bowl of creamy red lentil soup drizzled with olive oil and herbs">
     </figure>
 
-    <section class="card">
+  <section class="card">
       <h2>🌙 Why This Fits Today</h2>
       <p>During the final stretch before your bleed, your body shifts gears into restoration. Both estrogen and progesterone dip, calling for gentleness and warmth. This creamy red lentil soup stabilizes blood sugar, supports serotonin balance, and offers grounding comfort without heaviness.</p>
     </section>
 
-    <section class="card">
-      <h2>🥣 Base Ingredients</h2>
-      <ul>
-        <li>½ cup red lentils (rinsed)</li>
+  <section class="card">
+    <h2>🥣 Base Ingredients</h2>
+    <ul>
+      <li>½ cup red lentils (rinsed)</li>
         <li>1 small carrot + ½ sweet potato, diced</li>
         <li>½ tsp turmeric + pinch cumin</li>
         <li>1 garlic clove, chopped</li>
@@ -128,34 +191,33 @@
         <li>1 tbsp olive oil (plus extra for drizzling)</li>
         <li>Sea salt + pepper to taste</li>
         <li>Fresh parsley or thyme to finish</li>
-      </ul>
-    </section>
+    </ul>
+  </section>
 
-    <section class="card">
-      <h2>🪷 Optional Add-Ins</h2>
-      <ul>
-        <li>Swirl of plain coconut or Greek yogurt for extra creaminess</li>
+  <section class="card">
+    <h2>🪷 Optional Add-Ins</h2>
+    <ul>
+      <li>Swirl of plain coconut or Greek yogurt for extra creaminess</li>
         <li>½ cup chickpeas or cooked quinoa for added texture</li>
         <li>Lemon wedge on the side for a cleansing finish</li>
-      </ul>
-    </section>
+    </ul>
+  </section>
 
     <section class="card">
-      <h2>🕊 Notes for Your Rhythm</h2>
-      <p>This phase thrives on slower nourishment — warm meals, soft lighting, early evenings. Treat this as your body’s cue to restore rather than push. The nutrients here (magnesium, B-vitamins, plant protein) help your nervous system down-shift into repair mode.</p>
+    <h2>🕊 Notes for Your Rhythm</h2>
+    <p>This phase thrives on slower nourishment — warm meals, soft lighting, early evenings. Treat this as your body’s cue to restore rather than push. The nutrients here (magnesium, B-vitamins, plant protein) help your nervous system down-shift into repair mode.</p>
     </section>
 
-    <div class="cta-row">
-  <a class="btn primary" href="day4-cheatsheet.html">← Back to Cheat Sheet</a>
-  <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
-</div>
-
-
-    <footer>
-      You’re not slowing down — you’re syncing with your body’s wisdom. <strong>This warmth is data you can feel.</strong>
-    </footer>
+  <div class="cta-row">
+    <a class="btn" href="day4-cheatsheet.html">← Back to Cheat Sheet</a>
+    <a class="btn" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+    <button class="btn" onclick="window.print()">📄 Download PDF</button>
   </div>
+
+  <footer>
+    You’re not slowing down — you’re syncing with your body’s wisdom. <strong>This warmth is data you can feel.</strong>
+  </footer>
+
+</div>
 </body>
 </html>
-
-
