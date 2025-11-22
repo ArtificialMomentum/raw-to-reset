@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+    <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Day 5 Journal — Raw to Reset</title>
+<style>
+  :root {
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+  }
+  html,body {
+    margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+  .brand{text-align:center;margin-bottom:18px}
+  .brand img{width:120px;height:auto;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
+  header{
+    background:var(--brand);color:#fff;border-radius:var(--radius);
+    padding:26px 20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)
+  }
+  .hero{margin:20px auto 32px;max-width:900px;border-radius:20px;overflow:hidden;
+    box-shadow:0 8px 16px rgba(0,0,0,.08)}
+  .hero img{width:100%;display:block;object-fit:cover}
+  section.card{
+    background:var(--card);border-radius:var(--radius);padding:20px;margin-top:18px;
+    border:1px solid var(--line);box-shadow:0 8px 22px rgba(0,0,0,.06)
+  }
+  .tone{background:var(--soft);border-left:6px solid var(--brand)}
+  textarea.entry{
+    width:100%;min-height:130px;margin-top:10px;padding:12px 14px;font-size:1rem;
+    border:1px solid var(--line);border-radius:12px;resize:vertical;
+    font-family:inherit;line-height:1.55;background:#fff;
+  }
+  textarea.entry:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px #ffd7cc60}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+  .btn{
+    background:var(--brand);color:#fff;border:none;border-radius:999px;
+    padding:12px 22px;font-weight:700;cursor:pointer;transition:all .25s ease
+  }
+  .btn:hover{transform:translateY(-1px);opacity:.9}
+  .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+  footer{text-align:center;font-size:1.05rem;margin:52px 0 60px;
+    font-weight:600;line-height:1.7}
+  footer strong{color:var(--brand)}
+
+  /* Force light mode */
+  @media (prefers-color-scheme: dark) {
+    :root{color-scheme:light!important;}
+    html,body,section.card,.tone,footer,textarea.entry{
+      background:#FFFFFF!important;color:#0D0D0E!important;border-color:#ffd7cc!important;
+    }
+    header{background:#FC8B73!important;color:#FFFFFF!important;}
+    .btn{background:#FC8B73!important;color:#fff!important;}
+    .btn.ghost{background:#fff!important;color:#FC8B73!important;border-color:#FC8B73!important;}
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum"></div>
+
+  <header>
+    <h1>Day 5 — Journal Reflection</h1>
+    <div class="sub">Anchoring Your Rhythm</div>
+  </header>
+
+  <figure class="hero">
+    <img src="ladies-dining.jpg" alt="Women dining and celebrating together">
+  </figure>
+
+  <section class="card tone">
+    <h2>💬 Grounding Note</h2>
+    <p>You made it. Five days of listening instead of fighting — of decoding your rhythm instead of doubting it.<br>
+    Today isn’t an ending; it’s a beginning. You’ve proven you can tune in, adjust, and show up with kindness.<br>
+    This reflection closes your reset by helping you anchor what worked.</p>
+  </section>
+
+  <form name="day5-journal" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="day5-journal">
+    <input type="hidden" name="page" value="Day 5 Journal">
+
+    <section class="card">
+      <h2>🌿 What Changed</h2>
+      <textarea class="entry" name="what_changed" placeholder="How has your body felt different this week — in energy, mood, or clarity? What signal finally made sense?"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>💗 What You’ll Keep</h2>
+      <textarea class="entry" name="what_keep" placeholder="Which small ritual or quick win made the biggest difference? How can you make it part of your everyday rhythm?"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>🪷 Going Forward</h2>
+      <textarea class="entry" name="going_forward" placeholder="If you were your own best friend, how would you remind yourself to stay kind and curious next month? What will help you protect your new rhythm?"></textarea>
+    </section>
+
+    <section class="card tone">
+      <h2>🪄 Next Step</h2>
+      <p>Ready to go deeper?<br>
+      The <strong>Diana Air 6-Week Blueprint</strong> expands this foundation into full-cycle mastery — with coaching, rhythm maps, and live guidance.</p>
+      <div style="text-align:center;margin-top:14px;">
+        <a class="btn ghost" href="https://raw.artificialmomentum.com/diana-air-bp/">Join the 6-Week Blueprint Waitlist</a>
+      </div>
+    </section>
+
+    <div class="card tone" style="text-align:center;margin-top:28px;padding:26px 20px;
+      border:none;background:linear-gradient(to top,rgba(252,139,115,0.15)0%,rgba(252,139,115,0.06)60%,rgba(255,255,255,0)100%);
+      border-left:6px solid var(--brand);border-radius:var(--radius);">
+      <p style="margin-bottom:18px;font-size:0.98rem;opacity:0.9;">
+        When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong>
+      </p>
+      <div class="cta-row">
+        <button type="submit" class="btn">Share with Diana</button>
+        <button type="button" onclick="window.print()" class="btn ghost">🗂️ Keep Private Copy</button>
+        <a class="btn ghost" href="https://raw.artificialmomentum.com/day5/day5-cheatsheet.html">← Back to Cheat Sheet</a>
+      </div>
+    </div>
+  </form>
+
+  <footer>
+    🌙 You reset your rhythm.<br>
+    <strong>The next cycle begins with more awareness — and more grace.</strong>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const form=document.querySelector('form[name="day5-journal"]');
+  if(form){
+    form.addEventListener('submit',()=>{
+      let t=form.querySelector('input[name="timestamp"]');
+      if(!t){t=document.createElement('input');t.type='hidden';t.name='timestamp';form.appendChild(t);}
+      t.value=new Date().toISOString();
+    });
+  }
+});
+</script>
+
+</body>
+</html>
+
