@@ -21,98 +21,82 @@
   }
 
   html,body{
-    margin:0; padding:0;
+    margin:0;padding:0;
     background:#F7F7F7;
     color:var(--ink);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
 
-  .wrap{
-    max-width:900px;
-    margin:28px auto 64px;
-    padding:0 18px;
-  }
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
 
   /* Breadcrumb */
   .back {
-    margin:4px 0 16px;
+    margin:4px 0 18px;
     text-align:left;
   }
-  .back a{
+  .back a {
     color:#777;
     font-size:.95rem;
     text-decoration:none;
   }
-  .back a:hover{
-    color:var(--brand);
-  }
+  .back a:hover { color:var(--brand); }
 
-  .brand{
-    text-align:center;
-    margin-bottom:18px;
-  }
-  .brand img{
-    width:120px;
-    height:auto;
-  }
+  .brand{text-align:center;margin-bottom:18px}
+  .brand img{width:120px;height:auto}
 
   header{
-    background:var(--brand);
-    color:#fff;
+    background:var(--brand);color:#fff;
     border-radius:var(--radius);
-    padding:26px 20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.10);
+    padding:26px 20px;text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.10)
   }
 
-  .hero{
-    margin:20px auto 32px;
-    max-width:900px;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 8px 16px rgba(0,0,0,.08);
+  .hero {
+    margin:20px auto 32px;max-width:900px;
+    border-radius:20px;overflow:hidden;
+    box-shadow:0 8px 16px rgba(0,0,0,.08)
   }
-  .hero img{
-    width:100%;
-    display:block;
-  }
+  .hero img{width:100%;display:block}
 
+  /* Card layout */
   section.card{
     background:var(--card);
     border-radius:var(--radius);
     padding:20px;
-    margin-top:18px;
+    margin-top:22px;
     border:1px solid var(--line);
-    box-shadow:0 8px 22px rgba(0,0,0,.06);
+    box-shadow:0 8px 22px rgba(0,0,0,.06)
   }
 
-  .tone{
-    background:var(--soft);
-    border-left:6px solid var(--brand);
+  section.card h2 {
+    margin-top:0;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
   }
 
-  textarea.entry{
-    width:100%;
-    min-height:130px;
-    margin-top:10px;
-    padding:14px 16px;
-    border:1px solid var(--line);
-    border-radius:14px;
-    resize:vertical;
-    font-size:1rem;
-    line-height:1.5;
-  }
+textarea.entry{
+  width:100%;
+  min-height:130px;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  resize:none;                    /* No resize handle */
+  overflow:hidden;                /* Smooth auto-grow */
+  box-sizing:border-box;
+  font-size:1rem;
+  line-height:1.55;
+}
 
-  /* CTA Row (invisible container now) */
+  /* CTA Buttons */
   .cta-row{
     display:flex;
     flex-wrap:wrap;
-    gap:12px;
+    gap:14px;
     justify-content:center;
-    margin-top:28px;
+    margin-top:28px
   }
 
-  /* Button system — ghost outline + hover fill */
   .btn{
     background:#fff;
     color:var(--brand);
@@ -125,6 +109,7 @@
     display:inline-block;
     transition:all .25s ease;
   }
+
   .btn:hover{
     background:var(--brand);
     color:#fff;
@@ -136,11 +121,11 @@
     font-size:1.05rem;
     margin:52px 0 60px;
     font-weight:600;
-    line-height:1.7;
+    line-height:1.7
   }
-  footer strong{color:var(--brand);}
+  footer strong{color:var(--brand)}
 
-  /* Light-mode enforcement */
+  /* Light mode enforcement */
   @media (prefers-color-scheme: dark){
     :root{color-scheme:light!important;}
     html,body,section.card,.card,footer,.tone,textarea.entry{
@@ -153,18 +138,36 @@
     .btn:hover{background:var(--brand)!important;color:#fff!important;}
   }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const areas = document.querySelectorAll("textarea.entry");
+
+  areas.forEach(area => {
+    // Auto-expand on input
+    area.addEventListener("input", function() {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+    });
+
+    // Expand on page load if browser restores content
+    area.style.height = "auto";
+    area.style.height = area.scrollHeight + "px";
+  });
+});
+</script>
+
+
 </head>
+
 
 <body>
 <div class="wrap">
 
-  <div class="brand">
-    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum">
-  </div>
+  <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum"></div>
 
-  <div class="back">
-    <a href="/rtr-hub.html">← Back to Hub</a>
-  </div>
+  <!-- Breadcrumb -->
+  <div class="back"><a href="/rtr-hub.html">← Back to Hub</a></div>
 
   <header>
     <h1>Day 3 — Journal Reflection</h1>
@@ -172,10 +175,10 @@
   </header>
 
   <figure class="hero">
-    <img src="workout-prep.jpg" alt="Workout preparation image">
+    <img src="workout-prep.jpg" alt="">
   </figure>
 
-  <section class="card tone">
+  <section class="card">
     <h2>💬 Grounding Note</h2>
     <p>Today is about grace. If your energy dipped or focus vanished, that’s not weakness — it’s rhythm in motion.
     Your body’s chemistry just changed lanes. The goal isn’t to push through but to support yourself like a friend who’s tired.
@@ -183,46 +186,51 @@
   </section>
 
   <!-- Journal Form -->
-  <form name="day3-journal" method="POST" data-netlify="true" action="/thank-you.html">
-
-    <input type="hidden" name="form-name" value="day3-journal" />
+  <form name="day1-journal" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="day1-journal" />
     <input type="hidden" name="page" value="Day 3 Journal" />
 
     <section class="card">
       <h2>🍽 Energy Check-In</h2>
-      <textarea class="entry" name="energy_check" placeholder="Where did my energy feel strongest today? Where did I hit an invisible wall?"></textarea>
+      <textarea class="entry" name="body_checkin"
+      placeholder="Where did my energy feel strongest today? Where did I hit an invisible wall?"></textarea>
     </section>
 
     <section class="card">
       <h2>💗 Self-Talk Audit</h2>
-      <textarea class="entry" name="self_talk_audit" placeholder="What did my inner voice say when I slowed down? Would I speak to a friend that way?"></textarea>
+      <textarea class="entry" name="signals_stories"
+      placeholder="What did my inner voice say when I slowed down? Would I speak to a friend that way?"></textarea>
     </section>
 
-    <!-- Upgraded CTA Section — clean version -->
-    <div style="margin-top:32px; text-align:center;">
 
-      <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
+        <div style="margin-top:32px; text-align:center;">
+
+
+          <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
         When you’re finished reflecting, you can <strong>share your thoughts</strong>  
         or <strong>keep them private.</strong>
       </p>
 
+
+    <!-- Invisible CTA container -->
+    <div style="margin-top:38px; text-align:center;">
       <div class="cta-row">
         <button type="submit" class="btn">Share with Diana + Get a Copy</button>
         <button type="button" onclick="window.print()" class="btn">📄 Keep Private Copy</button>
-        <a class="btn" href="https://raw.artificialmomentum.com/day3/day3-cheatsheet.html">← Back to Cheat Sheet</a>
+        <a class="btn" href="/day3/day3-cheatsheet.html">← Back to Cheat Sheet</a>
       </div>
-
     </div>
-
   </form>
 
   <footer>
-    💫 Grace isn’t slowing down — it’s syncing up.  
+    💫 Grace isn’t slowing down — it’s syncing up. 
     <strong>Fuel first. Guilt never.</strong>
   </footer>
+
 </div>
 
 <script>
+  /* Timestamp injection */
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[name="day3-journal"]');
     if (form) {
