@@ -3,84 +3,171 @@
 <head>
 <meta charset="utf-8" />
 
-    <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+<link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- 🌓 Dark mode safety -->
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark">
 <title>Day 4 Journal — Raw to Reset</title>
+
 <style>
   :root {
-    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
-    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+    --brand:#FC8B73;
+    --ink:#0D0D0E;
+    --card:#FFFFFF;
+    --soft:#FFF7F4;
+    --line:#ffd7cc;
+    --radius:18px;
   }
-  html,body {
-    margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+
+  html,body{
+    margin:0;padding:0;
+    background:#F7F7F7;
+    color:var(--ink);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
-  .wrap {max-width:900px;margin:28px auto 64px;padding:0 18px}
-  .brand {text-align:center;margin-bottom:18px}
-  .brand img {width:120px;height:auto;filter:drop-shadow(0 4px 14px rgba(0,0,0,.08))}
-  header {
-    background:var(--brand);color:#fff;border-radius:var(--radius);
-    padding:26px 20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)
-  }
-  .hero {margin:20px auto 32px;max-width:900px;border-radius:20px;overflow:hidden;
-    box-shadow:0 8px 16px rgba(0,0,0,.08)}
-  .hero img {width:100%;display:block;object-fit:cover}
-  section.card {
-    background:var(--card);border-radius:var(--radius);padding:20px;margin-top:18px;
-    border:1px solid var(--line);box-shadow:0 8px 22px rgba(0,0,0,.06)
-  }
-  .tone {background:var(--soft);border-left:6px solid var(--brand)}
-  textarea.entry {
-    width:100%;min-height:130px;margin-top:10px;padding:12px 14px;
-    border:1px solid var(--line);border-radius:12px;resize:vertical;
-    font-family:inherit;line-height:1.55
-  }
-  textarea.entry:focus {outline:none;border-color:var(--brand);box-shadow:0 0 0 2px #ffd7cc60}
-  .cta-row {display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
-  .btn {
-    background:var(--brand);color:#fff;border:none;border-radius:999px;
-    padding:12px 22px;font-weight:700;cursor:pointer;transition:all .25s ease
-  }
-  .btn:hover {transform:translateY(-1px);opacity:.9}
-  .btn.ghost {background:#fff;color:var(--brand);border:2px solid var(--brand)}
-  footer {
-    text-align:center;font-size:1.05rem;margin:52px 0 60px;
-    font-weight:600;line-height:1.7
-  }
-  footer strong {color:var(--brand)}
 
-  /* 🌓 Force light mode everywhere — keep header coral */
-  @media (prefers-color-scheme: dark) {
-    :root { color-scheme: light !important; }
-    html, body, section.card, .card, footer, .tone, textarea.entry {
-      background: #FFFFFF !important;
-      color: #0D0D0E !important;
-      border-color: #ffd7cc !important;
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+
+  /* Breadcrumb */
+  .back {
+    margin:4px 0 18px;
+    text-align:left;
+  }
+  .back a {
+    color:#777;
+    font-size:.95rem;
+    text-decoration:none;
+  }
+  .back a:hover { color:var(--brand); }
+
+  .brand{text-align:center;margin-bottom:18px}
+  .brand img{width:120px;height:auto}
+
+  header{
+    background:var(--brand);color:#fff;
+    border-radius:var(--radius);
+    padding:26px 20px;text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.10)
+  }
+
+  .hero {
+    margin:20px auto 32px;max-width:900px;
+    border-radius:20px;overflow:hidden;
+    box-shadow:0 8px 16px rgba(0,0,0,.08)
+  }
+  .hero img{width:100%;display:block}
+
+  /* Card layout */
+  section.card{
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:20px;
+    margin-top:22px;
+    border:1px solid var(--line);
+    box-shadow:0 8px 22px rgba(0,0,0,.06)
+  }
+
+  section.card h2 {
+    margin-top:0;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+  }
+
+textarea.entry{
+  width:100%;
+  min-height:130px;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  resize:none;                    /* No resize handle */
+  overflow:hidden;                /* Smooth auto-grow */
+  box-sizing:border-box;
+  font-size:1rem;
+  line-height:1.55;
+}
+
+  /* CTA Buttons */
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    justify-content:center;
+    margin-top:28px
+  }
+
+  .btn{
+    background:#fff;
+    color:var(--brand);
+    border:2px solid var(--brand);
+    border-radius:999px;
+    padding:12px 22px;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    transition:all .25s ease;
+  }
+
+  .btn:hover{
+    background:var(--brand);
+    color:#fff;
+    transform:translateY(-1px);
+  }
+
+  footer{
+    text-align:center;
+    font-size:1.05rem;
+    margin:52px 0 60px;
+    font-weight:600;
+    line-height:1.7
+  }
+  footer strong{color:var(--brand)}
+
+  /* Light mode enforcement */
+  @media (prefers-color-scheme: dark){
+    :root{color-scheme:light!important;}
+    html,body,section.card,.card,footer,.tone,textarea.entry{
+      background:#FFFFFF!important;
+      color:#0D0D0E!important;
+      border-color:#ffd7cc!important;
     }
-    header {
-      background: #FC8B73 !important;
-      color: #FFFFFF !important;
-    }
-    .btn, .btn.primary {
-      background: #FC8B73 !important;
-      color: #fff !important;
-    }
-    .btn.ghost {
-      background: #fff !important;
-      color: #FC8B73 !important;
-      border-color: #FC8B73 !important;
-    }
+    header{background:#FC8B73!important;color:#FFFFFF!important;}
+    .btn{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important;}
+    .btn:hover{background:var(--brand)!important;color:#fff!important;}
   }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const areas = document.querySelectorAll("textarea.entry");
+
+  areas.forEach(area => {
+    // Auto-expand on input
+    area.addEventListener("input", function() {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+    });
+
+    // Expand on page load if browser restores content
+    area.style.height = "auto";
+    area.style.height = area.scrollHeight + "px";
+  });
+});
+</script>
+
+
 </head>
+
 
 <body>
 <div class="wrap">
+
   <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum"></div>
+
+  <!-- Breadcrumb -->
+  <div class="back"><a href="/rtr-hub.html">← Back to Hub</a></div>
 
   <header>
     <h1>Day 4 — Journal Reflection</h1>
@@ -88,10 +175,10 @@
   </header>
 
   <figure class="hero">
-    <img src="yoga.jpg" alt="Gentle yoga class — moving with your cycle">
+    <img src="yoga.jpg" alt="">
   </figure>
 
-  <section class="card tone">
+  <section class="card">
     <h2>💬 Grounding Note</h2>
     <p>The fog, the dip, the moodiness — all signals, not setbacks.<br>
     Today is your invitation to stop forcing and start fine-tuning.<br>
@@ -100,52 +187,56 @@
   </section>
 
   <!-- Journal Form -->
-  <form name="day4-journal" method="POST" data-netlify="true" action="/thank-you.html">
-    <input type="hidden" name="form-name" value="day4-journal" />
+  <form name="day1-journal" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="day1-journal" />
     <input type="hidden" name="page" value="Day 4 Journal" />
 
     <section class="card">
       <h2>🩸 Signal Decoder</h2>
-      <textarea class="entry" name="signal_decoder" placeholder="What signals showed up today — tiredness, craving, frustration, clarity? What might each be asking for?"></textarea>
+      <textarea class="entry" name="signal_decoder"
+      placeholder="What signals showed up today — tiredness, craving, frustration, clarity? What might each be asking for?"></textarea>
     </section>
 
     <section class="card">
       <h2>🧘‍♀️ Precision Moves</h2>
-      <textarea class="entry" name="precision_moves" placeholder="What one right-sized action helped (or could help) me feel steadier? How did it change my energy?"></textarea>
+      <textarea class="entry" name="precision_moves"
+      placeholder="What one right-sized action helped (or could help) me feel steadier? How did it change my energy?"></textarea>
     </section>
 
     <section class="card">
       <h2>🌿 System Update</h2>
-      <textarea class="entry" name="system_update" placeholder="If I stop treating this as a crash and start treating it as calibration, what becomes easier?"></textarea>
+      <textarea class="entry" name="system_update"
+      placeholder="If I stop treating this as a crash and start treating it as calibration, what becomes easier?"></textarea>
     </section>
 
-    <!-- CTA Section -->
-    <div class="card tone" 
-      style="text-align:center;
-            margin-top:28px;
-            padding:26px 20px;
-            border:none;
-            background:linear-gradient(to top, rgba(252,139,115,0.15) 0%, rgba(252,139,115,0.06) 60%, rgba(255,255,255,0) 100%);
-            border-left:6px solid var(--brand);
-            border-radius:var(--radius);">
+        <div style="margin-top:32px; text-align:center;">
 
-      <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
-        When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong>
+
+          <p style="margin-bottom:18px; font-size:0.98rem; opacity:0.9;">
+        When you’re finished reflecting, you can <strong>share your thoughts</strong>  
+        or <strong>keep them private.</strong>
       </p>
 
+
+    <!-- Invisible CTA container -->
+    <div style="margin-top:38px; text-align:center;">
       <div class="cta-row">
-        <button type="submit" class="btn">Share with Diana</button>
-        <button type="button" onclick="window.print()" class="btn ghost">🗂️ Keep Private Copy</button>
-        <a class="btn ghost" href="https://raw.artificialmomentum.com/day4/day4-cheatsheet.html">← Back to Cheat Sheet</a>
+        <button type="submit" class="btn">Share with Diana + Get a Copy</button>
+        <button type="button" onclick="window.print()" class="btn">📄 Keep Private Copy</button>
+        <a class="btn" href="/day4/day4-cheatsheet.html">← Back to Cheat Sheet</a>
       </div>
     </div>
   </form>
 
-  <footer>💫 Every signal is data. <strong>Precision beats push — always.</strong></footer>
+  <footer>
+    💫 Every signal is data.  
+    <strong>Precision beats push — always.</strong>
+  </footer>
+
 </div>
 
 <script>
-  // Automatically attach a timestamp to the form before it's submitted
+  /* Timestamp injection */
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[name="day4-journal"]');
     if (form) {
@@ -165,4 +256,3 @@
 
 </body>
 </html>
-
