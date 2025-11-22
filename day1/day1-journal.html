@@ -12,11 +12,11 @@
 
 <style>
   :root {
-    --brand:#FC8B73; 
-    --ink:#0D0D0E; 
+    --brand:#FC8B73;
+    --ink:#0D0D0E;
     --card:#FFFFFF;
-    --soft:#FFF7F4; 
-    --line:#ffd7cc; 
+    --soft:#FFF7F4;
+    --line:#ffd7cc;
     --radius:18px;
   }
 
@@ -66,26 +66,57 @@
     box-shadow:0 8px 22px rgba(0,0,0,.06)
   }
 
-  .tone{
-    background:var(--soft);
-    border-left:6px solid var(--brand)
+  section.card h2 {
+    margin-top:0;
+    font-size:1.45rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
   }
 
+  /* New Cleaner Textarea */
   textarea.entry{
-    width:100%;min-height:130px;margin-top:10px;
-    padding:12px 14px;
-    border:1px solid var(--line);
-    border-radius:12px;
-    resize:vertical
+    width:100%;
+    min-height:150px;
+    margin-top:14px;
+    padding:14px 16px;
+    border:2px solid var(--line);
+    border-radius:16px;
+    font-size:1rem;
+    line-height:1.55;
+    resize:vertical;
+    background:#FFFFFF;
+  }
+  textarea.entry:focus{
+    outline:none;
+    border-color:var(--brand);
+    box-shadow:0 0 0 3px rgba(252,139,115,0.20);
   }
 
-  /* CTA Buttons */
+  /* CTA Card Style — matches Recipe/Cheat Sheet */
+  .cta-card{
+    background:#FFFFFF;
+    border:2px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 20px;
+    margin-top:32px;
+    text-align:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);
+  }
+
+  .cta-card p{
+    margin:0 0 22px;
+    font-size:1rem;
+    opacity:0.88;
+  }
+
+  /* Buttons */
   .cta-row{
     display:flex;
     flex-wrap:wrap;
     gap:12px;
     justify-content:center;
-    margin-top:28px
+    margin-top:10px;
   }
 
   .btn{
@@ -116,13 +147,11 @@
   }
   footer strong{color:var(--brand)}
 
-  /* Light mode enforcement */
   @media (prefers-color-scheme: dark){
     :root{color-scheme:light!important;}
-    html,body,section.card,.card,footer,.tone,textarea.entry{
+    html,body,section.card,.card,footer,textarea.entry{
       background:#FFFFFF!important;
       color:#0D0D0E!important;
-      border-color:#ffd7cc!important;
     }
     header{background:#FC8B73!important;color:#FFFFFF!important;}
     .btn{background:#fff!important;color:var(--brand)!important;border-color:var(--brand)!important;}
@@ -136,9 +165,7 @@
 
   <div class="brand"><img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum"></div>
 
-    <!-- Breadcrumb -->
   <div class="back"><a href="/rtr-hub.html">← Back to Hub</a></div>
-
 
   <header>
     <h1>Day 1 — Journal Reflection</h1>
@@ -151,80 +178,38 @@
 
   <section class="card tone">
     <h2>💬 Grounding Note</h2>
-    <p>Welcome to Day 1. Remember: you’re learning a language your body has always been speaking.
-    There’s nothing to fix — only to listen, decode, and support.</p>
+    <p>Welcome to Day 1. Remember: you’re learning a language your body has always been speaking. There’s nothing to fix — only to listen, decode, and support.</p>
   </section>
 
-<!-- Journal Form -->
-<form name="day1-journal" method="POST" data-netlify="true" action="/thank-you.html">
+  <!-- Journal Form -->
+  <form name="day1-journal" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="day1-journal" />
+    <input type="hidden" name="page" value="Day 1 Journal" />
 
-  <input type="hidden" name="form-name" value="day1-journal" />
-  <input type="hidden" name="page" value="Day 1 Journal" />
+    <section class="card">
+      <h2>🩸 Body Check-in</h2>
+      <textarea class="entry" name="body_checkin" placeholder="How does my body feel today — physically, emotionally, energetically?"></textarea>
+    </section>
 
-  <!-- Body Check-in -->
-  <section class="card">
-    <h2>🩸 Body Check-in</h2>
-    <textarea class="entry upgraded"
-      name="body_checkin"
-      placeholder="How does my body feel today — physically, emotionally, energetically?"></textarea>
-  </section>
+    <section class="card">
+      <h2>🌙 Signals & Stories</h2>
+      <textarea class="entry" name="signals_stories" placeholder="Where did I notice tension, ease, or craving?"></textarea>
+    </section>
 
-  <!-- Signals & Stories -->
-  <section class="card">
-    <h2>🍌 Signals &amp; Stories</h2>
-    <textarea class="entry upgraded"
-      name="signals_stories"
-      placeholder="Where did I notice tension, ease, or craving?"></textarea>
-  </section>
+    <section class="card">
+      <h2>🌿 Integration Prompt</h2>
+      <textarea class="entry" name="integration_prompt" placeholder="One small action to stay in rhythm tomorrow..."></textarea>
+    </section>
 
-  <!-- Integration -->
-  <section class="card">
-    <h2>🌿 Integration Prompt</h2>
-    <textarea class="entry upgraded"
-      name="integration_prompt"
-      placeholder="One small action to stay in rhythm tomorrow..."></textarea>
-  </section>
+    <!-- CTA Section -->
+    <div class="cta-card">
+      <p>When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong></p>
 
-
-<!-- CTA Section — Clean, Important White Card -->
-<!-- CTA Section -->
-<div class="card"
-     style="margin-top:28px;
-            padding:26px 20px;
-            border:2px solid var(--line);
-            background:#fff;
-            border-radius:var(--radius);
-            text-align:center;">
-
-  <p style="margin-bottom:18px;font-size:0.98rem;opacity:0.9;">
-    When you’re finished reflecting, you can <strong>share your thoughts</strong> or <strong>keep them private.</strong>
-  </p>
-
-  <div class="cta-row">
-
-    <!-- Share Button -->
-    <button type="submit" class="btn"
-      style="border-width:2px;">
-      Share with Diana + Get a Copy
-    </button>
-
-    <!-- Private Copy -->
-    <button type="button"
-            onclick="window.print()"
-            class="btn"
-            style="border-width:2px;">
-      🗂️ Keep Private Copy
-    </button>
-
-    <!-- Back Link -->
-    <a class="btn" style="border-width:2px;" 
-       href="https://raw.artificialmomentum.com/day1/day1-cheatsheet.html">
-       ← Back to Cheat Sheet
-    </a>
-
-  </div>
-
-</div>
+      <div class="cta-row">
+        <button type="submit" class="btn">Share with Diana + Get a Copy</button>
+        <button type="button" onclick="window.print()" class="btn">🗂️ Keep Private Copy</button>
+        <a class="btn" href="https://raw.artificialmomentum.com/day1/day1-cheatsheet.html">← Back to Cheat Sheet</a>
+      </div>
     </div>
   </form>
 
@@ -232,7 +217,6 @@
 </div>
 
 <script>
-  // Automatically attach a timestamp to the form before it's submitted
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form[name="day1-journal"]');
     if (form) {
