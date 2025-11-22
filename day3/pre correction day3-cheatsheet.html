@@ -68,34 +68,15 @@
     .why,.card em.why{display:block;color:#6b2f23;opacity:.85;font-size:.92rem;
       margin-top:4px;font-style:italic;}
 
-/* ---------- Unified Outlined Button System ---------- */
-.cta-row {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  justify-content:center;
-  margin-top:26px;
-}
-
-.btn {
-  display:inline-block;
-  background:#fff;
-  color:var(--brand);
-  border:2px solid var(--brand);
-  text-decoration:none;
-  padding:12px 24px;
-  border-radius:999px;
-  font-weight:700;
-  cursor:pointer;
-  transition:all .25s ease;
-}
-
-.btn:hover {
-  background:var(--brand);
-  color:#fff;
-  transform:translateY(-1px);
-  box-shadow:0 4px 12px rgba(252,139,115,0.35);
-}
+    /* ---------- Buttons ---------- */
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px;}
+    .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+      padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer;
+      transition:all .25s ease;}
+    .btn:hover{transform:translateY(-1px);opacity:.9;}
+    .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+    .btn.locked{background:#fce3dd;color:#888;border-color:#f7b4a3;cursor:not-allowed;}
+    .btn.locked:hover{background:#fce3dd;color:#888;}
 
     /* ---------- Footer ---------- */
     footer{text-align:center;font-size:1.05rem;color:#0D0D0E;margin-top:48px;margin-bottom:60px;
