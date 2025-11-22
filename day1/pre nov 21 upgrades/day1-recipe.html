@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+    <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Day 1 Recipe — Morning Reset Bowl (Comfort Edition)</title>
+<style>
+  :root{
+    --brand:#FC8B73; --ink:#0D0D0E; --card:#FFFFFF;
+    --soft:#FFF7F4; --line:#ffd7cc; --radius:18px;
+  }
+
+  html,body{
+    margin:0;padding:0;
+    background:#F7F7F7;color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px}
+
+  .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  .brand img {
+    width: clamp(90px, 8vw, 120px);
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 3px 10px rgba(0,0,0,.08));
+    transition: transform 0.3s ease;
+  }
+
+  .brand img:hover {
+    transform: scale(1.04);
+  }
+
+  header {
+    background: var(--brand);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 26px 20px 28px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    margin-bottom: 32px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: clamp(22px, 4vw, 34px);
+    line-height: 1.18;
+    font-weight: 700;
+  }
+
+  header .sub {
+    margin-top: 6px;
+    opacity: 0.95;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto 32px;
+  max-width: 900px;       /* same as text width */
+  aspect-ratio: 16 / 9;   /* shallow, cinematic feel */
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+}
+
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,.06);
+    border: 1px solid var(--line);
+  }
+
+  .card h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  .tone {
+    background: var(--soft);
+    border-left: 6px solid var(--brand);
+  }
+
+  ul {
+    margin: 8px 0 0 20px;
+  }
+  li {
+    margin: .25rem 0;
+    line-height: 1.55;
+  }
+
+  /* Buttons + layout */
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 26px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--brand);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all .25s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+    opacity: .9;
+  }
+
+  .btn.ghost {
+    background: #fff;
+    color: var(--brand);
+    border: 2px solid var(--brand);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #0D0D0E;
+    margin-top: 52px;
+    margin-bottom: 60px;
+    font-weight: 600;
+    line-height: 1.7;
+  }
+
+  footer strong {
+    color: #FC8B73;
+  }
+
+  /* Mobile polish */
+  @media (max-width:600px){
+    header{padding:20px 14px;}
+    .card{padding:16px}
+    .btn{width:100%;max-width:300px}
+    .hero{margin-top:12px}
+  }
+
+  /* Print-friendly */
+  @media print {
+    @page {size:A4;margin:18mm;}
+    .cta-row,.brand img {display:none!important;}
+    section.card{box-shadow:none!important;border:1px solid #e8e8e8!important;border-radius:8px!important;}
+    header{background:#fff!important;color:#000!important;border:1px solid #e8e8e8!important;}
+    a{color:#000!important;text-decoration:underline!important;}
+    html,body{background:#fff!important;}
+  }
+  @media (prefers-color-scheme: dark) {
+  html, body {
+    background: #F7F7F7 !important;
+    color: var(--ink) !important;
+  }
+  header {
+    background: var(--brand) !important;
+    color: #fff !important;
+  }
+  section.card, .card, footer {
+    background: #FFFFFF !important;
+    color: var(--ink) !important;
+  }
+  .btn, .btn.primary {
+    background: var(--brand) !important;
+    color: #fff !important;
+  }
+  .btn.ghost {
+    background: #fff !important;
+    color: var(--brand) !important;
+    border-color: var(--brand) !important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo">
+  </div>
+
+  <header>
+    <h1>Day 1 Recipe — Morning Reset Bowl (Comfort Edition)</h1>
+    <div class="sub">Warm, mineral-rich nourishment to ease you into rhythm</div>
+  </header>
+
+  <figure class="hero">
+    <img src="morning-reset-bowl.jpg" alt="Morning Reset Bowl">
+  </figure>
+
+  <section class="card tone">
+    <h2>💧 Why This Fits Today</h2>
+    <p>During menstruation or early reset days, your body craves minerals, warmth, and calm blood sugar.
+      This bowl supports gentle rehydration, steady glucose, and the “I’m safe” signal your nervous system needs
+      to start restoring energy. Think: comfort meets chemistry.</p>
+  </section>
+
+  <section class="card">
+    <h2>🥣 Base Ingredients</h2>
+    <ul>
+      <li>½ cup cooked quinoa or steel-cut oats</li>
+      <li>½ cup warm plant milk or water (mineral salt pinch optional)</li>
+      <li>1 tbsp ground flax or chia for fiber + minerals</li>
+      <li>1 scoop pea protein or collagen (optional)</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>🍓 Sweet Option</h2>
+    <ul>
+      <li>Top with ½ cup berries (anti-inflammatory)</li>
+      <li>1 tbsp nut butter or crushed nuts for satiety</li>
+      <li>Drizzle of honey or maple (optional)</li>
+    </ul>
+    <p><em>Comforting and bright — supports iron and serotonin without spikes.</em></p>
+  </section>
+
+  <section class="card">
+    <h2>🥬 Savory Option</h2>
+    <ul>
+      <li>Add sautéed greens (spinach, kale, zucchini)</li>
+      <li>1 soft boiled egg or ¼ cup tofu for protein</li>
+      <li>Sprinkle sea salt + olive oil for minerals and fat balance</li>
+    </ul>
+    <p><em>Grounding and mineral-dense — supports cramp relief and focus.</em></p>
+  </section>
+
+  <section class="card">
+    <h2>🕊 Notes for Your Rhythm</h2>
+    <p>Eat slowly and warm. Pair with your electrolyte water before coffee for maximum steadiness.  
+    You’re not aiming for “perfect nutrition” — you’re re-establishing trust between your body and your schedule.</p>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn" href="day1-cheatsheet.html">← Back to Cheat Sheet</a>
+    <a class="btn ghost" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
+  </div>
+
+  <footer>
+    💬 Your body’s rhythm starts here — warm, steady, and enough. <strong>Reset from the inside out.</strong>
+  </footer>
+
+</div>
+</body>
+</html>
