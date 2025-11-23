@@ -210,26 +210,36 @@
       html, body { background:#fff!important; }
     }
 
-    /* ---------- Dark Mode Override ---------- */
-    @media (prefers-color-scheme: dark) {
-      html, body {
-        background:#F7F7F7 !important;
-        color:var(--ink) !important;
-      }
-      .card, header, footer {
-        background:#FFFFFF !important;
-        color:var(--ink) !important;
-      }
-      .btn {
-        background:#fff !important;
-        color:var(--brand) !important;
-        border-color:var(--brand) !important;
-      }
-      .btn:hover {
-        background:var(--brand) !important;
-        color:#fff !important;
-      }
-    }
+/* Clean dark mode */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background:#F7F7F7 !important;
+    color:var(--ink) !important;
+  }
+
+  /* KEEP the header coral */
+  header {
+    background:var(--brand) !important;
+    color:#fff !important;
+  }
+
+  /* Cards + footer white */
+  .card, footer {
+    background:#FFFFFF !important;
+    color:var(--ink) !important;
+  }
+
+  .btn {
+    background:#fff !important;
+    color:var(--brand) !important;
+    border-color:var(--brand) !important;
+  }
+
+  .btn:hover {
+    background:var(--brand) !important;
+    color:#fff !important;
+  }
+}
   </style>
 </head>
 
