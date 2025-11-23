@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-
 <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
-
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark">
 <title>Raw to Reset — Hub</title>
@@ -13,9 +11,10 @@
   :root{
     --brand:#FC8B73;
     --ink:#0D0D0E;
-    --soft:#FFF7F4;
+    --soft:#FFF2EE;
     --card:#FFFFFF;
     --line:#ffd7cc;
+    --blue:#3B6EA3;
     --radius:18px;
   }
 
@@ -26,58 +25,103 @@
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
 
-  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px;}
+  p,h1,h2,h3{line-height:1.55;}
 
+  .wrap{
+    max-width:900px;
+    margin:28px auto 64px;
+    padding:0 18px;
+  }
+
+  /* Brand Logo */
   .brand{text-align:center;margin-bottom:12px;}
   .brand img{
-    width:clamp(88px,9vw,140px);height:auto;
+    width:clamp(88px,9vw,140px);
     filter:drop-shadow(0 4px 14px rgba(0,0,0,.08));
   }
 
+  /* Breadcrumb */
   .breadcrumb{
-    display:block;margin:6px 0 18px;
-    font-size:.95rem;color:#777;opacity:.9;
-    text-decoration:none;transition:.25s;
+    display:block;
+    margin:6px 0 18px;
+    font-size:.95rem;
+    color:#777;
+    opacity:.9;
+    text-decoration:none;
+    transition:.25s ease;
   }
   .breadcrumb:hover{color:var(--brand);opacity:1;}
 
+  /* Header */
   header{
     background:var(--brand);
-    color:#fff;border-radius:var(--radius);
-    padding:26px 20px 28px;text-align:center;
+    color:#fff;
+    border-radius:var(--radius);
+    padding:26px 20px 28px;
+    text-align:center;
     margin-bottom:26px;
     box-shadow:0 8px 24px rgba(0,0,0,.08);
   }
   header h1{
-    margin:0;font-size:clamp(24px,5vw,38px);
-    line-height:1.12;font-weight:700;
+    margin:0;
+    font-size:clamp(24px,5vw,38px);
+    line-height:1.12;
+    font-weight:700;
   }
-  .sub{opacity:.95;margin-top:6px;font-size:1.1rem;font-weight:500;}
+  .sub{
+    opacity:.95;
+    margin-top:6px;
+    font-size:1.1rem;
+    font-weight:500;
+  }
 
-  /* ---------------------------
-     New Cycle Component
-  ----------------------------*/
-  .cycle-card{
-    background:var(--soft);
-    border:1px solid var(--line);
+  /* Section Cards */
+  .card{
+    background:var(--card);
+    padding:20px;
     border-radius:var(--radius);
-    padding:24px 22px;
-    box-shadow:0 8px 22px rgba(0,0,0,.06);
+    border:1px solid var(--line);
     margin-top:24px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);
   }
 
-  .cycle-card h2{margin-top:0;}
+  .tone{
+    background:var(--soft);
+    border-left:6px solid var(--brand);
+  }
+
+  /* === Cycle Selection — Option C (Soft + Editorial) === */
+
+  .cycle-box{
+    background:var(--soft);
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    padding:24px 22px;
+  }
+
+  .cycle-box h2{
+    margin:0;
+    font-size:1.25rem;
+    color:var(--blue);
+    display:flex;
+    align-items:center;
+    gap:.4rem;
+  }
+
+  .cycle-desc{
+    margin:8px 0 16px;
+    opacity:.9;
+    font-size:.97rem;
+  }
 
   .cycle-grid{
     display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
     gap:14px;
-    margin-top:18px;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   }
 
-  .pill{
-    display:flex;
-    flex-direction:column;
+  .cycle-pill{
+    display:block;
     background:#fff;
     border:2px solid var(--brand);
     border-radius:14px;
@@ -85,81 +129,97 @@
     text-decoration:none;
     color:var(--ink);
     transition:.25s ease;
-    box-shadow:0 6px 14px rgba(0,0,0,.05);
+    box-shadow:0 6px 16px rgba(0,0,0,.04);
   }
 
-  .pill:hover{
+  .cycle-pill:hover{
     background:var(--brand);
     color:#fff;
     transform:translateY(-2px);
-    box-shadow:0 10px 24px rgba(252,139,115,.35);
+    box-shadow:0 10px 22px rgba(252,139,115,.32);
   }
 
-  .pill strong{font-size:1.1rem;}
-  .pill span{opacity:.8;margin-top:2px;font-size:.93rem;}
-  .pill em{margin-top:6px;font-style:normal;font-weight:600;color:var(--brand);}
-  .pill:hover em{color:#fff;}
+  .cycle-pill strong{
+    display:block;
+    font-size:1.05rem;
+    color:var(--blue);
+  }
+  .cycle-pill:hover strong{
+    color:#fff;
+  }
 
-  /* ---------------------------
-     Hub Buttons
-  ----------------------------*/
-  .hub-section{margin-top:24px;}
-  .hub-section h2{margin-top:0;}
+  .cycle-pill span{
+    font-size:.9rem;
+    opacity:.75;
+  }
 
+  .cycle-pill em{
+    display:block;
+    margin-top:6px;
+    font-size:.9rem;
+    color:var(--brand);
+    font-style:normal;
+    font-weight:600;
+  }
+  .cycle-pill:hover em{
+    color:#fff;
+  }
+
+  /* All Pages + Journals Grids */
   .hub-grid{
     display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:16px;
     margin-top:16px;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   }
 
+  .journal-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:14px;
+    margin-top:14px;
+  }
+
+  /* Hub Buttons */
   .hub-btn{
     display:block;
-    padding:16px 18px;
     background:#fff;
     border:2px solid var(--brand);
+    padding:16px 18px;
     border-radius:16px;
     text-decoration:none;
     color:var(--ink);
     font-weight:600;
-    line-height:1.45;
     transition:.25s;
-    box-shadow:0 6px 14px rgba(0,0,0,.05);
+    box-shadow:0 6px 14px rgba(0,0,0,0.05);
   }
 
   .hub-btn:hover{
     background:var(--brand);
     color:#fff;
     transform:translateY(-2px);
-    box-shadow:0 10px 24px rgba(252,139,115,.35);
+    box-shadow:0 8px 20px rgba(252,139,115,.35);
   }
 
+  /* Footer */
   footer{
     text-align:center;
-    font-size:1.05rem;font-weight:600;
-    margin-top:48px;margin-bottom:60px;
-    opacity:.95;line-height:1.7;
+    margin-top:48px;
+    font-size:1.05rem;
+    font-weight:600;
+    line-height:1.7;
+    opacity:.95;
   }
   footer strong{color:var(--brand);}
-
-  /* Dark-mode safety */
-  @media (prefers-color-scheme: dark){
-    :root{color-scheme:light!important;}
-    html,body,.hub-btn,.pill,.card,footer{
-      background:#fff !important;
-      color:#0D0D0E !important;
-    }
-    header{background:#FC8B73!important;color:#fff!important;}
-  }
-
 </style>
 </head>
 
 <body>
 <div class="wrap">
 
+  <!-- Brand -->
   <div class="brand">
-    <img src="https://cdn.artificialmomentum.com/logo.png">
+    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo">
   </div>
 
   <a href="/" class="breadcrumb">← Back to Home</a>
@@ -169,38 +229,43 @@
     <div class="sub">Your 5-day rhythm reset — in one place.</div>
   </header>
 
-  <!-- CYCLE SELECTION -->
-  <section class="cycle-card">
-    <h2>🧬 Start Where *Your* Cycle Is</h2>
-    <p>If you're joining mid-cycle, choose the day that fits your physiology right now. Not sure? Pick the one that feels closest — you can’t get this wrong.</p>
+  <!-- ===================================================
+        CYCLE SELECTION — Soft Peach Warmth (Option C)
+  ==================================================== -->
+  <section class="cycle-box">
+    <h2>🧬 Start Where <em>Your</em> Cycle Is</h2>
+    <p class="cycle-desc">
+      If you're joining mid-cycle, choose the day that fits your physiology right now.
+      Not sure? Go with the one that feels closest — you can’t get this wrong.
+    </p>
 
     <div class="cycle-grid">
 
-      <a class="pill" href="day1/day1-cheatsheet.html">
+      <a class="cycle-pill" href="day1/day1-cheatsheet.html">
         <strong>Menstruation</strong>
         <span>around days 1–7</span>
         <em>→ RTR Day 1</em>
       </a>
 
-      <a class="pill" href="day2/day2-cheatsheet.html">
+      <a class="cycle-pill" href="day2/day2-cheatsheet.html">
         <strong>Mid-Luteal</strong>
         <span>around day 19</span>
         <em>→ RTR Day 2</em>
       </a>
 
-      <a class="pill" href="day3/day3-cheatsheet.html">
+      <a class="cycle-pill" href="day3/day3-cheatsheet.html">
         <strong>Post-Ovulation</strong>
         <span>around day 15</span>
         <em>→ RTR Day 3</em>
       </a>
 
-      <a class="pill" href="day4/day4-cheatsheet.html">
+      <a class="cycle-pill" href="day4/day4-cheatsheet.html">
         <strong>Late Luteal</strong>
         <span>around days 20–28</span>
         <em>→ RTR Day 4</em>
       </a>
 
-      <a class="pill" href="day5/day5-cheatsheet.html">
+      <a class="cycle-pill" href="day5/day5-cheatsheet.html">
         <strong>Pre-Bleed Reset</strong>
         <span>around day 28</span>
         <em>→ RTR Day 5</em>
@@ -209,8 +274,10 @@
     </div>
   </section>
 
-  <!-- ALL PAGES -->
-  <section class="hub-section card">
+  <!-- ===================================================
+        ALL PAGES
+  ==================================================== -->
+  <section class="card tone">
     <h2>📘 All Pages</h2>
     <p>Everything you need — videos, recipes, cheat sheets, and your journals — organised by day.</p>
 
@@ -223,12 +290,14 @@
     </div>
   </section>
 
-  <!-- JOURNALS -->
-  <section class="hub-section card">
+  <!-- ===================================================
+        JOURNALS
+  ==================================================== -->
+  <section class="card">
     <h2>📝 Your Journals</h2>
-    <p>If you submitted them, I have them — but you're welcome to revisit the blank versions below.</p>
+    <p>If you submitted them, I have them — but feel free to revisit the blank versions below.</p>
 
-    <div class="hub-grid">
+    <div class="journal-grid">
       <a class="hub-btn" href="day1/day1-journal.html">Day 1 Journal</a>
       <a class="hub-btn" href="day2/day2-journal.html">Day 2 Journal</a>
       <a class="hub-btn" href="day3/day3-journal.html">Day 3 Journal</a>
