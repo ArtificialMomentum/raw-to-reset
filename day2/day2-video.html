@@ -2,107 +2,195 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-
-      <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+  <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark">
-  <title>Raw to Reset — Day 2</title>
+  <meta name="supported-color-schemes" content="light dark">
+
+  <title>Day 2 Video — Raw to Reset</title>
   <meta name="description" content="Day 2 of your 5-Day Raw to Reset." />
+
   <style>
-    :root{--brand:#FC8B73;--ink:#0D0D0E;}
-    body {
-      font-family: system-ui, sans-serif;
-      background: #F7F7F7;
-      color: #0D0D0E;
-      margin: 0;
-      padding: 0;
+    :root {
+      --brand:#FC8B73;
+      --ink:#0D0D0E;
+      --card:#FFFFFF;
+      --line:#ffd7cc;
+      --radius:18px;
     }
-    .wrap { max-width: 900px; margin: auto; padding: 16px; }
+
+    html, body {
+      margin:0;
+      padding:0;
+      background:#F7F7F7;
+      color:var(--ink);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+
+    .wrap {
+      max-width:900px;
+      margin:28px auto 64px;
+      padding:0 18px;
+    }
+
+    /* ------- Header ------- */
     header {
       background:var(--brand);
-      padding: 18px;
-      border-radius: 18px;
-      text-align: center;
-      max-width: 620px;
-      margin: 0 auto;
-      color: white;
+      padding:26px 20px;
+      border-radius:var(--radius);
+      text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+      max-width:620px;
+      margin:0 auto 16px;
+      color:#fff;
     }
-    h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); }
-    p.lead { margin: 8px 0 0; opacity: .9; }
 
+    h1 {
+      margin:0;
+      font-size:clamp(24px,4vw,34px);
+      line-height:1.15;
+      font-weight:700;
+    }
+
+    .sub {
+      margin-top:6px;
+      opacity:.95;
+      font-size:1.05rem;
+      font-weight:500;
+    }
+
+    /* ------- Breadcrumb (matches cheat sheets & recipes) ------- */
+    .breadcrumb {
+      display:block;
+      margin:8px 0 22px 0;
+      color:#666;
+      opacity:0.75;
+      font-size:0.95rem;
+      text-decoration:none;
+      transition:all .25s ease;
+    }
+
+    .breadcrumb:hover {
+      color:var(--brand);
+      opacity:1;
+    }
+
+    /* ------- Video ------- */
     .player {
-      display: flex;
-      justify-content: center;
-      margin: 2rem 0;
+      display:flex;
+      justify-content:center;
+      margin:34px 0 22px;
     }
+
     .player iframe {
-      width: 100%;
-      max-width: 420px;
-      aspect-ratio: 9 / 16;
-      border: 0;
-      border-radius: 12px;
-      background: #000;
-    }
-    @media (min-width: 768px) { .player iframe { max-width: 480px; } }
-    @media (hover:hover) {
-      .player iframe:hover { transform: scale(1.01); transition: transform 0.3s ease; }
+      width:100%;
+      max-width:420px;
+      aspect-ratio:9 / 16;
+      border:0;
+      border-radius:14px;
+      background:#000;
+      transition:transform .3s ease;
     }
 
-    .cta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 18px 0;
+    @media (min-width:768px){
+      .player iframe { max-width:480px; }
     }
+
+    .player iframe:hover {
+      transform:scale(1.01);
+    }
+
+    /* ------- Unified CTA Buttons (outlined) ------- */
+    .cta-row {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin:24px 0 16px;
+    }
+
     .btn {
-      background: #FC8B73;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      cursor: pointer;
+      display:inline-block;
+      background:#fff;
+      color:var(--brand);
+      border:2px solid var(--brand);
+      padding:12px 24px;
+      border-radius:999px;
+      font-weight:700;
+      text-decoration:none;
+      cursor:pointer;
+      transition:all .25s ease;
     }
-    .btn:hover { filter: brightness(1.05); }
-    .muted { font-size: .95rem; opacity: .8; text-align: center; }
-    footer { margin: 26px 0 10px; text-align: center; font-size: .9rem; opacity: .75; }
-    @media (prefers-color-scheme: dark) {
-  html, body {
-    background: #F7F7F7 !important;
-    color: var(--ink) !important;
-  }
-  header {
-    background: var(--brand) !important;
-    color: #fff !important;
-  }
-  section.card, .card, footer {
-    background: #FFFFFF !important;
-    color: var(--ink) !important;
-  }
-  .btn, .btn.primary {
-    background: var(--brand) !important;
-    color: #fff !important;
-  }
-  .btn.ghost {
-    background: #fff !important;
-    color: var(--brand) !important;
-    border-color: var(--brand) !important;
-  }
-}
 
+    .btn:hover {
+      background:var(--brand);
+      color:#fff;
+      transform:translateY(-1px);
+      box-shadow:0 4px 12px rgba(252,139,115,0.35);
+    }
+
+    /* ------- Supporting Text ------- */
+    .muted {
+      font-size:.95rem;
+      opacity:.8;
+      text-align:center;
+      margin-top:6px;
+    }
+
+    .muted a {
+      color:var(--brand);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .muted a:hover {
+      text-decoration:underline;
+    }
+
+    footer {
+      margin:60px 0 10px;
+      text-align:center;
+      font-size:.9rem;
+      opacity:.75;
+    }
+
+    /* ------- Dark Mode Fix ------- */
+    @media (prefers-color-scheme: dark){
+      :root { color-scheme: light !important; }
+      html,body {
+        background:#FFFFFF !important;
+        color:#0D0D0E !important;
+      }
+      header {
+        background:#FC8B73 !important;
+        color:#fff !important;
+      }
+      .btn {
+        background:#fff !important;
+        color:var(--brand) !important;
+        border-color:var(--brand) !important;
+      }
+      .btn:hover {
+        background:var(--brand) !important;
+        color:#fff !important;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+
+    <!-- Breadcrumb under header (proper placement) -->
+    <a href="/rtr-hub.html" class="breadcrumb">← Back to Hub</a>
+
     <header>
       <h1>Day 2 · Raw to Reset</h1>
-      <p class="lead"><strong>PMT isn't the problem - your luteal phase is asking for this.</strong></p>
+      <p class="sub"><strong>PMT isn't the problem - your luteal phase is asking for this.</strong></p>
     </header>
 
+    <!-- Video (same size as original) -->
     <div class="player">
       <iframe 
         src="https://iframe.mediadelivery.net/embed/504868/154e0934-1095-4a7f-b98a-7c21091f7558?autoplay=false&responsive=true"
@@ -112,20 +200,18 @@
       </iframe>
     </div>
 
-    <div class="cta">
-      <a class="btn" href="day2-cheatsheet.html" target="_blank" rel="noopener">Get Today’s Cheatsheet</a>
+    <!-- Unified Buttons -->
+    <div class="cta-row">
+      <a class="btn" href="day2-cheatsheet.html">Get Today’s Cheatsheet</a>
       <a class="btn" href="mailto:rtr@artificialmomentum.com">Ask a Question</a>
     </div>
 
     <p class="muted">
-      Tip: If video is choppy on mobile, switch Wi-Fi or tap the ••• menu to <em>Download</em> and watch locally.<br>
-      <a href="day2vid.mp4" download>Download the video</a>
+      Tip: If video is choppy on mobile, switch Wi-Fi or tap the ••• menu to download and watch locally.<br>
     </p>
 
     <footer>© Artificial Momentum · Diana Air Coaching × ECHO</footer>
+
   </div>
 </body>
 </html>
-
-
-
