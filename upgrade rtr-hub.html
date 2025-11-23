@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark">
+<title>Raw to Reset — Hub</title>
+
+<style>
+  :root {
+    --brand:#FC8B73;
+    --ink:#0D0D0E;
+    --soft:#FFF7F4;
+    --card:#FFFFFF;
+    --line:#ffd7cc;
+    --radius:18px;
+  }
+
+  html,body {
+    margin:0; padding:0;
+    background:#F7F7F7;
+    color:var(--ink);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  p, h1, h2, h3 { line-height:1.55; }
+
+  .wrap {
+    max-width:900px;
+    margin:28px auto 64px;
+    padding:0 18px;
+  }
+
+  /* Brand Logo */
+  .brand {
+    text-align:center;
+    margin-bottom:12px;
+  }
+  .brand img {
+    width:clamp(88px,9vw,140px);
+    height:auto;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.08));
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display:block;
+    margin:6px 0 18px;
+    font-size:.95rem;
+    color:#777;
+    opacity:.9;
+    text-decoration:none;
+    transition:.25s ease;
+  }
+  .breadcrumb:hover {
+    color:var(--brand);
+    opacity:1;
+  }
+
+  /* Header */
+  header {
+    background:var(--brand);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:26px 20px 28px;
+    text-align:center;
+    margin-bottom:26px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+  }
+
+  header h1 {
+    margin:0;
+    font-size:clamp(24px,5vw,38px);
+    line-height:1.12;
+    font-weight:700;
+  }
+
+  .sub {
+    opacity:.95;
+    margin-top:6px;
+    font-size:1.1rem;
+    font-weight:500;
+  }
+
+  /* Card */
+  .card {
+    background:var(--card);
+    padding:20px;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    margin-top:24px;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);
+  }
+
+  .tone {
+    background:var(--soft);
+    border-left:6px solid var(--brand);
+  }
+
+  /* Cycle Bar */
+  .cycle-bar {
+    background:linear-gradient(to right,#ffe4dd,#fff);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .cycle-bar h3 {
+    margin:0;
+    font-size:1.25rem;
+    color:var(--brand);
+  }
+
+  .cycle-options {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:14px;
+  }
+
+  .cycle-options a {
+    flex:1;
+    min-width:130px;
+    text-align:center;
+    background:#fff;
+    border:2px solid var(--brand);
+    color:var(--brand);
+    padding:10px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    transition:all .25s ease;
+  }
+  .cycle-options a:hover {
+    background:var(--brand);
+    color:#fff;
+    transform:translateY(-1px);
+  }
+
+  /* --- Cycle Selection Component --- */
+
+.cycle-bar {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+}
+
+.cycle-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.cycle-desc {
+  margin: 6px 0 18px;
+  font-size: .97rem;
+  opacity: .9;
+  line-height: 1.55;
+}
+
+.cycle-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.cycle-pill {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 2px solid var(--brand);
+  text-decoration: none;
+  transition: all .25s ease;
+}
+
+.cycle-pill:hover {
+  background: var(--brand);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(252, 139, 115, 0.3);
+}
+
+.cycle-pill .phase {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.cycle-pill .range {
+  font-size: .9rem;
+  opacity: .8;
+  margin-top: 2px;
+}
+
+.cycle-pill .rtr {
+  margin-top: 6px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.cycle-pill:hover .rtr {
+  color: #fff;
+}
+
+
+  /* Grid */
+  .grid {
+    display:grid;
+    gap:18px;
+    margin-top:20px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  }
+
+  .item {
+    background:var(--card);
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    padding:18px;
+    text-decoration:none;
+    color:var(--ink);
+    box-shadow:0 8px 18px rgba(0,0,0,.05);
+    transition:all .25s ease;
+  }
+
+  .item:hover {
+    transform:translateY(-2px);
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
+  }
+
+  .item strong {
+    color:var(--brand);
+    font-weight:700;
+  }
+
+  /* Footer */
+  footer {
+    text-align:center;
+    margin-top:48px;
+    margin-bottom:60px;
+    font-size:1.05rem;
+    font-weight:600;
+    opacity:.95;
+    line-height:1.7;
+  }
+  footer strong {
+    color:var(--brand);
+  }
+
+  /* Dark mode override */
+  @media (prefers-color-scheme: dark){
+    :root { color-scheme: light !important; }
+    html, body, .card, .item, footer {
+      background:#FFFFFF !important;
+      color:#0D0D0E !important;
+    }
+    header {
+      background:#FC8B73 !important;
+      color:#fff !important;
+    }
+    .cycle-bar {
+      background:#FFF7F4 !important;
+    }
+  }
+</style>
+</head>
+
+
+<body>
+<div class="wrap">
+
+  <!-- Brand -->
+  <div class="brand">
+    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum Logo">
+  </div>
+
+  <!-- Breadcrumb -->
+  <a href="/" class="breadcrumb">← Back to Home</a>
+
+  <!-- Header -->
+  <header>
+    <h1>Raw to Reset — Hub</h1>
+    <div class="sub">Your 5-day rhythm reset — in one place.</div>
+  </header>
+
+
+<section class="card cycle-bar">
+
+  <h3 class="cycle-title">✨ Start Where *Your* Cycle Is</h3>
+  <p class="cycle-desc">
+    If you're joining mid-cycle, choose the option that best matches where your body is right now.  
+    Not sure? Click the one that feels closest — you can’t get this wrong.
+  </p>
+
+  <div class="cycle-grid">
+
+    <!-- Menstruation -->
+    <a class="cycle-pill" href="/day1/day1-cheatsheet.html">
+      <span class="phase">Menstruation</span>
+      <span class="range">around days 1–7</span>
+      <span class="rtr">→ RTR Day 1</span>
+    </a>
+
+    <!-- Mid-Luteal -->
+    <a class="cycle-pill" href="/day2/day2-cheatsheet.html">
+      <span class="phase">Mid-Luteal</span>
+      <span class="range">around day 19</span>
+      <span class="rtr">→ RTR Day 2</span>
+    </a>
+
+    <!-- Post-Ovulation -->
+    <a class="cycle-pill" href="/day3/day3-cheatsheet.html">
+      <span class="phase">Post-Ovulation</span>
+      <span class="range">around day 15</span>
+      <span class="rtr">→ RTR Day 3</span>
+    </a>
+
+    <!-- Late-Luteal -->
+    <a class="cycle-pill" href="/day4/day4-cheatsheet.html">
+      <span class="phase">Late Luteal</span>
+      <span class="range">around days 20–28</span>
+      <span class="rtr">→ RTR Day 4</span>
+    </a>
+
+    <!-- Pre-Bleed Reset -->
+    <a class="cycle-pill" href="/day5/day5-cheatsheet.html">
+      <span class="phase">Pre-Bleed Reset</span>
+      <span class="range">around day 28</span>
+      <span class="rtr">→ RTR Day 5</span>
+    </a>
+
+  </div>
+
+</section>
+  </section>
+
+
+  <!-- All Pages -->
+  <section class="card tone">
+    <h2 style="margin-top:0;">📘 All Pages</h2>
+    <p>Everything you need — videos, recipes, cheat sheets, and your journals — organised by day.</p>
+
+    <div class="grid">
+      <a class="item" href="/day1/day1-cheatsheet.html">
+        <strong>Day 1</strong><br>Cheat Sheet, Video, Recipe, Journal
+      </a>
+      <a class="item" href="/day2/day2-cheatsheet.html">
+        <strong>Day 2</strong><br>Cheat Sheet, Video, Recipe, Journal
+      </a>
+      <a class="item" href="/day3/day3-cheatsheet.html">
+        <strong>Day 3</strong><br>Cheat Sheet, Video, Recipe, Journal
+      </a>
+      <a class="item" href="/day4/day4-cheatsheet.html">
+        <strong>Day 4</strong><br>Cheat Sheet, Video, Recipe, Journal
+      </a>
+      <a class="item" href="/day5/day5-cheatsheet.html">
+        <strong>Day 5</strong><br>Cheat Sheet, Video, Recipe, Journal
+      </a>
+    </div>
+  </section>
+
+
+  <!-- Journals -->
+  <section class="card">
+    <h2>✒️ Your Journals</h2>
+    <p style="opacity:.85">If you submitted them, I have them — but feel free to revisit the blank versions below.</p>
+
+    <div class="grid">
+      <a class="item" href="/day1/day1-journal.html"><strong>Day 1 Journal</strong></a>
+      <a class="item" href="/day2/day2-journal.html"><strong>Day 2 Journal</strong></a>
+      <a class="item" href="/day3/day3-journal.html"><strong>Day 3 Journal</strong></a>
+      <a class="item" href="/day4/day4-journal.html"><strong>Day 4 Journal</strong></a>
+      <a class="item" href="/day5/day5-journal.html"><strong>Day 5 Journal</strong></a>
+    </div>
+  </section>
+
+
+  <footer>
+    🌙 Rhythm isn’t something you chase — <strong>it’s something you return to.</strong>
+  </footer>
+
+</div>
+</body>
+</html>
