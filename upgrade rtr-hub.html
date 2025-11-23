@@ -266,123 +266,162 @@
       background:#FFF7F4 !important;
     }
   }
+
+  /* ============================================
+   HUB UPGRADE — Card Buttons & Layout
+   ============================================ */
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.hub-btn {
+  display: block;
+  padding: 16px 18px;
+  background: #fff;
+  border: 2px solid var(--brand);
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  transition: all .25s ease;
+  line-height: 1.45;
+}
+
+.hub-btn:hover {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(252,139,115,0.35);
+  transform: translateY(-2px);
+}
+
+/* Journals section */
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
 </style>
 </head>
 
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-  <!-- Brand -->
-  <div class="brand">
-    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum Logo">
-  </div>
-
-  <!-- Breadcrumb -->
-  <a href="/" class="breadcrumb">← Back to Home</a>
-
-  <!-- Header -->
-  <header>
-    <h1>Raw to Reset — Hub</h1>
-    <div class="sub">Your 5-day rhythm reset — in one place.</div>
-  </header>
-
-
-<section class="card cycle-bar">
-
-  <h3 class="cycle-title">✨ Start Where *Your* Cycle Is</h3>
-  <p class="cycle-desc">
-    If you're joining mid-cycle, choose the option that best matches where your body is right now.  
-    Not sure? Click the one that feels closest — you can’t get this wrong.
-  </p>
-
-  <div class="cycle-grid">
-
-    <!-- Menstruation -->
-    <a class="cycle-pill" href="/day1/day1-cheatsheet.html">
-      <span class="phase">Menstruation</span>
-      <span class="range">around days 1–7</span>
-      <span class="rtr">→ RTR Day 1</span>
-    </a>
-
-    <!-- Mid-Luteal -->
-    <a class="cycle-pill" href="/day2/day2-cheatsheet.html">
-      <span class="phase">Mid-Luteal</span>
-      <span class="range">around day 19</span>
-      <span class="rtr">→ RTR Day 2</span>
-    </a>
-
-    <!-- Post-Ovulation -->
-    <a class="cycle-pill" href="/day3/day3-cheatsheet.html">
-      <span class="phase">Post-Ovulation</span>
-      <span class="range">around day 15</span>
-      <span class="rtr">→ RTR Day 3</span>
-    </a>
-
-    <!-- Late-Luteal -->
-    <a class="cycle-pill" href="/day4/day4-cheatsheet.html">
-      <span class="phase">Late Luteal</span>
-      <span class="range">around days 20–28</span>
-      <span class="rtr">→ RTR Day 4</span>
-    </a>
-
-    <!-- Pre-Bleed Reset -->
-    <a class="cycle-pill" href="/day5/day5-cheatsheet.html">
-      <span class="phase">Pre-Bleed Reset</span>
-      <span class="range">around day 28</span>
-      <span class="rtr">→ RTR Day 5</span>
-    </a>
-
-  </div>
-
-</section>
-  </section>
-
-
-  <!-- All Pages -->
-  <section class="card tone">
-    <h2 style="margin-top:0;">📘 All Pages</h2>
-    <p>Everything you need — videos, recipes, cheat sheets, and your journals — organised by day.</p>
-
-    <div class="grid">
-      <a class="item" href="/day1/day1-cheatsheet.html">
-        <strong>Day 1</strong><br>Cheat Sheet, Video, Recipe, Journal
-      </a>
-      <a class="item" href="/day2/day2-cheatsheet.html">
-        <strong>Day 2</strong><br>Cheat Sheet, Video, Recipe, Journal
-      </a>
-      <a class="item" href="/day3/day3-cheatsheet.html">
-        <strong>Day 3</strong><br>Cheat Sheet, Video, Recipe, Journal
-      </a>
-      <a class="item" href="/day4/day4-cheatsheet.html">
-        <strong>Day 4</strong><br>Cheat Sheet, Video, Recipe, Journal
-      </a>
-      <a class="item" href="/day5/day5-cheatsheet.html">
-        <strong>Day 5</strong><br>Cheat Sheet, Video, Recipe, Journal
-      </a>
+    <!-- Brand -->
+    <div class="brand">
+      <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum logo">
     </div>
-  </section>
 
+    <a href="/" class="breadcrumb">← Back to Home</a>
 
-  <!-- Journals -->
-  <section class="card">
-    <h2>✒️ Your Journals</h2>
-    <p style="opacity:.85">If you submitted them, I have them — but feel free to revisit the blank versions below.</p>
+    <header>
+      <h1>Raw to Reset — Hub</h1>
+      <div class="sub">Your 5-day rhythm reset — in one place.</div>
+    </header>
 
-    <div class="grid">
-      <a class="item" href="/day1/day1-journal.html"><strong>Day 1 Journal</strong></a>
-      <a class="item" href="/day2/day2-journal.html"><strong>Day 2 Journal</strong></a>
-      <a class="item" href="/day3/day3-journal.html"><strong>Day 3 Journal</strong></a>
-      <a class="item" href="/day4/day4-journal.html"><strong>Day 4 Journal</strong></a>
-      <a class="item" href="/day5/day5-journal.html"><strong>Day 5 Journal</strong></a>
-    </div>
-  </section>
+    <!-- ============================================
+         CYCLE SELECTION (your new gorgeous buttons)
+    ============================================= -->
+    <section class="card">
+      <h2>🧬 Start Where *Your* Cycle Is</h2>
+      <p>If you're joining mid-cycle, choose the day that fits your physiology right now. Not sure? Click the one that feels closest — you can’t get this wrong.</p>
 
+      <div class="cycle-select">
 
-  <footer>
-    🌙 Rhythm isn’t something you chase — <strong>it’s something you return to.</strong>
-  </footer>
+        <a class="pill" href="day1/day1-cheatsheet.html">
+          <strong>Menstruation</strong>
+          <span>around days 1–7</span>
+          <em>→ RTR Day 1</em>
+        </a>
 
-</div>
+        <a class="pill" href="day2/day2-cheatsheet.html">
+          <strong>Mid-Luteal</strong>
+          <span>around day 19</span>
+          <em>→ RTR Day 2</em>
+        </a>
+
+        <a class="pill" href="day3/day3-cheatsheet.html">
+          <strong>Post-Ovulation</strong>
+          <span>around day 15</span>
+          <em>→ RTR Day 3</em>
+        </a>
+
+        <a class="pill" href="day4/day4-cheatsheet.html">
+          <strong>Late Luteal</strong>
+          <span>around days 20-28</span>
+          <em>→ RTR Day 4</em>
+        </a>
+
+        <a class="pill active" href="day5/day5-cheatsheet.html">
+          <strong>Pre-Bleed Reset</strong>
+          <span>around day 28</span>
+          <em>→ RTR Day 5</em>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         ALL PAGES SECTION
+    ============================================= -->
+    <section class="card">
+      <h2>📘 All Pages</h2>
+      <p>Everything you need — videos, recipes, cheat sheets, and your journals — organised by day.</p>
+
+      <div class="hub-grid">
+
+        <a class="hub-btn" href="day1/day1-cheatsheet.html">
+          <strong>Day 1</strong><br>Cheat Sheet, Video, Recipe, Journal
+        </a>
+
+        <a class="hub-btn" href="day2/day2-cheatsheet.html">
+          <strong>Day 2</strong><br>Cheat Sheet, Video, Recipe, Journal
+        </a>
+
+        <a class="hub-btn" href="day3/day3-cheatsheet.html">
+          <strong>Day 3</strong><br>Cheat Sheet, Video, Recipe, Journal
+        </a>
+
+        <a class="hub-btn" href="day4/day4-cheatsheet.html">
+          <strong>Day 4</strong><br>Cheat Sheet, Video, Recipe, Journal
+        </a>
+
+        <a class="hub-btn" href="day5/day5-cheatsheet.html">
+          <strong>Day 5</strong><br>Cheat Sheet, Video, Recipe, Journal
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         JOURNALS SECTION
+    ============================================= -->
+    <section class="card">
+      <h2>📝 Your Journals</h2>
+      <p>If you submitted them, I have them — but feel free to revisit the blank versions below.</p>
+
+      <div class="journal-grid">
+
+        <a class="hub-btn" href="day1/day1-journal.html">Day 1 Journal</a>
+        <a class="hub-btn" href="day2/day2-journal.html">Day 2 Journal</a>
+        <a class="hub-btn" href="day3/day3-journal.html">Day 3 Journal</a>
+        <a class="hub-btn" href="day4/day4-journal.html">Day 4 Journal</a>
+        <a class="hub-btn" href="day5/day5-journal.html">Day 5 Journal</a>
+
+      </div>
+    </section>
+
+    <footer>
+      🍌 Rhythm isn’t something you chase — <strong>it’s something you return to.</strong>
+    </footer>
+
+  </div>
 </body>
 </html>
