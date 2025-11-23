@@ -2,120 +2,223 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-
-    <link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+<link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark">
 <title>Raw to Reset — Hub</title>
 
 <style>
-  :root{
-    --brand:#FC8B73; --ink:#0D0D0E; --soft:#FFF7F4;
-    --card:#FFFFFF; --line:#ffd7cc; --radius:18px;
+  :root {
+    --brand:#FC8B73;
+    --ink:#0D0D0E;
+    --soft:#FFF7F4;
+    --card:#FFFFFF;
+    --line:#ffd7cc;
+    --radius:18px;
   }
-  html,body{
-    margin:0;padding:0;background:#F7F7F7;color:var(--ink);
+
+  html,body {
+    margin:0; padding:0;
+    background:#F7F7F7;
+    color:var(--ink);
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   }
-  .wrap{max-width:900px;margin:28px auto 64px;padding:0 18px;}
-  .brand{text-align:center;margin-bottom:18px;}
-  .brand img{width:120px;height:auto;}
-  header{
-    background:var(--brand);color:#fff;border-radius:var(--radius);
-    padding:26px 20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.10)
-  }
-  header h1{margin:0;font-size:clamp(24px,5vw,38px);}
-  .sub{opacity:.95;margin-top:6px;font-size:1.1rem;}
 
-  /* Cards */
-  .card{
-    background:var(--card);padding:20px;border-radius:var(--radius);
-    margin-top:24px;border:1px solid var(--line);
+  p, h1, h2, h3 { line-height:1.55; }
+
+  .wrap {
+    max-width:900px;
+    margin:28px auto 64px;
+    padding:0 18px;
+  }
+
+  /* Brand Logo */
+  .brand {
+    text-align:center;
+    margin-bottom:12px;
+  }
+  .brand img {
+    width:clamp(88px,9vw,140px);
+    height:auto;
+    filter:drop-shadow(0 4px 14px rgba(0,0,0,.08));
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display:block;
+    margin:6px 0 18px;
+    font-size:.95rem;
+    color:#777;
+    opacity:.9;
+    text-decoration:none;
+    transition:.25s ease;
+  }
+  .breadcrumb:hover {
+    color:var(--brand);
+    opacity:1;
+  }
+
+  /* Header */
+  header {
+    background:var(--brand);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:26px 20px 28px;
+    text-align:center;
+    margin-bottom:26px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+  }
+
+  header h1 {
+    margin:0;
+    font-size:clamp(24px,5vw,38px);
+    line-height:1.12;
+    font-weight:700;
+  }
+
+  .sub {
+    opacity:.95;
+    margin-top:6px;
+    font-size:1.1rem;
+    font-weight:500;
+  }
+
+  /* Card */
+  .card {
+    background:var(--card);
+    padding:20px;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    margin-top:24px;
     box-shadow:0 8px 22px rgba(0,0,0,.06);
   }
-  .tone{
-    background:var(--soft);border-left:6px solid var(--brand);
+
+  .tone {
+    background:var(--soft);
+    border-left:6px solid var(--brand);
+  }
+
+  /* Cycle Bar */
+  .cycle-bar {
+    background:linear-gradient(to right,#ffe4dd,#fff);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .cycle-bar h3 {
+    margin:0;
+    font-size:1.25rem;
+    color:var(--brand);
+  }
+
+  .cycle-options {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:14px;
+  }
+
+  .cycle-options a {
+    flex:1;
+    min-width:130px;
+    text-align:center;
+    background:#fff;
+    border:2px solid var(--brand);
+    color:var(--brand);
+    padding:10px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    transition:all .25s ease;
+  }
+  .cycle-options a:hover {
+    background:var(--brand);
+    color:#fff;
+    transform:translateY(-1px);
   }
 
   /* Grid */
-  .grid{
-    display:grid;gap:18px;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  .grid {
+    display:grid;
+    gap:18px;
     margin-top:20px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   }
-  .item{
-    background:var(--card);padding:18px;border-radius:var(--radius);
-    border:1px solid var(--line);text-decoration:none;color:var(--ink);
+
+  .item {
+    background:var(--card);
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    padding:18px;
+    text-decoration:none;
+    color:var(--ink);
     box-shadow:0 8px 18px rgba(0,0,0,.05);
     transition:all .25s ease;
   }
-  .item:hover{
-    transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.08);
-  }
-  .item strong{color:var(--brand);}
 
-  /* Buttons */
-  .btn{
-    background:var(--brand);color:#fff;border-radius:999px;
-    padding:12px 22px;font-weight:700;text-decoration:none;
-    display:inline-block;text-align:center;margin-top:16px;
-  }
-  .btn:hover{opacity:.9;}
-
-  footer{
-    text-align:center;margin-top:48px;font-size:1.05rem;font-weight:600;
-    line-height:1.7;color:var(--ink);
-  }
-  footer strong{color:var(--brand);}
-
-  /* Start-by-cycle bar */
-  .cycle-bar{
-    background:linear-gradient(to right,#ffe4dd,#fff);
-    padding:18px 20px;border-radius:var(--radius);
-    border:1px solid var(--line);
-  }
-  .cycle-bar h3{
-    margin:0;font-size:1.2rem;color:var(--brand);
-  }
-  .cycle-options{
-    display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;
-  }
-  .cycle-options a{
-    flex:1;min-width:130px;text-decoration:none;text-align:center;
-    background:#fff;border:2px solid var(--brand);color:var(--brand);
-    padding:10px;border-radius:999px;font-weight:600;transition:.25s;
-  }
-  .cycle-options a:hover{
-    background:var(--brand);color:#fff;
+  .item:hover {
+    transform:translateY(-2px);
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
   }
 
-  /* Dark mode kill switch */
+  .item strong {
+    color:var(--brand);
+    font-weight:700;
+  }
+
+  /* Footer */
+  footer {
+    text-align:center;
+    margin-top:48px;
+    margin-bottom:60px;
+    font-size:1.05rem;
+    font-weight:600;
+    opacity:.95;
+    line-height:1.7;
+  }
+  footer strong {
+    color:var(--brand);
+  }
+
+  /* Dark mode override */
   @media (prefers-color-scheme: dark){
-    :root{ color-scheme: light !important; }
-    html,body,.card,.item,.tone,footer { 
-      background:#FFFFFF !important; color:#0D0D0E !important;
+    :root { color-scheme: light !important; }
+    html, body, .card, .item, footer {
+      background:#FFFFFF !important;
+      color:#0D0D0E !important;
     }
-    header{background:#FC8B73 !important;color:#fff !important;}
-    .cycle-bar{background:#FFF7F4 !important;}
+    header {
+      background:#FC8B73 !important;
+      color:#fff !important;
+    }
+    .cycle-bar {
+      background:#FFF7F4 !important;
+    }
   }
 </style>
 </head>
 
+
 <body>
 <div class="wrap">
 
+  <!-- Brand -->
   <div class="brand">
-    <img src="https://cdn.artificialmomentum.com/logo.png">
+    <img src="https://cdn.artificialmomentum.com/logo.png" alt="Artificial Momentum Logo">
   </div>
 
+  <!-- Breadcrumb -->
+  <a href="/" class="breadcrumb">← Back to Home</a>
+
+  <!-- Header -->
   <header>
     <h1>Raw to Reset — Hub</h1>
     <div class="sub">Your 5-day rhythm reset — in one place.</div>
   </header>
 
 
-  <!-- Start by Cycle Phase -->
+  <!-- Start Page by Cycle Phase -->
   <section class="card cycle-bar">
     <h3>✨ Start Where *Your* Cycle Is</h3>
     <p style="margin-top:6px;font-size:.97rem;opacity:.85;">
@@ -132,7 +235,7 @@
   </section>
 
 
-  <!-- Main Sections -->
+  <!-- All Pages -->
   <section class="card tone">
     <h2 style="margin-top:0;">📘 All Pages</h2>
     <p>Everything you need — videos, recipes, cheat sheets, and your journals — organised by day.</p>
@@ -157,7 +260,7 @@
   </section>
 
 
-  <!-- Journals Access -->
+  <!-- Journals -->
   <section class="card">
     <h2>✒️ Your Journals</h2>
     <p style="opacity:.85">If you submitted them, I have them — but feel free to revisit the blank versions below.</p>
@@ -179,4 +282,3 @@
 </div>
 </body>
 </html>
-
