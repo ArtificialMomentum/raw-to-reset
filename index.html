@@ -211,25 +211,42 @@
     .cta { background: #d45d5d; }
   }
 
-  .founding-offer-banner {
-  background: #fff3f1;
-  border: 2px solid #fa9884;
+.founding-offer-banner {
+  background: #fff8f5;
+  border: 1.5px solid #f4a293;
   color: #d45d5d;
-  padding: 12px 16px;
-  margin: 0.75rem 0 1.4rem;
-  border-radius: 14px;
-  font-size: 1rem;
-  font-weight: 700;
+  padding: 10px 14px;
+  margin: 1rem auto 1.4rem;
+  
+  /* NEW: elegant fixed width for premium feel */
+  max-width: 82%;
+  
   text-align: center;
-  line-height: 1.4;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  /* NEW: tighter line rhythm */
+  line-height: 1.35;
+
+  border-radius: 14px;
+
+  /* NEW: subtle shadow for depth */
+  box-shadow: 0px 2px 5px rgba(212, 93, 76, 0.08);
 }
+
+.founding-offer-banner .icon {
+  margin-right: 4px;
+}
+
 @media (prefers-color-scheme: dark) {
   .founding-offer-banner {
     background: #1a1a1a;
     border-color: #ffb0a2;
     color: #ffb0a2;
+    box-shadow: none;
   }
 }
+
 
 </style>
 
@@ -287,10 +304,12 @@
 
     <!-- BADGE -->
 
-    <h1>Raw to Reset — Cycle Clarity Coaching</h1>
-
-    <div class="founding-offer-banner">
-  🧭 Founding Cohort — <strong>First 5 join free</strong> · Early birds <strong>£17 until Jan 31</strong> · Starts <strong>Jan 11, 2026</strong>
+<div class="founding-offer-banner">
+  <span class="icon">🧭</span>
+  <strong>Founding Cohort</strong> —
+  <strong>First 5 join free</strong> ·
+  Early birds <strong>£17 until Jan 31</strong> ·
+  Starts <strong>Jan 11, 2026</strong>
 </div>
 
 
