@@ -201,36 +201,29 @@
     color: #999;
   }
 
-  /* Dark mode */
-  @media (prefers-color-scheme: dark) {
-    body { background: #0d0d0e; color: #f6f6f6; }
-    h1, h2, .highlight, .truth-bomb { color: #ffb0a2 !important; }
-    .badge-top { background: #1a1a1a; border-color: #ffb0a2; color: #ffb0a2; }
-    .badge-subtext { color: #e3c1bb; }
-    .proof, .mini-intro { background: #1a1a1a; border-color: #444; color: #eaeaea; }
-    .cta { background: #d45d5d; }
-  }
-
+/* Founding Offer Banner — refined, left-aligned, softer */
 .founding-offer-banner {
   background: #ffffff;
-  border: 2px solid #fa9884;
+  border: 1.5px solid #fa9884;
   color: #6b2f23;
-  padding: 14px 18px;
-  border-radius: 16px;
-  margin: 1.4rem auto 1.8rem;
-  text-align: center;
-  max-width: 420px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  margin: 1rem 0 1.6rem;
+  text-align: left;
+  max-width: 360px;  /* slightly smaller, neater */
   line-height: 1.45;
 }
 
 .founding-offer-top {
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin-bottom: 2px;
+  color: #d45d5d;
 }
 
 .founding-offer-details {
-  font-size: 0.90rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: #b24b35;
 }
@@ -242,10 +235,14 @@
     border-color: #ffb0a2;
     color: #ffb0a2;
   }
+  .founding-offer-top {
+    color: #ffb0a2;
+  }
   .founding-offer-details {
     color: #ffb0a2;
   }
 }
+
 
 
 </style>
@@ -338,7 +335,7 @@
     <p class="highlight">No medical gaslighting. No jargon. Just straight-talking clarity.</p>
 
     <p>
-  We begin <strong>January 11th, 2026</strong> — and you can join from anywhere.
+  We begin <strong>January 11, 2026</strong> — and you can join from anywhere.
   No live calls. No camera. Just short daily voice notes and videos you can play on your own rhythm.
   If you join after Jan 11, you’ll be added to the next cohort, but your early-bird pricing still locks in.
 </p>
