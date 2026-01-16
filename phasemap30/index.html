@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="icon" href="/artificial-momentum-favicon-rounded.ico">
+
+<title>Raw to Reset — Cycle Clarity Coaching</title>
+
+<!-- Base styles -->
+<style>
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background: #ffffff;
+    color: #222;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  h1, h2 {
+    margin: 1rem 0;
+    color: #d45d5d;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .highlight {
+    font-weight: 700;
+    color: #d45d5d;
+  }
+
+  /* --- Badge --- */
+  .badge-top {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #fff3f1;
+    border: 1.5px solid #d45d5d;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #d45d5d;
+    margin-bottom: 0.35rem;
+  }
+
+  .badge-subtext {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #6b2f23;
+  }
+
+  /* Hero image */
+  .hero-image {
+    width: 100%;
+    border-radius: 16px;
+    margin: 1.5rem 0 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .truth-bomb {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d45d5d;
+    margin: 1.2rem 0 .5rem;
+  }
+
+  /* Testimonials */
+  .proof {
+    display: flex;
+    gap: .75rem;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ffd7cc;
+    background: #fffdfc;
+    margin: 1.5rem 0;
+    color: #6b2f23;
+    line-height: 1.4;
+  }
+
+  .proof img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffd7cc;
+    flex-shrink: 0;
+  }
+
+  .attrib {
+    opacity: 0.75;
+  }
+
+  .rotating-proofs {
+    position: relative;
+    min-height: 1.6rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .rotating-proofs .line {
+    position: absolute;
+    left: 0; right: 0;
+    opacity: 0;
+    transition: opacity .6s ease;
+  }
+
+  .rotating-proofs .line.active {
+    opacity: 1;
+  }
+
+  /* Meet Diana */
+  .mini-intro {
+    display: flex;
+    gap: 16px;
+    padding: 18px;
+    background: #fff7f4;
+    border: 1px solid #ffd7cc;
+    border-radius: 16px;
+    margin: 2.25rem 0;
+  }
+
+  .mini-intro .portrait {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffd7cc;
+    flex-shrink: 0;
+  }
+
+  .mini-intro h3 {
+    margin: 0 0 .4rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #6b2f23;
+  }
+
+  .mini-intro p {
+    margin: .4rem 0;
+    line-height: 1.55;
+  }
+
+  .signature {
+    margin-top: .75rem;
+    font-family: "Brush Script MT", cursive;
+    font-size: 1.25rem;
+    color: #6b2f23;
+  }
+
+  /* CTA */
+  .cta {
+    display: block;
+    background: #fa9884;
+    color: #fff;
+    padding: 1rem;
+    margin: 2rem 0 1rem;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: filter .2s ease;
+  }
+
+  .cta:hover {
+    filter: brightness(0.93);
+  }
+
+  .note {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #444;
+    font-size: 0.95rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: .9rem;
+    color: #999;
+  }
+
+.founding-offer-banner {
+  background: #ffffff;
+  border: 2px solid #fa9884;
+  color: #6b2f23;
+  padding: 10px 16px;
+  border-radius: 16px;
+  margin: 1.6rem auto 1.6rem;
+  max-width: 420px;
+  line-height: 1.45;
+  display: block;
+  text-align: center;
+}
+
+.founding-offer-top {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  opacity: 0.9;
+}
+
+.founding-offer-details {
+  font-size: 0.90rem;
+  font-weight: 600;
+  color: #b24b35;
+  letter-spacing: 0.1px;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .founding-offer-banner {
+    background: #1a1a1a;
+    border-color: #ffb0a2;
+    color: #ffb0a2;
+  }
+  .founding-offer-details {
+    color: #ffb0a2;
+  }
+}
+.hero-header,
+.hero-header h1,
+.hero-header .highlight {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight.centered {
+    text-align: center;
+   } 
+
+
+
+</style>
+
+<!-- Rotating testimonial script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lines = document.querySelectorAll('.rotating-proofs .line');
+    let i = 0;
+    if (lines.length > 0) {
+      setInterval(() => {
+        lines[i].classList.remove('active');
+        i = (i + 1) % lines.length;
+        lines[i].classList.add('active');
+      }, 4500);
+    }
+
+    // image fade-in
+    const imgs = document.querySelectorAll("img");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("loaded");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    imgs.forEach(img => observer.observe(img));
+  });
+</script>
+
+<!-- Sender embed -->
+<script>
+  (function (s, e, n, d, er) {
+    s['Sender'] = er; s[er] = s[er] || function () {
+      (s[er].q = s[er].q || []).push(arguments)
+    }, s[er].l = 1 * new Date();
+    var a = e.createElement(n), m = e.getElementsByTagName(n)[0];
+    a.async = 1; a.src = d; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+  sender('5200e1d77e6017');
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S0F060FJQJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-S0F060FJQJ');
+</script>
+
+</head>
+<body>
+  <div class="container">
+
+
+    <!-- BADGE -->
+
+<div class="hero-header">
+  <div class="founding-offer-banner">
+    <div class="founding-offer-top">🧭 February Cohort</div>
+    <div class="founding-offer-details">
+      First to join is free · Early bird offer £17 until Jan 31 · Starts February 1st, 2026
+    </div>
+  </div>
+
+  <h1>Raw to Reset — Cycle Clarity Coaching</h1>
+  <p class="highlight">Five days. Zero perfectionism. Just rhythm — finally decoded.</p>
+</div>
+
+    <img src="rtr-hero-gym.jpg" alt="Women smiling in gym gear" class="hero-image">
+
+    <div class="truth-bomb">Hormone hell? You’re not crazy.</div>
+    <h1>Bring the chaos — I’ll bring the map. 🗺️</h1>
+
+    <p>Do you feel a mix of capable and completely overwhelmed — sometimes in the same hour?</p>
+    <p>
+      This is for women who are tired of guessing whether it’s hormones, nervous system overload, 
+      different wiring, poor sleep, relationship stress… or all of it at once.
+    </p>
+
+    <p>Many women here later realise they don’t think or feel in a straight line — and that matters.</p>
+
+    <p style="text-align:center; font-size:1rem; color:#6b2f23;">
+      ✨ For cycling women — whether your rhythm is regular, shifting, or supported —  
+      who want real language for what their body is doing.
+    </p>
+
+    <p>
+      For 5 days, I’ll be in your ear (video + email), helping you untangle the fog, the fatigue, the rage,
+      the cravings, and the quiet grief of not feeling like yourself.
+    </p>
+
+    <p class="highlight centered">No medical gaslighting.</p>
+    <p class="highlight centered">No jargon.</p>
+    <p class="highlight centered">Just clear, grounded insight — delivered gently.</p>
+    
+<ul class="details">
+  <li>We begin <strong>February 1st, 2026</strong></li>
+  <li>You can join from anywhere</li>
+  <li>No live calls <span>(optional group wrap-up call)</span></li>
+  <li>No camera</li>
+  <li>Just short daily voice notes and videos you can play on your own rhythm</li>
+</ul>
+
+    <div class="proof">
+      <img src="rtr-testimonial-emanuela.jpg" alt="">
+      <span>“Raw to Reset helped me reconnect with my body in a real and simple way. 
+      Small shifts made me feel more aligned almost instantly.” 
+      <span class="attrib">— Emanuela, mother of twins</span></span>
+    </div>
+
+    <div class="rotating-proofs">
+      <div class="line active">“Now I understand my chocolate cravings — wish I’d known years ago.” <span class="attrib">— Ruth</span></div>
+      <div class="line">“Five days, clear and compact. Zero overwhelm.” <span class="attrib">— Cat</span></div>
+      <div class="line">“The journal helped me see the pattern. I don’t feel crazy anymore.” <span class="attrib">— Maria</span></div>
+      <div class="line">“Finally I understand what my body goes through.” <span class="attrib">— Elise</span></div>
+    </div>
+
+    <img src="rtr-hero-dinner.jpg" class="hero-image">
+
+    <h2>Here’s what you’ll get:</h2>
+    <ul>
+      <li>Daily voice notes that put words to what you’re feeling</li>
+      <li>Clarity on what's cycle-driven vs. what's emotional or ND-driven</li>
+      <li>Tools I wish I’d had when I thought I was “falling apart”</li>
+      <li>Actual rhythm — not the 24-hour system we were raised inside</li>
+      <li>Closing group call where you get to ask questions and talk with women like you</li>
+    </ul>
+
+    <p class="note">Limited spots. Intimate by design — potent by impact.</p>
+
+    <img src="rtr-hero-hug.jpg" class="hero-image">
+    <p><em>“I laughed more this week than I have in months.”</em></p>
+
+    <img src="rtr-hero-laughing.jpg" class="hero-image">
+
+    <!-- MEET DIANA -->
+    <section class="mini-intro">
+      <img src="rtr-diana.jpg" alt="Diana" class="portrait">
+      <div>
+        <h3>👩‍🦰 Meet Diana</h3>
+        <p>I know what it’s like to feel out of rhythm — foggy, tired, reactive, and unsure what your body is trying to tell you.</p>
+        <p>I built Raw to Reset so women like us can finally make sense of the chaos and work <em>with</em> our biology, not against it.</p>
+        <p class="signature">With rhythm, — Diana Air</p>
+      </div>
+    </section>
+
+    <p>You don’t have to muscle through this alone. I’ve got you.</p>
+
+    <h2>🌸 Early Bird Offer — Claim Your Spot</h2>
+    <ul>
+      <li><strong>💎 First to Sign Up is Free</strong> → Full access + journal + 5 recipes</li><br>
+      <li><strong>⚡ Early Bird £17</strong> → Until Jan 31. Includes bonus bundle.</li><br>
+      <li><strong>🌿 Full Price £34</strong> → Includes expanded recipe bundle.</li>
+    </ul>
+
+    <p class="highlight">Spots are limited. Reset with me.</p>
+
+    <!-- SENDER FORM -->
+    <div style="text-align:center" class="sender-form-field" data-sender-form-id="dPNGKw"></div>
+
+    <footer>
+      Built by Diana Air Coaching + ECHO — powered by raw truth, hormonal wisdom, and momentum.
+    </footer>
+
+  </div>
+</body>
+</html>
